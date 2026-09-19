@@ -153,6 +153,15 @@ int sim_run(const sim_config_t *cfg, const workload_t *wl, const trace_t *tr, si
             return -1;
         }
     }
+    /* Every workload row must lie inside the run: a row at t >= run_ms would
+       never be generated and must not appear as a phantom ledger record. */
+    for (i = 0; i < wl->n; i++) {
+        if (wl->items[i].time_ms >= cfg->run_ms) {
+            fprintf(stderr, "sim: workload row %u at t=%u is outside run_ms=%u (rejected)\n", i,
+                    wl->items[i].time_ms, cfg->run_ms);
+            return -1;
+        }
+    }
 
     snd = (fl_sender_t *)calloc(1, sizeof(fl_sender_t));
     rcv = (fl_receiver_t *)calloc(1, sizeof(fl_receiver_t));
@@ -166,10 +175,12 @@ int sim_run(const sim_config_t *cfg, const workload_t *wl, const trace_t *tr, si
         free(rcv);
         return -1;
     }
-    out->n_events = wl->n_events;
+    out->ledger_cap = wl->n_events;
+    out->n_events = 0; /* grows with events actually generated (IDs 1..n) */
     for (i = 0; i < wl->n_events; i++) {
         out->events[i].terminal_time = FL_TIME_NONE;
         out->events[i].rx_first_time = FL_TIME_NONE;
+        out->events[i].first_tx_time = FL_TIME_NONE;
     }
     for (i = 0; i < FL_MAX_STREAMS; i++) {
         aoi_init(&out->aoi[i], cfg->aoi_threshold_ms);
@@ -225,8 +236,9 @@ int sim_run(const sim_config_t *cfg, const workload_t *wl, const trace_t *tr, si
                 payload[0] = a->code;
                 rc = fl_sender_post_event(snd, t, kind, a->code, a->deadline_rel, a->retention_rel, payload, &id);
                 if (rc == FL_OK || rc == FL_ERR_EVENT_FULL) {
-                    if (id >= 1u && id <= out->n_events) {
+                    if (id >= 1u && id <= out->ledger_cap && id == out->n_events + 1u) {
                         ev_record_t *e = &out->events[id - 1u];
+                        out->n_events = id;
                         e->id = id;
                         e->kind = kind;
                         e->code = a->code;
@@ -351,6 +363,16 @@ int sim_run(const sim_config_t *cfg, const workload_t *wl, const trace_t *tr, si
             d->choice = sr.choice;
             d->attempt = sr.attempt;
             d->seq = sr.seq;
+            if (sr.frame_len > 0 && sr.choice.kind == FL_DK_EVENT && sr.choice.event_id >= 1u &&
+                sr.choice.event_id <= out->n_events) {
+                ev_record_t *e = &out->events[sr.choice.event_id - 1u];
+                e->attempts = sr.attempt;
+                if (e->first_tx_time == FL_TIME_NONE) {
+                    e->first_tx_time = t;
+                }
+                out->ledger_attempt_sum++;
+                out->event_decisions++;
+            }
             d->lost = 0;
             d->delay = 0;
             if (sr.frame_len > 0) {
@@ -442,6 +464,18 @@ int sim_run(const sim_config_t *cfg, const workload_t *wl, const trace_t *tr, si
     }
     out->s = snd->stats;
     out->r = rcv->stats;
+    /* Reconcile: per-event attempts (counted per transmission) must equal the
+       sender's transmission counter and the number of EVENT decisions. */
+    {
+        uint64_t sum = 0;
+        for (i = 0; i < out->n_events; i++) {
+            sum += out->events[i].attempts;
+        }
+        out->ledger_mismatch = (sum != out->ledger_attempt_sum || sum != out->s.event_tx ||
+                                out->event_decisions != out->s.event_tx || out->n_events != out->s.events_generated)
+                                   ? 1u
+                                   : 0u;
+    }
 
 done:
     transit_free(&tq_data);

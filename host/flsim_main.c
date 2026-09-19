@@ -155,7 +155,10 @@ int main(int argc, char **argv)
                (unsigned long long)(res.s.bytes_data_tx + res.r.bytes_ack_tx), res.interval_violations,
                res.core_error);
     }
-    rc = res.core_error != 0 ? 3 : 0;
+    if (res.ledger_mismatch) {
+        fprintf(stderr, "flsim: ledger reconciliation failed (attempts vs event_tx vs decisions)\n");
+    }
+    rc = (res.core_error != 0 || res.ledger_mismatch) ? 3 : 0;
     sim_result_free(&res);
     workload_free(&wl);
     trace_free(&tr);

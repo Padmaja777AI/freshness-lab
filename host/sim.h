@@ -60,7 +60,8 @@ typedef struct {
     uint8_t admitted;
     uint8_t outcome;         /* enum fl_terminal; PENDING = censored */
     fl_time_t terminal_time; /* FL_TIME_NONE if pending */
-    uint8_t attempts;
+    uint8_t attempts;        /* updated on every transmission, not only at terminal */
+    fl_time_t first_tx_time; /* FL_TIME_NONE if never transmitted */
     fl_time_t rx_first_time; /* FL_TIME_NONE if never delivered */
     uint8_t rx_on_time;
     uint32_t rx_dups;
@@ -103,7 +104,11 @@ typedef struct {
     fl_sender_stats_t s;
     fl_receiver_stats_t r;
     ev_record_t *events;
-    uint32_t n_events;
+    uint32_t n_events;       /* events actually generated in the run (IDs 1..n) */
+    uint32_t ledger_cap;     /* workload event rows (allocation size) */
+    uint64_t ledger_attempt_sum; /* transmissions attributed to ledger records */
+    uint32_t event_decisions;    /* EVENT decisions that produced a frame */
+    uint8_t ledger_mismatch;     /* 1 if the reconciliation in sim_run failed */
     dec_record_t *decisions;
     uint32_t n_decisions;
     rx_record_t *rxlog;

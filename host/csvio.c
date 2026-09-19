@@ -378,7 +378,7 @@ int sim_write_summary(FILE *fp, const sim_result_t *r, const sim_config_t *cfg, 
                 "aoi_mean_ms,aoi_peak_ms,unknown_ms_sum,over_threshold_ms_sum,"
                 "data_frames,ack_frames,data_lost,ack_lost,bytes_data_tx,bytes_ack_tx,bytes_total_tx,"
                 "event_tx,event_retries,state_tx,state_published,state_superseded,state_ack_timeouts,"
-                "in_transit_end,interval_violations,sizeof_sender,sizeof_receiver,core_error\n");
+                "in_transit_end,interval_violations,ledger_mismatch,sizeof_sender,sizeof_receiver,core_error\n");
     }
     fprintf(fp, "%s,%s,%u,%u,%u,%u,%u,%u,%u,%u,%u,%u,%u,%u,%u,", cfg->policy_name,
             fl_policy_family_name(cfg->policy.family), cfg->policy.defer, cfg->policy.late_demote,
@@ -400,8 +400,8 @@ int sim_write_summary(FILE *fp, const sim_result_t *r, const sim_config_t *cfg, 
             (unsigned long long)(r->s.bytes_data_tx + r->r.bytes_ack_tx));
     fprintf(fp, "%u,%u,%u,%u,%u,%u,", r->s.event_tx, r->s.event_tx - r->s.event_first_tx, r->s.state_tx,
             r->s.state_published, r->s.state_superseded, r->s.state_ack_timeouts);
-    fprintf(fp, "%u,%u,%u,%u,%d\n", r->in_transit_end, r->interval_violations, (unsigned)sizeof(fl_sender_t),
-            (unsigned)sizeof(fl_receiver_t), r->core_error);
+    fprintf(fp, "%u,%u,%u,%u,%u,%d\n", r->in_transit_end, r->interval_violations, r->ledger_mismatch,
+            (unsigned)sizeof(fl_sender_t), (unsigned)sizeof(fl_receiver_t), r->core_error);
     return ferror(fp) ? -1 : 0;
 }
 
@@ -409,7 +409,7 @@ int sim_write_events(FILE *fp, const sim_result_t *r)
 {
     uint32_t i;
     fprintf(fp, "id,kind,code,gen_time,deadline_abs,retention_abs,admitted,outcome,terminal_time,attempts,"
-                "rx_first_time,rx_on_time,rx_latency_ms,rx_dups,rx_oow\n");
+                "first_tx_time,rx_first_time,rx_on_time,rx_latency_ms,rx_dups,rx_oow\n");
     for (i = 0; i < r->n_events; i++) {
         const ev_record_t *e = &r->events[i];
         fprintf(fp, "%u,%s,%u,%u,%u,%u,%u,%s,", e->id, e->kind == FL_EV_RAISE ? "RAISE" : "CLEAR", e->code,
@@ -420,6 +420,11 @@ int sim_write_events(FILE *fp, const sim_result_t *r)
             fprintf(fp, "%u,", e->terminal_time);
         }
         fprintf(fp, "%u,", e->attempts);
+        if (e->first_tx_time == FL_TIME_NONE) {
+            fprintf(fp, "-,");
+        } else {
+            fprintf(fp, "%u,", e->first_tx_time);
+        }
         if (e->rx_first_time == FL_TIME_NONE) {
             fprintf(fp, "-,-,-,");
         } else {
