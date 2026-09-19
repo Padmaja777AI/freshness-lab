@@ -155,6 +155,16 @@ def wrap_text(text, max_px, size):
     return lines
 
 
+def _num_or_none(v):
+    """NA/empty -> None (drawn as an explicit 'NA' marker, never as a zero-height bar); 0 stays 0."""
+    if v is None:
+        return None
+    t = str(v).strip()
+    if t == "" or t.upper() in ("NA", "N/A", "NAN"):
+        return None
+    return float(t)
+
+
 def _parse_rows(rows):
     scenarios, policies, data = [], [], {}
     for r in rows:
@@ -165,7 +175,8 @@ def _parse_rows(rows):
             policies.append(pol)
         entry = {"n_seeds": int(float(r.get("n_seeds", "1") or 1))}
         for _, metric, _, _ in PANELS:
-            entry[metric] = tuple(float(r[f"{metric}_{k}"]) for k in ("mean", "min", "max"))
+            entry[metric] = tuple(_num_or_none(r.get(f"{metric}_{k}")) for k in ("mean", "min", "max"))
+            entry[metric + "_n"] = r.get(f"{metric}_n", "")
         data[(sc, pol)] = entry
     return scenarios, policies, data
 
@@ -291,7 +302,8 @@ def render_svg(rows, title=None):
         if fixed_unit:
             top, step = 1.0, 0.25
         else:
-            vmax = max(data[k][metric][2] for k in data)
+            defined_hi = [data[k][metric][2] for k in data if data[k][metric][2] is not None]
+            vmax = max(defined_hi) if defined_hi else 0.0
             top, step = nice_axis(vmax)
 
         def yv(v, top=top, py0=py0, base=base):
@@ -330,6 +342,14 @@ def render_svg(rows, title=None):
                     continue
                 mean, lo, hi = e[metric]
                 light, _, cls = policy_fill(pol)
+                if mean is None or lo is None or hi is None:
+                    # undefined for at least one seed: explicit marker, no bar, no whisker
+                    out.append(
+                        f'<text class="na" x="{_f(bx + BAR_W / 2.0)}" y="{_f(base - 4)}" text-anchor="middle" '
+                        f'font-size="9" fill="{L["secondary"][0]}" transform="rotate(-90 {_f(bx + BAR_W / 2.0)} {_f(base - 4)})">'
+                        f'NA ({e.get(metric + "_n", "?")}/{e["n_seeds"]})</text>'
+                    )
+                    continue
                 p = bar_path(bx, yv(mean), BAR_W, base)
                 if p:
                     out.append(f'<path class="{cls}" d="{p}" fill="{light}"/>')

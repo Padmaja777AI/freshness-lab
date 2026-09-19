@@ -117,6 +117,7 @@ typedef struct {
     aoi_acc_t aoi[FL_MAX_STREAMS];
     stream_counts_t sc[FL_MAX_STREAMS];
     uint32_t data_frames, ack_frames, data_lost, ack_lost, in_transit_end;
+    uint32_t in_transit_data, in_transit_ack; /* per-direction split of in_transit_end */
     uint32_t interval_violations;
     uint32_t ev_pending_end, delivered_but_unacked;
     uint64_t lat_sum;

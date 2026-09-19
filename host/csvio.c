@@ -386,8 +386,12 @@ int sim_write_summary(FILE *fp, const sim_result_t *r, const sim_config_t *cfg, 
     uint64_t unknown = 0, over = 0;
     fl_time_t peak = 0;
     uint32_t i;
+    uint32_t defined = 0; /* streams with at least one applied snapshot: the AoI mean is conditional on them */
     for (i = 0; i < cfg->n_streams; i++) {
-        aoi_sum += aoi_mean(&r->aoi[i], cfg->run_ms);
+        if (r->aoi[i].defined) {
+            aoi_sum += aoi_mean(&r->aoi[i], cfg->run_ms);
+            defined++;
+        }
         unknown += r->aoi[i].unknown_ms;
         over += r->aoi[i].over_ms;
         if (r->aoi[i].peak > peak) {
@@ -403,7 +407,7 @@ int sim_write_summary(FILE *fp, const sim_result_t *r, const sim_config_t *cfg, 
                 "rx_frames_rejected,rx_session_mismatch,rx_state_applied,rx_state_stale_dropped,"
                 "rx_ack_event_dropped,rx_ack_state_coalesced,acks_ok,acks_unmatched,acks_impossible,"
                 "recall,on_time_rate,delivered_but_unacked,lat_mean_ms,lat_max_ms,conf_mean_ms,conf_max_ms,"
-                "aoi_mean_ms,aoi_peak_ms,unknown_ms_sum,over_threshold_ms_sum,"
+                "aoi_mean_ms,aoi_mean_defined_ms,aoi_defined_streams,aoi_peak_ms,unknown_ms_sum,over_threshold_ms_sum,"
                 "data_frames,ack_frames,data_lost,ack_lost,bytes_data_tx,bytes_ack_tx,bytes_total_tx,"
                 "event_tx,event_retries,state_tx,state_published,state_superseded,state_ack_timeouts,"
                 "in_transit_end,interval_violations,ledger_mismatch,sizeof_sender,sizeof_receiver,core_error\n");
@@ -421,8 +425,17 @@ int sim_write_summary(FILE *fp, const sim_result_t *r, const sim_config_t *cfg, 
     fprintf(fp, "%u,%u,%u,", r->s.acks_ok, r->s.acks_unmatched, r->s.acks_impossible);
     fprintf(fp, "%.6f,%.6f,%u,%.3f,%u,%.3f,%u,", recall, on_time, r->delivered_but_unacked, lat_mean, r->lat_max,
             conf_mean, r->conf_max);
-    fprintf(fp, "%.3f,%u,%llu,%llu,", cfg->n_streams ? aoi_sum / (double)cfg->n_streams : 0.0, peak,
-            (unsigned long long)unknown, (unsigned long long)over);
+    /* aoi_mean_ms is the full-stream aggregate: NA unless EVERY configured stream received at
+       least one snapshot. aoi_mean_defined_ms is the partial aggregate over the streams that did
+       (coverage in aoi_defined_streams); it must never be read as full-stream AoI. */
+    if (defined == cfg->n_streams && defined > 0) {
+        fprintf(fp, "%.3f,%.3f,", aoi_sum / (double)defined, aoi_sum / (double)defined);
+    } else if (defined > 0) {
+        fprintf(fp, "NA,%.3f,", aoi_sum / (double)defined);
+    } else {
+        fprintf(fp, "NA,NA,");
+    }
+    fprintf(fp, "%u,%u,%llu,%llu,", defined, peak, (unsigned long long)unknown, (unsigned long long)over);
     fprintf(fp, "%u,%u,%u,%u,%llu,%llu,%llu,", r->data_frames, r->ack_frames, r->data_lost, r->ack_lost,
             (unsigned long long)r->s.bytes_data_tx, (unsigned long long)r->r.bytes_ack_tx,
             (unsigned long long)(r->s.bytes_data_tx + r->r.bytes_ack_tx));
@@ -482,12 +495,17 @@ int sim_write_state(FILE *fp, const sim_result_t *r, const sim_config_t *cfg)
 {
     uint32_t i;
     fprintf(fp, "stream,published,sent,applied,stale_dropped,unknown_ms,aoi_mean_ms,aoi_area_ms2,aoi_peak_ms,"
-                "final_age_ms,over_threshold_ms\n");
+                "final_age_ms,over_threshold_ms\n"); /* NA = stream never received a snapshot */
     for (i = 0; i < cfg->n_streams; i++) {
         const aoi_acc_t *a = &r->aoi[i];
-        fprintf(fp, "%u,%u,%u,%u,%u,%u,%.3f,%.1f,%u,%u,%llu\n", i, r->sc[i].published, r->sc[i].sent, r->sc[i].applied,
-                r->sc[i].stale_dropped, a->unknown_ms, aoi_mean(a, cfg->run_ms), aoi_area(a), a->peak, a->final_age,
-                (unsigned long long)a->over_ms);
+        fprintf(fp, "%u,%u,%u,%u,%u,%u,", i, r->sc[i].published, r->sc[i].sent, r->sc[i].applied,
+                r->sc[i].stale_dropped, a->unknown_ms);
+        if (a->defined) {
+            fprintf(fp, "%.3f,%.1f,%u,%u,%llu\n", aoi_mean(a, cfg->run_ms), aoi_area(a), a->peak, a->final_age,
+                    (unsigned long long)a->over_ms);
+        } else {
+            fprintf(fp, "NA,NA,NA,NA,%llu\n", (unsigned long long)a->over_ms); /* never received: undefined */
+        }
     }
     return ferror(fp) ? -1 : 0;
 }

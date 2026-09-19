@@ -148,9 +148,10 @@ int sim_run(const sim_config_t *cfg, const workload_t *wl, const trace_t *tr, si
         return -1;
     }
     for (i = 0; i < n_slots_needed; i++) {
-        if (tr->data_delay[i] == 0 || tr->ack_delay[i] == 0) {
-            fprintf(stderr, "sim: delay must be >= 1 ms (slot %u)\n", i);
-            return -1;
+        if (tr->data_delay[i] == 0 || tr->ack_delay[i] == 0 || tr->data_delay[i] > FL_MAX_REL_MS ||
+            tr->ack_delay[i] > FL_MAX_REL_MS) {
+            fprintf(stderr, "sim: delay must be 1..%u ms (slot %u)\n", (unsigned)FL_MAX_REL_MS, i);
+            return -1; /* t + delay can then never wrap: run_ms + FL_MAX_REL_MS < 2^32 */
         }
     }
     /* Every workload row must lie inside the run: a row at t >= run_ms would
@@ -385,6 +386,7 @@ int sim_run(const sim_config_t *cfg, const workload_t *wl, const trace_t *tr, si
                     int pr = transit_push(&tq_data, t, t + tr->data_delay[k], sr.frame, sr.frame_len);
                     if (pr == 1) {
                         out->in_transit_end++;
+                        out->in_transit_data++;
                     } else if (pr < 0) {
                         result = -1;
                         goto done;
@@ -407,6 +409,7 @@ int sim_run(const sim_config_t *cfg, const workload_t *wl, const trace_t *tr, si
                     int pr = transit_push(&tq_ack, t, t + tr->ack_delay[k], ack, alen);
                     if (pr == 1) {
                         out->in_transit_end++;
+                        out->in_transit_ack++;
                     } else if (pr < 0) {
                         result = -1;
                         goto done;
@@ -475,6 +478,17 @@ int sim_run(const sim_config_t *cfg, const workload_t *wl, const trace_t *tr, si
                                 out->event_decisions != out->s.event_tx || out->n_events != out->s.events_generated)
                                    ? 1u
                                    : 0u;
+        /* Frame conservation: every transmitted frame is exactly one of delivered,
+           lost, or still in transit at the end (per direction). */
+        {
+            uint64_t rx_data = (uint64_t)out->r.frames_ok + out->r.frames_rejected + out->r.session_mismatch;
+            uint64_t rx_ack = (uint64_t)out->s.acks_ok + out->s.acks_unmatched + out->s.acks_impossible +
+                              out->s.acks_rejected_frame + out->s.acks_session_mismatch;
+            if (rx_data + out->data_lost + out->in_transit_data != out->data_frames ||
+                rx_ack + out->ack_lost + out->in_transit_ack != out->ack_frames) {
+                out->ledger_mismatch = 1;
+            }
+        }
     }
 
 done:

@@ -132,7 +132,7 @@ static void test_attempts_recorded_when_pending(void)
     trace_free(&tr);
 }
 
-/* Delay 0 in the trace is rejected (delays are >= 1 ms by §8.2). */
+/* Delay 0 or > FL_MAX_REL_MS in the trace is rejected (§8.2): t + delay can then never wrap. */
 static void test_reject_zero_delay(void)
 {
     sim_config_t c;
@@ -144,6 +144,128 @@ static void test_reject_zero_delay(void)
     mk_trace(&tr, 10, 2);
     tr.ack_delay[3] = 0;
     CHECK(sim_run(&c, &wl, &tr, &r) != 0);
+    tr.ack_delay[3] = 2;
+    tr.data_delay[1] = FL_MAX_REL_MS + 1u;
+    CHECK(sim_run(&c, &wl, &tr, &r) != 0);
+    tr.data_delay[1] = 0xFFFFFFD8u; /* would wrap t=50 + delay into a past bucket */
+    CHECK(sim_run(&c, &wl, &tr, &r) != 0);
+    tr.data_delay[1] = 2;
+    tr.ack_delay[2] = 0xFFFFFFF0u; /* same hole on the ACK direction */
+    CHECK(sim_run(&c, &wl, &tr, &r) != 0);
+    tr.ack_delay[2] = FL_MAX_REL_MS + 1u;
+    CHECK(sim_run(&c, &wl, &tr, &r) != 0);
+    tr.ack_delay[2] = 2;
+    tr.data_delay[1] = 2;
+    tr.data_delay[2] = FL_MAX_REL_MS; /* allowed: the frame sent at slot 2 arrives after run end -> in transit */
+    wl_state(&wl, 0, 0, 1);  /* sent at t=0, applied at 2, ACK back at 12 */
+    wl_state(&wl, 15, 0, 2); /* eligible at slot 2 (t=20) */
+    CHECK_EQI(sim_run(&c, &wl, &tr, &r), 0);
+    CHECK_EQ(r.data_frames, r.r.frames_ok + r.data_lost + r.in_transit_data);
+    CHECK_EQ(r.in_transit_data, 1);
+    CHECK_EQ(r.ledger_mismatch, 0);
+    sim_result_free(&r);
+    free(wl.items);
+    trace_free(&tr);
+}
+
+/* Returns the value of a named column in the single summary row (writes via sim_write_summary). */
+static int summary_field(const sim_result_t *r, const sim_config_t *c, const char *name, char *out, size_t cap)
+{
+    FILE *fp = tmpfile();
+    static char buf[8192];
+    size_t n;
+    char *row;
+    char *h;
+    char *v;
+    int col = -1;
+    int k = 0;
+    if (fp == 0) {
+        return -1;
+    }
+    sim_write_summary(fp, r, c, 1);
+    rewind(fp);
+    n = fread(buf, 1, sizeof(buf) - 1u, fp);
+    buf[n] = '\0';
+    fclose(fp);
+    row = strchr(buf, '\n');
+    if (row == 0) {
+        return -1;
+    }
+    *row++ = '\0';
+    for (h = strtok(buf, ","); h != 0; h = strtok(0, ",")) {
+        if (strcmp(h, name) == 0) {
+            col = k;
+        }
+        k++;
+    }
+    if (col < 0) {
+        return -1;
+    }
+    k = 0;
+    for (v = strtok(row, ",\n"); v != 0; v = strtok(0, ",\n")) {
+        if (k == col) {
+            strncpy(out, v, cap - 1u);
+            out[cap - 1u] = '\0';
+            return 0;
+        }
+        k++;
+    }
+    return -1;
+}
+
+/*
+ * Undefined AoI must never become a numeric zero in the headline aggregate:
+ * two streams, only stream 0 publishes -> aoi_mean_ms is NA, the partial
+ * aggregate equals stream 0's mean with coverage 1; all-unknown -> both NA.
+ * Stream 0: applied at 2 with gen 0, run 100: [2,100) age 2->100, area 4998, mean 4998/98.
+ */
+static void test_aoi_undefined_streams_are_na(void)
+{
+    sim_config_t c;
+    workload_t wl;
+    trace_t tr;
+    sim_result_t r;
+    char v[64];
+    cfg_init(&c, "edf_rr", 100, 2);
+    wl_init(&wl);
+    wl_state(&wl, 0, 0, 1); /* stream 1 never publishes */
+    mk_trace(&tr, 10, 2);
+    CHECK_EQI(sim_run(&c, &wl, &tr, &r), 0);
+    CHECK_EQ(r.aoi[0].defined, 1);
+    CHECK_EQ(r.aoi[1].defined, 0);
+    CHECK_EQ(r.aoi[1].unknown_ms, 100);
+    CHECK_NEAR(aoi_mean(&r.aoi[0], 100), 4998.0 / 98.0, 1e-9);
+    CHECK_EQI(summary_field(&r, &c, "aoi_mean_ms", v, sizeof(v)), 0);
+    CHECK(strcmp(v, "NA") == 0);
+    CHECK_EQI(summary_field(&r, &c, "aoi_mean_defined_ms", v, sizeof(v)), 0);
+    CHECK_NEAR(atof(v), 4998.0 / 98.0, 1e-3);
+    CHECK_EQI(summary_field(&r, &c, "aoi_defined_streams", v, sizeof(v)), 0);
+    CHECK_EQ((unsigned)atoi(v), 1);
+    CHECK_EQI(summary_field(&r, &c, "unknown_ms_sum", v, sizeof(v)), 0);
+    CHECK_EQ((unsigned)atoi(v), 102); /* 2 + 100 */
+    sim_result_free(&r);
+    /* all unknown: no stream ever publishes */
+    wl.n = 0;
+    CHECK_EQI(sim_run(&c, &wl, &tr, &r), 0);
+    CHECK_EQI(summary_field(&r, &c, "aoi_mean_ms", v, sizeof(v)), 0);
+    CHECK(strcmp(v, "NA") == 0);
+    CHECK_EQI(summary_field(&r, &c, "aoi_mean_defined_ms", v, sizeof(v)), 0);
+    CHECK(strcmp(v, "NA") == 0);
+    CHECK_EQI(summary_field(&r, &c, "aoi_defined_streams", v, sizeof(v)), 0);
+    CHECK_EQ((unsigned)atoi(v), 0);
+    CHECK_EQI(summary_field(&r, &c, "unknown_ms_sum", v, sizeof(v)), 0);
+    CHECK_EQ((unsigned)atoi(v), 200);
+    sim_result_free(&r);
+    /* both defined: headline equals the partial aggregate and coverage is 2 */
+    wl.n = 0;
+    wl_state(&wl, 0, 0, 1);
+    wl_state(&wl, 0, 1, 1);
+    CHECK_EQI(sim_run(&c, &wl, &tr, &r), 0);
+    CHECK_EQI(summary_field(&r, &c, "aoi_mean_ms", v, sizeof(v)), 0);
+    CHECK(strcmp(v, "NA") != 0);
+    CHECK_EQI(summary_field(&r, &c, "aoi_defined_streams", v, sizeof(v)), 0);
+    CHECK_EQ((unsigned)atoi(v), 2);
+    sim_result_free(&r);
     free(wl.items);
     trace_free(&tr);
 }
@@ -234,6 +356,10 @@ static void check_identity(const sim_result_t *r)
     CHECK_EQ(sent_states, r->s.state_tx);
     CHECK_EQ(r->data_frames, r->s.state_tx + r->s.event_tx);
     CHECK_EQ(r->ack_frames, r->r.ack_tx);
+    CHECK_EQ(r->data_frames, r->r.frames_ok + r->r.frames_rejected + r->r.session_mismatch + r->data_lost + r->in_transit_data);
+    CHECK_EQ(r->ack_frames, r->s.acks_ok + r->s.acks_unmatched + r->s.acks_impossible + r->s.acks_rejected_frame +
+                                r->s.acks_session_mismatch + r->ack_lost + r->in_transit_ack);
+    CHECK_EQ(r->in_transit_end, r->in_transit_data + r->in_transit_ack);
 }
 
 static void test_accounting_identity(void)
@@ -515,6 +641,7 @@ int main(void)
     RUN(test_reject_out_of_run_rows);
     RUN(test_attempts_recorded_when_pending);
     RUN(test_reject_zero_delay);
+    RUN(test_aoi_undefined_streams_are_na);
     RUN(test_accounting_identity);
     RUN(test_determinism);
     RUN(test_ablation_equivalence);

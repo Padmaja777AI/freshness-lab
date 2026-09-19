@@ -279,6 +279,9 @@ def metric_direction(metric, override):
 
 
 def predicate_holds(direction, base_val, cand_val):
+    """Strict comparison; an undefined (None / NA) value on either side never 'holds'."""
+    if base_val is None or cand_val is None:
+        return False
     if direction == "higher_is_better":
         return cand_val < base_val
     return cand_val > base_val
@@ -327,8 +330,13 @@ class FlsimRunner:
         row = rows[0]
         if self.metric not in row:
             fail(f"metric {self.metric!r} is not a summary.csv column; columns: {', '.join(row.keys())}")
+        raw = str(row[self.metric]).strip()
+        if raw.upper() in ("NA", "N/A", "NAN", ""):
+            # explicit undefined metric (e.g. aoi_mean_ms with a never-received stream):
+            # not an error of the run, but no comparison is possible on it
+            return 0, row, None, f"metric {self.metric} is undefined (NA) for this run"
         try:
-            value = float(row[self.metric])
+            value = float(raw)
         except ValueError:
             return -1, row, None, f"metric {self.metric} is not numeric: {row[self.metric]!r}"
         return 0, row, value, proc.stderr.strip()
@@ -646,6 +654,14 @@ def main(argv=None):
         if res[side]["rc"] != 0:
             fail(f"flsim failed on the full workload for the {side} ({res[side]['rc']}): {res[side]['stderr']}")
     before_b, before_c = res["baseline"]["value"], res["candidate"]["value"]
+    if before_b is None or before_c is None:
+        sys.stderr.write(
+            f"reduce_counterexample: metric {args.metric} is undefined (NA) on the full workload for "
+            f"{'baseline' if before_b is None else 'candidate'}; no comparison is possible, nothing reduced.\n"
+        )
+        if not args.keep_work:
+            shutil.rmtree(work_dir, ignore_errors=True)
+        return 2
     if not predicate_holds(direction, before_b, before_c):
         sys.stderr.write(
             f"reduce_counterexample: no counterexample: {predicate_text} does not hold on the full workload "

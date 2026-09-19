@@ -171,7 +171,52 @@ class Summarize(unittest.TestCase):
         self.assertEqual(by[("s", "q")]["n_seeds"], "1")
 
 
+class SummarizeNA(unittest.TestCase):
+    def test_group_with_any_na_seed_is_unavailable(self):
+        sm = _import("summarize")
+        rows = [
+            {"scenario": "s", "policy": "cand", "seed": "1", "aoi_mean_ms": "50"},
+            {"scenario": "s", "policy": "cand", "seed": "2", "aoi_mean_ms": "NA"},
+            {"scenario": "s", "policy": "base", "seed": "1", "aoi_mean_ms": "60"},
+            {"scenario": "s", "policy": "base", "seed": "2", "aoi_mean_ms": "60"},
+        ]
+        header, out = sm.aggregate(rows, metrics=["aoi_mean_ms"])
+        by = {r["policy"]: r for r in out}
+        # the NA seed must not be dropped to announce a "50 beats 60" winner
+        self.assertEqual(by["cand"]["aoi_mean_ms_mean"], "NA")
+        self.assertEqual(by["cand"]["aoi_mean_ms_min"], "NA")
+        self.assertEqual(by["cand"]["aoi_mean_ms_n"], "1")
+        self.assertEqual(by["base"]["aoi_mean_ms_mean"], "60.000000")
+        self.assertEqual(by["base"]["aoi_mean_ms_n"], "2")
+        cell = sm._fmt_cell("aoi_mean_ms", by["cand"])
+        self.assertIn("NA", cell)
+        self.assertIn("no comparison", cell)
+
+    def test_numeric_zero_is_a_value_not_missing(self):
+        sm = _import("summarize")
+        rows = [
+            {"scenario": "s", "policy": "p", "seed": "1", "rx_ev_late": "0"},
+            {"scenario": "s", "policy": "p", "seed": "2", "rx_ev_late": "0"},
+        ]
+        _, out = sm.aggregate(rows, metrics=["rx_ev_late"])
+        self.assertEqual(out[0]["rx_ev_late_mean"], "0.000000")
+        self.assertEqual(out[0]["rx_ev_late_n"], "2")
+        self.assertEqual(sm.num_or_none("0"), 0.0)
+        self.assertEqual(sm.num_or_none("0.0"), 0.0)
+        self.assertIsNone(sm.num_or_none("NA"))
+        self.assertIsNone(sm.num_or_none(""))
+        self.assertEqual(sm._fmt_cell("rx_ev_late", out[0]), "0")
+
+
 class Reducer(unittest.TestCase):
+    def test_predicate_never_holds_on_undefined(self):
+        rc = _import("reduce_counterexample")
+        self.assertFalse(rc.predicate_holds("higher_is_better", None, 0.5))
+        self.assertFalse(rc.predicate_holds("lower_is_better", 50.0, None))
+        self.assertTrue(rc.predicate_holds("higher_is_better", 0.7, 0.6))
+        self.assertFalse(rc.predicate_holds("higher_is_better", 0.0, 0.0))  # equal: no winner
+
+
     def test_ddmin_finds_minimal_pair(self):
         rc = _import("reduce_counterexample")
         calls = []
@@ -196,6 +241,11 @@ class Plot(unittest.TestCase):
                     "on_time_rate_mean": ot, "on_time_rate_min": ot, "on_time_rate_max": ot,
                     "aoi_mean_ms_mean": aoi, "aoi_mean_ms_min": aoi, "aoi_mean_ms_max": aoi,
                 })
+        rows.append({
+            "scenario": "alarm_outage", "policy": "fifo", "n_seeds": "2", "seeds": "101;102",
+            "on_time_rate_mean": "0.5", "on_time_rate_min": "0.5", "on_time_rate_max": "0.5",
+            "aoi_mean_ms_mean": "NA", "aoi_mean_ms_min": "NA", "aoi_mean_ms_max": "NA", "aoi_mean_ms_n": "1",
+        })
         with tempfile.TemporaryDirectory() as d:
             path = os.path.join(d, "p.svg")
             ps.write_plot(rows, path)
@@ -203,6 +253,7 @@ class Plot(unittest.TestCase):
                 text = fp.read()
             ET.fromstring(text)
             self.assertIn("HOST SIMULATION", text)
+            self.assertIn("NA (1/2)", text)  # undefined cell drawn as an explicit marker, not a zero bar
 
 
 if __name__ == "__main__":

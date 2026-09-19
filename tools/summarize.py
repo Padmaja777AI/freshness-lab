@@ -34,6 +34,8 @@ import sys
 
 # Metrics aggregated per scenario x policy (mean, min, max over seeds).
 AGG_METRICS = [
+    "aoi_mean_defined_ms",
+    "aoi_defined_streams",
     "recall",
     "on_time_rate",
     "rx_ev_late",
@@ -54,6 +56,7 @@ AGG_METRICS = [
 # Integer-valued columns of summary.csv among AGG_METRICS (host/csvio.c prints
 # them with %u / %llu); the rest are printed as decimals.
 INT_METRICS = {
+    "aoi_defined_streams",
     "rx_ev_late",
     "ev_rejected_full",
     "ev_retention_expired",
@@ -260,6 +263,22 @@ def collect_summary_rows(run_list):
     return ["scenario", "seed"] + (header or []), rows
 
 
+NA = "NA"
+
+
+def num_or_none(s):
+    """Parse a summary cell: None for the explicit NA marker (or empty), else float.
+
+    A legitimate numeric 0 stays 0.0 (never classified as missing by truthiness).
+    """
+    if s is None:
+        return None
+    t = str(s).strip()
+    if t == "" or t.upper() in ("NA", "N/A", "NAN"):
+        return None
+    return float(t)
+
+
 def aggregate(rows, metrics=AGG_METRICS):
     """Per scenario x policy: mean/min/max over seeds -> (header, rows).
 
@@ -276,7 +295,7 @@ def aggregate(rows, metrics=AGG_METRICS):
         groups[key].append(r)
     header = ["scenario", "policy", "n_seeds", "seeds"]
     for m in metrics:
-        header += [f"{m}_mean", f"{m}_min", f"{m}_max"]
+        header += [f"{m}_mean", f"{m}_min", f"{m}_max", f"{m}_n"]
     out = []
     for key in order:
         g = groups[key]
@@ -287,7 +306,17 @@ def aggregate(rows, metrics=AGG_METRICS):
             "seeds": ";".join(r["seed"] for r in g),
         }
         for m in metrics:
-            vals = [(float(r[m]), r[m]) for r in g]
+            parsed = [(num_or_none(r.get(m)), r.get(m)) for r in g]
+            vals = [(v, raw) for v, raw in parsed if v is not None]
+            row[f"{m}_n"] = str(len(vals))
+            if len(vals) < len(g):
+                # A group with ANY undefined seed is reported as unavailable: a partial
+                # mean over the defined seeds would silently favour one side. The
+                # per-seed values remain in summary_all.csv.
+                row[f"{m}_mean"] = NA
+                row[f"{m}_min"] = NA
+                row[f"{m}_max"] = NA
+                continue
             mean = sum(v for v, _ in vals) / len(vals)
             vmin = min(vals, key=lambda t: t[0])
             vmax = max(vals, key=lambda t: t[0])
@@ -319,7 +348,8 @@ MD_TABLES = [
     ),
     (
         "State freshness and link bytes",
-        ["aoi_mean_ms", "aoi_peak_ms", "over_threshold_ms_sum", "unknown_ms_sum", "bytes_total_tx"],
+        ["aoi_mean_ms", "aoi_mean_defined_ms", "aoi_defined_streams", "aoi_peak_ms", "over_threshold_ms_sum",
+         "unknown_ms_sum", "bytes_total_tx"],
     ),
 ]
 
@@ -334,7 +364,9 @@ METRIC_GLOSSARY = [
     ("delivered_but_unacked", "receiver-delivered IDs whose sender outcome is not ACKED (S7.4)"),
     ("lat_mean_ms", "mean first-delivery latency rx_time - gen_time over delivered events"),
     ("event_retries", "event transmissions beyond the first attempt (S8.5)"),
-    ("aoi_mean_ms", "time-weighted mean Age of Information at the receiver, averaged over streams (S8.6)"),
+    ("aoi_mean_ms", "time-weighted mean AoI at the receiver averaged over ALL configured streams; NA whenever any stream never received a snapshot (S8.6). Conditional on the interval after each stream's first reception: always read next to unknown_ms_sum"),
+    ("aoi_mean_defined_ms", "PARTIAL aggregate over the streams that did receive a snapshot (coverage = aoi_defined_streams); not comparable as full-stream AoI"),
+    ("aoi_defined_streams", "number of configured streams with at least one applied snapshot in the run"),
     ("aoi_peak_ms", "largest AoI reached on any stream (S8.6)"),
     ("over_threshold_ms_sum", "continuous-time ms with AoI > aoi_threshold_ms, summed over streams"),
     ("unknown_ms_sum", "ms before the first applied snapshot, summed over streams (warm-up, reported)"),
@@ -343,20 +375,25 @@ METRIC_GLOSSARY = [
 
 
 def _fmt_value(metric, s):
-    v = float(s)
+    v = num_or_none(s)
+    if v is None:
+        return NA
     if metric in INT_METRICS:
         return str(int(round(v)))
     return f"{v:.4f}"
 
 
 def _fmt_cell(metric, row):
-    lo = row[f"{metric}_min"]
-    hi = row[f"{metric}_max"]
-    mean = float(row[f"{metric}_mean"])
-    if float(lo) == float(hi):
-        return _fmt_value(metric, lo)
+    lo = num_or_none(row.get(f"{metric}_min"))
+    hi = num_or_none(row.get(f"{metric}_max"))
+    mean = num_or_none(row.get(f"{metric}_mean"))
+    if mean is None or lo is None or hi is None:
+        n_def = row.get(f"{metric}_n", "?")
+        return f"NA ({n_def}/{row.get('n_seeds', '?')} seeds defined; no comparison)"
+    if lo == hi:
+        return _fmt_value(metric, row[f"{metric}_min"])
     mean_s = f"{mean:.1f}" if metric in INT_METRICS else f"{mean:.4f}"
-    return f"{mean_s} [{_fmt_value(metric, lo)}, {_fmt_value(metric, hi)}]"
+    return f"{mean_s} [{_fmt_value(metric, row[f'{metric}_min'])}, {_fmt_value(metric, row[f'{metric}_max'])}]"
 
 
 def _md_escape(s):
