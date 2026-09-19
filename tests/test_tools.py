@@ -138,6 +138,24 @@ class Generators(unittest.TestCase):
             self.assertEqual(int(row[1]), expect, k)
             self.assertEqual(int(row[3]), expect, k)
 
+    def test_scenario_table_matches_committed_cfg_files(self):
+        # The Python table is what other tools import; the .cfg files are what flsim reads.
+        for sc in self.gw.SCENARIOS:
+            path = os.path.join(ROOT, "scenarios", f"{sc}.cfg")
+            with open(path, encoding="utf-8") as fp:
+                committed = {}
+                for line in fp:
+                    line = line.strip()
+                    if not line or line.startswith("#"):
+                        continue
+                    k, v = line.split("=", 1)
+                    committed[k.strip()] = int(v)
+            table = {k: int(v) for k, v in (kv.split("=") for kv in self.gw.config_lines(sc))}
+            self.assertEqual(table, committed, sc)
+        self.assertEqual(self.gw.SCENARIOS["alarm_outage"]["max_attempts"], 40)
+        self.assertEqual(self.gw.SCENARIOS["overflow"]["max_attempts"], 40)
+        self.assertEqual(self.gw.SCENARIOS["healthy_light"]["max_attempts"], 8)
+
     def test_scenario_shapes(self):
         w, _ = self._rows("overflow", 101)
         self.assertEqual(sum(1 for r in w if r[1] == "RAISE"), 20)

@@ -89,19 +89,25 @@ SCENARIO_NAMES = (
     "tight_deadline",
 )
 
+# Must agree with the committed scenarios/<name>.cfg files (tests/test_tools.py checks it).
+# The two outage scenarios use max_attempts=40: 8 attempts x 300 ms exhausted retries inside
+# the outage in the seed-101 pilot (docs/DESIGN.md section 10.2); identical for all policies.
 SCENARIOS = {
     "healthy_light": _cfg(),
-    "alarm_outage": _cfg(n_streams=2),
+    "alarm_outage": _cfg(n_streams=2, max_attempts=40),
     "burst_loss": _cfg(),
     "ack_loss": _cfg(),
     "reorder": _cfg(),
-    "overflow": _cfg(),
+    "overflow": _cfg(max_attempts=40),
     "overload": _cfg(),
     "tight_deadline": _cfg(n_streams=8),
 }
 
+# Seed provenance (docs/DESIGN.md section 10.1): ALL of these are development / pilot
+# seeds. The first matrix is exploratory; no held-out evaluation seeds exist yet.
 TUNING_SEEDS = (1, 2, 3)
-EVALUATION_SEEDS = (101, 102, 103, 104, 105)
+PILOT_SEEDS = (101, 102, 103, 104, 105)
+EVALUATION_SEEDS = PILOT_SEEDS  # kept for compatibility; NOT an untouched evaluation set
 
 # Outage schedule shared by the tight_deadline workload and trace generators:
 # [start, start + OUTAGE_LEN) for start = OUTAGE_FIRST + k * OUTAGE_PERIOD.
