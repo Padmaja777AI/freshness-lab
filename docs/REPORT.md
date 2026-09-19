@@ -294,7 +294,9 @@ Columns: see §2. `aoi_mean_ms` is paired with `aoi_defined_streams` and
    `burst_loss`, `ack_loss` and `reorder` every policy delivers 100 % of
    events on time; mean AoI differs by under 1 % between policies (e.g.
    `healthy_light` 279.7 vs 279.7 ms). The candidate offers no
-   measurable benefit there and costs nothing. `ack_loss` (40 % reverse loss)
+   measurable benefit there, and its measured link traffic in those scenarios
+   is comparable to the baselines' (`bytes_total_tx` within about 1 %); no
+   CPU or energy cost was measured and none is claimed. `ack_loss` (40 % reverse loss)
    costs about 1.40× the bytes of `healthy_light` for the same outcome, and
    `reorder` shows the receiver dropping stale STATE frames without regressing
    (`rx_state_stale_dropped` in `summary_all.csv`).
@@ -402,7 +404,9 @@ baseline/candidate pair runs outside `--max-runs` (documented in
 `reduction.json` as `final_runs_not_counted`).
 
 **Provenance note.** Commits after `f18d875` on this branch touch only
-`docs/`, `results/` and `README.md`; the code, tools and scenario files that
+`docs/`, `results/`, `README.md` and `.gitignore` (the last one removes the
+non-deterministic `runtime.txt` files of the ledger-fixture checks from the
+retained tree); the `core/`, `host/`, `tools/` and `scenarios/` sources that
 produced the retained results are exactly those of `f18d875`, which the
 manifest records.
 
@@ -414,9 +418,13 @@ every run's `summary.csv`, `state.csv`, `config.txt` and `events.csv`
 seed 101 of `alarm_outage` and `tight_deadline`, the aggregate files,
 `checks.json`, `manifest.json` (sha256 of all 1080 files), the reduced
 counterexample with both policies' outputs, the 8-attempt pilot, and
-`results/reproduction_log.txt`. Everything pruned is regenerated
-byte-identically by `make matrix` (about 3 s on the host) and can be checked
-against the manifest hashes.
+`results/reproduction_log.txt`. `make matrix` (about 3 s on the host) regenerates the pruned
+files; byte-identity is claimed only for the deterministic files whose sha256
+the manifest records (inputs, `summary.csv`, `events.csv`, `state.csv`),
+which the reproduction log confirms. `runtime.txt` (host timing) and the
+path, timestamp and git-state metadata in `manifest.json` and
+`reduction.json` are expected to differ between runs and are excluded from
+that claim.
 
 ## 11. Limitations
 
