@@ -136,9 +136,9 @@ identical hashes).
 * **Explicit rejection (`overflow`):** 28/40 events delivered eventually,
   20/40 on time, 12 rejected at admission with burned IDs; identical for
   every policy.
-* **Candidate `fresh` vs baselines:** no measurable difference on healthy,
-  bursty, ACK-loss or reordering links; under persistent overload it
-  **loses** about one percentage point of event recall (0.770 vs 0.782) while
+* **Candidate `fresh` vs baselines:** near parity in these pilot runs on
+  healthy, bursty, ACK-loss or reordering links; under persistent overload it
+  **loses** about 1.2 percentage points of event recall (0.770 vs 0.782) while
   cutting mean AoI about five-fold (1210 vs 6232 ms); the scenario built to
   make it lose (`tight_deadline`) did not, and `fifo` had the highest on-time
   rate there with overlapping seed ranges. No superiority claim.

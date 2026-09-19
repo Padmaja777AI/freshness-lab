@@ -290,11 +290,11 @@ Columns: see §2. `aoi_mean_ms` is paired with `aoi_defined_streams` and
 
 ## 7. Findings (measured; with the regressions that pin them)
 
-1. **No difference where the link is healthy.** In `healthy_light`,
+1. **Near parity where the link is healthy.** In `healthy_light`,
    `burst_loss`, `ack_loss` and `reorder` every policy delivers 100 % of
    events on time; mean AoI differs by under 1 % between policies (e.g.
    `healthy_light` 279.7 vs 279.7 ms). The candidate offers no
-   measurable benefit there, and its measured link traffic in those scenarios
+   benefit beyond that near parity in these pilot runs, and its measured link traffic in those scenarios
    is comparable to the baselines' (`bytes_total_tx` within about 1 %); no
    CPU or energy cost was measured and none is claimed. `ack_loss` (40 % reverse loss)
    costs about 1.40× the bytes of `healthy_light` for the same outcome, and
@@ -310,7 +310,8 @@ Columns: see §2. `aoi_mean_ms` is paired with `aoi_defined_streams` and
    (182 ms) and the worst recall (0.658). This contradicts the design note that
    the candidate would degenerate to `fresh_nodefer` under overload (corrected
    in docs/DESIGN.md §9.3): in-flight events are not eligible, so the
-   "three eligible events" urgency condition is often false. The reduced
+   "three eligible events" urgency condition is often false. The recall gap
+   is about 1.2 percentage points. The reduced
    counterexample (§8) shows the mechanism of the event loss.
 3. **Late demotion moves failures, it does not remove them.** `edf_rr_ld` in
    `overload` cuts late deliveries from 20.4 to 2.4 per run but 40

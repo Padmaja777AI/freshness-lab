@@ -51,23 +51,29 @@ latest-state-only design lose that an event ledger keeps?
 ## Headline numbers (means over 5 pilot seeds; denominator = all generated events)
 
 "Eventual" counts an event delivered at any time; "on time" counts it only
-if it arrived by its deadline. Mean AoI is the time-weighted age of the
+if it arrived by its deadline. **Mean AoI** is the time-weighted age of the
 receiver's state snapshot, conditional on the interval after each stream's
-first reception and averaged over streams; it is always reported next to
-the unknown time. Figures are rounded.
+first reception and averaged over streams; **peak AoI** is the largest age
+reached on any stream. **Unknown time** is the time before each stream's
+first applied snapshot, summed over the scenario's streams and averaged over
+seeds (column `unknown_ms_sum`); a later first reception shortens the
+interval the mean is taken over, which is why the two are shown together.
+Figures are rounded.
 
-| Scenario | Policy | Eventual receipt | On-time receipt | Mean state age (AoI) | Note |
-|---|---|---:|---:|---:|---|
-| `healthy_light` | all 7 | 100 % | 100 % | ≈ 280 ms | no measurable difference; traffic within ≈ 1 % |
-| `overload` | `edf_rr` | ≈ 78.2 % | ≈ 77.4 % | ≈ 6.2 s | state starves behind events |
-| `overload` | `fresh` | ≈ 77.0 % | ≈ 76.2 % | ≈ 1.2 s (≈ 81 % lower) | about 1 pp fewer events, ≈ 5× fresher state |
-| `overload` | `fifo` | ≈ 65.8 % | ≈ 65.1 % | ≈ 0.18 s | freshest state, most events lost |
-| `alarm_outage` | all 7 | 2/2 | 0/2 | peak ≈ 7.0 s | both late; arrival order reversed |
-| `overflow` | all 7 | 28/40 | 20/40 | peak ≈ 7.6 s | 12 rejected at admission, IDs burned |
+| Scenario | Policy | Eventual receipt | On-time receipt | Mean AoI | Peak AoI | Unknown time (sum over streams) | Note |
+|---|---|---:|---:|---:|---:|---:|---|
+| `healthy_light` | all 7 | 100 % | 100 % | ≈ 280 ms | ≈ 0.83 s | ≈ 838 ms (4 streams) | near parity in these pilot runs; traffic within ≈ 1 % |
+| `overload` | `edf_rr` | ≈ 78.2 % | ≈ 77.4 % | ≈ 6.2 s | ≈ 19.3 s | ≈ 470 ms (4 streams) | state starves behind events |
+| `overload` | `fresh` | ≈ 77.0 % | ≈ 76.2 % | ≈ 1.2 s (≈ 81 % lower) | ≈ 5.4 s | ≈ 470 ms (4 streams) | ≈ 1.2 pp fewer events, ≈ 5× fresher state |
+| `overload` | `fifo` | ≈ 65.8 % | ≈ 65.1 % | ≈ 0.18 s | ≈ 0.64 s | ≈ 470 ms (4 streams) | freshest state, most events lost |
+| `alarm_outage` | all 7 | 2/2 | 0/2 | ≈ 1.07 s | ≈ 7.0 s | ≈ 298 ms (2 streams) | both late; arrival order reversed |
+| `overflow` | all 7 | 28/40 | 20/40 | ≈ 1.14 s | ≈ 7.6 s | ≈ 838 ms (4 streams) | 12 rejected at admission, IDs burned |
 
 Source cells: [`results/matrix/summary_by_scenario.csv`](../results/matrix/summary_by_scenario.csv)
-(`recall_mean`, `on_time_rate_mean`, `aoi_mean_ms_mean`); full tables in
-[`results/matrix/summary.md`](../results/matrix/summary.md); plot
+(`recall_mean`, `on_time_rate_mean`, `aoi_mean_ms_mean`, `aoi_peak_ms_mean`,
+`unknown_ms_sum_mean`); per-run values in
+[`results/matrix/summary_all.csv`](../results/matrix/summary_all.csv); full
+tables in [`results/matrix/summary.md`](../results/matrix/summary.md); plot
 [`results/matrix/plot.svg`](../results/matrix/plot.svg).
 
 ## Practical conclusions (what the data supports)
@@ -83,10 +89,11 @@ Source cells: [`results/matrix/summary_by_scenario.csv`](../results/matrix/summa
    arrive late but are recorded (28/40 eventual, 20/40 on time), identical
    for every policy.
 3. **The candidate is a trade-off, not a win.** Under overload `fresh` gives
-   up about one percentage point of event receipt (78.2 % → 77.0 % eventual,
+   up about 1.2 percentage points of event receipt (78.2 % → 77.0 % eventual,
    77.4 % → 76.2 % on time) for roughly 81 % lower mean state age. `fifo`
    pushes the same trade further (0.18 s age, 65.8 % receipt). On healthy,
-   bursty, ACK-loss and reordering links no policy differs measurably. The
+   bursty, ACK-loss and reordering links the policies are at near parity in
+   these pilot runs (small differences exist and are in the CSVs). The
    scenario designed to make the candidate lose on deadlines did not; seed
    ranges overlap there and no ordering is claimed.
 4. **The loss mechanism is auditable.** A deterministic reducer shrinks the
