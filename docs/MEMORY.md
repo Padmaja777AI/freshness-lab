@@ -4,10 +4,11 @@ All core state lives in two objects the host allocates once (statically on a
 target). Nothing in `core/` calls `malloc`, uses VLAs, recurses, or does I/O.
 
 Measured with `gcc 13.3 -std=c11` on **x86-64 Linux** (natural alignment;
-`uint64_t` counters force 8-byte alignment). Sizes on a 32-bit ARM EABI target
-have not been measured (no cross compiler in this session); field layouts use
-only 1/2/4/8-byte scalars so the totals are expected to be close, but that is
-an expectation, not a measurement.
+`uint64_t` counters force 8-byte alignment). This is a software-only project:
+sizes on a 32-bit ARM EABI target, flash use and cycle counts have not been
+measured and hardware is outside the project's scope; field layouts use only
+1/2/4/8-byte scalars so the totals are expected to be close, but that is an
+expectation, not a measurement.
 
 Default capacities: `FL_MAX_STREAMS=8`, `FL_EVENT_CAPACITY=8`,
 `FL_RX_DEDUP_WINDOW=64`, `FL_RX_ACK_QUEUE=4`, payloads 8 bytes.
