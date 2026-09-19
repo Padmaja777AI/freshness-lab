@@ -13,7 +13,7 @@ tables are in `results/matrix/summary.md`.
 
 ## 1. What was run
 
-* **Source commit:** `f18d875212fa25b4e15055b34e26592583d29f77` (branch `claude/dazzling-galileo-0800h2`).
+* **Source commit:** `f18d875212fa25b4e15055b34e26592583d29f77` (developed on branch `claude/dazzling-galileo-0800h2`, merged into `main` with full history).
   The retained results were generated from this commit with a clean tracked
   tree (`results/matrix/manifest.json`: `git_head` = `f18d875212fa25b4e15055b34e26592583d29f77`,
   `git_dirty_tracked` = `False`; `flsim` sha256
@@ -407,7 +407,7 @@ counterexample" outcome both exit with code 2, and the final
 baseline/candidate pair runs outside `--max-runs` (documented in
 `reduction.json` as `final_runs_not_counted`).
 
-**Provenance note.** Commits after `f18d875` on this branch touch only
+**Provenance note.** Commits after `f18d875` touch only
 `docs/`, `results/`, `README.md` and `.gitignore` (the last one removes the
 non-deterministic `runtime.txt` files of the ledger-fixture checks from the
 retained tree); the `core/`, `host/`, `tools/` and `scenarios/` sources that

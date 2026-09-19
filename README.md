@@ -27,7 +27,7 @@ Prerequisites: gcc or clang with C11, GNU make, Python 3 (standard library
 only). Verified with gcc 13.3, clang 18.1, Python 3.11 on Ubuntu 24.04.
 
 ```sh
-git clone -b claude/dazzling-galileo-0800h2 https://github.com/Padmaja777AI/freshness-lab.git
+git clone https://github.com/Padmaja777AI/freshness-lab.git
 cd freshness-lab
 make && make test            # build/flsim, six C test suites (4027 checks)
 mkdir -p out/demo

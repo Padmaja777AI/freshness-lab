@@ -17,11 +17,12 @@ a fresh run against the retained evidence.
 
 ## Get the code
 
-The default branch `main` holds only the initial README. The complete
-project lives on the working branch, so clone that branch explicitly:
+The complete project is on the default branch `main` (the reviewed working
+branch `claude/dazzling-galileo-0800h2` was merged into it with its full
+history):
 
 ```sh
-git clone -b claude/dazzling-galileo-0800h2 https://github.com/Padmaja777AI/freshness-lab.git
+git clone https://github.com/Padmaja777AI/freshness-lab.git
 cd freshness-lab
 ```
 
@@ -169,9 +170,9 @@ used by argparse for usage errors), 1 input or `flsim` failure.
 ## Provenance
 
 * Retained results were generated from source commit **`f18d875`**
-  (`core/`, `host/`, `tools/`, `scenarios/`, `Makefile`, `tests/`). Later
-  commits on the branch change only documentation, `results/` and
-  `.gitignore`; `results/matrix/manifest.json` records `git_head`,
+  (`core/`, `host/`, `tools/`, `scenarios/`, `Makefile`, `tests/`), which is
+  in the history of `main`. Later commits change only documentation,
+  `results/` and `.gitignore`; `results/matrix/manifest.json` records `git_head`,
   `git_dirty_tracked = false` and the `flsim` binary hash.
 * `results/reproduction_log.txt` is the log of a fresh detached worktree of
   that commit building, passing every test and sanitizer run, and
