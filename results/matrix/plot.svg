@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1204" height="760" viewBox="0 0 1204 760" role="img" aria-labelledby="fl-title fl-desc">
+<title id="fl-title">HOST SIMULATION -- exploratory/pilot scheduler matrix (development seeds; not a held-out evaluation): on-time rate and mean AoI by scenario and policy</title>
+<desc id="fl-desc">HOST SIMULATION on a desktop CPU; no board, no real link. Grouped bars per scenario (one bar per policy): panel A on-time rate, panel B mean AoI in ms; bars are means over seeds, whiskers are min to max across seeds. Every value is listed in summary_by_scenario.csv and summary.md. Bytes are not energy; no superiority claim.</desc>
+<style>
+text { font-family: system-ui, -apple-system, 'Segoe UI', sans-serif; }
+@media (prefers-color-scheme: dark) {
+  .surface { fill: #1a1a19; }
+  .ink { fill: #ffffff; }
+  .ink2 { fill: #c3c2b7; }
+  .muted { fill: #898781; }
+  .grid { stroke: #2c2c2a; }
+  .axis { stroke: #383835; }
+  .whisk { stroke: #c3c2b7; }
+  .s0 { fill: #3987e5; }
+  .s1 { fill: #d95926; }
+  .s2 { fill: #199e70; }
+  .s3 { fill: #c98500; }
+  .s4 { fill: #d55181; }
+  .s5 { fill: #008300; }
+  .s6 { fill: #9085e9; }
+  .s7 { fill: #e66767; }
+}
+</style>
+<rect class="surface" x="0" y="0" width="1204" height="760" fill="#fcfcfb"/>
+<text class="ink" x="76" y="30" font-size="16" font-weight="600" fill="#0b0b0b">HOST SIMULATION -- exploratory/pilot scheduler matrix (development seeds; not a held-out evaluation): on-time rate and</text>
+<text class="ink" x="76" y="52" font-size="16" font-weight="600" fill="#0b0b0b">mean AoI by scenario and policy</text>
+<text class="ink2" x="76" y="68" font-size="12" fill="#52514e">Bars: mean over seeds per scenario x policy (n = 5 seeds); whiskers: min to max across seeds. Development seeds, not a held-out evaluation. Bytes are not</text>
+<text class="ink2" x="76" y="84" font-size="12" fill="#52514e">energy; no superiority claim. Values: summary_by_scenario.csv (table view).</text>
+<rect class="s0" x="76" y="99" width="12" height="12" rx="2" fill="#2a78d6"/>
+<text class="ink2" x="94" y="109" font-size="12" fill="#52514e">edf_rr</text>
+<rect class="s1" x="153.76" y="99" width="12" height="12" rx="2" fill="#eb6834"/>
+<text class="ink2" x="171.76" y="109" font-size="12" fill="#52514e">edf_rr_ld</text>
+<rect class="s2" x="252.39999999999998" y="99" width="12" height="12" rx="2" fill="#1baf7a"/>
+<text class="ink2" x="270.4" y="109" font-size="12" fill="#52514e">fresh_nodefer</text>
+<rect class="s3" x="378.88" y="99" width="12" height="12" rx="2" fill="#eda100"/>
+<text class="ink2" x="396.88" y="109" font-size="12" fill="#52514e">fresh</text>
+<rect class="s4" x="449.68" y="99" width="12" height="12" rx="2" fill="#e87ba4"/>
+<text class="ink2" x="467.68" y="109" font-size="12" fill="#52514e">fresh_ld</text>
+<rect class="s5" x="541.36" y="99" width="12" height="12" rx="2" fill="#008300"/>
+<text class="ink2" x="559.36" y="109" font-size="12" fill="#52514e">fresh_so</text>
+<rect class="s6" x="633.04" y="99" width="12" height="12" rx="2" fill="#4a3aa7"/>
+<text class="ink2" x="651.04" y="109" font-size="12" fill="#52514e">fifo</text>
+<text class="ink" x="76" y="138" font-size="13" font-weight="600" fill="#0b0b0b">A. On-time rate = rx_ev_on_time / ev_generated (0..1)</text>
+<text class="muted" x="68" y="352" font-size="11" text-anchor="end" fill="#898781">0</text>
+<line class="grid" x1="76" y1="298" x2="1180" y2="298" stroke="#e1e0d9" stroke-width="1"/>
+<text class="muted" x="68" y="302" font-size="11" text-anchor="end" fill="#898781">0.25</text>
+<line class="grid" x1="76" y1="248" x2="1180" y2="248" stroke="#e1e0d9" stroke-width="1"/>
+<text class="muted" x="68" y="252" font-size="11" text-anchor="end" fill="#898781">0.5</text>
+<line class="grid" x1="76" y1="198" x2="1180" y2="198" stroke="#e1e0d9" stroke-width="1"/>
+<text class="muted" x="68" y="202" font-size="11" text-anchor="end" fill="#898781">0.75</text>
+<line class="grid" x1="76" y1="148" x2="1180" y2="148" stroke="#e1e0d9" stroke-width="1"/>
+<text class="muted" x="68" y="152" font-size="11" text-anchor="end" fill="#898781">1</text>
+<line class="axis" x1="76" y1="348" x2="1180" y2="348" stroke="#c3c2b7" stroke-width="1"/>
+<path class="s0" d="M90,348 L90,152 Q90,148 94,148 L100,148 Q104,148 104,152 L104,348 Z" fill="#2a78d6"/>
+<rect x="89" y="148" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>healthy_light / edf_rr: on_time_rate mean 1 (min 1, max 1; n=5 seeds)</title></rect>
+<path class="s1" d="M106,348 L106,152 Q106,148 110,148 L116,148 Q120,148 120,152 L120,348 Z" fill="#eb6834"/>
+<rect x="105" y="148" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>healthy_light / edf_rr_ld: on_time_rate mean 1 (min 1, max 1; n=5 seeds)</title></rect>
+<path class="s2" d="M122,348 L122,152 Q122,148 126,148 L132,148 Q136,148 136,152 L136,348 Z" fill="#1baf7a"/>
+<rect x="121" y="148" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>healthy_light / fresh_nodefer: on_time_rate mean 1 (min 1, max 1; n=5 seeds)</title></rect>
+<path class="s3" d="M138,348 L138,152 Q138,148 142,148 L148,148 Q152,148 152,152 L152,348 Z" fill="#eda100"/>
+<rect x="137" y="148" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>healthy_light / fresh: on_time_rate mean 1 (min 1, max 1; n=5 seeds)</title></rect>
+<path class="s4" d="M154,348 L154,152 Q154,148 158,148 L164,148 Q168,148 168,152 L168,348 Z" fill="#e87ba4"/>
+<rect x="153" y="148" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>healthy_light / fresh_ld: on_time_rate mean 1 (min 1, max 1; n=5 seeds)</title></rect>
+<path class="s5" d="M170,348 L170,152 Q170,148 174,148 L180,148 Q184,148 184,152 L184,348 Z" fill="#008300"/>
+<rect x="169" y="148" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>healthy_light / fresh_so: on_time_rate mean 1 (min 1, max 1; n=5 seeds)</title></rect>
+<path class="s6" d="M186,348 L186,152 Q186,148 190,148 L196,148 Q200,148 200,152 L200,348 Z" fill="#4a3aa7"/>
+<rect x="185" y="148" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>healthy_light / fifo: on_time_rate mean 1 (min 1, max 1; n=5 seeds)</title></rect>
+<text class="ink2" x="145" y="366" font-size="11" text-anchor="middle" fill="#52514e">healthy_light</text>
+<rect x="227" y="148" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>alarm_outage / edf_rr: on_time_rate mean 0 (min 0, max 0; n=5 seeds)</title></rect>
+<rect x="243" y="148" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>alarm_outage / edf_rr_ld: on_time_rate mean 0 (min 0, max 0; n=5 seeds)</title></rect>
+<rect x="259" y="148" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>alarm_outage / fresh_nodefer: on_time_rate mean 0 (min 0, max 0; n=5 seeds)</title></rect>
+<rect x="275" y="148" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>alarm_outage / fresh: on_time_rate mean 0 (min 0, max 0; n=5 seeds)</title></rect>
+<rect x="291" y="148" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>alarm_outage / fresh_ld: on_time_rate mean 0 (min 0, max 0; n=5 seeds)</title></rect>
+<rect x="307" y="148" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>alarm_outage / fresh_so: on_time_rate mean 0 (min 0, max 0; n=5 seeds)</title></rect>
+<rect x="323" y="148" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>alarm_outage / fifo: on_time_rate mean 0 (min 0, max 0; n=5 seeds)</title></rect>
+<text class="ink2" x="283" y="366" font-size="11" text-anchor="middle" fill="#52514e">alarm_outage</text>
+<path class="s0" d="M366,348 L366,152 Q366,148 370,148 L376,148 Q380,148 380,152 L380,348 Z" fill="#2a78d6"/>
+<rect x="365" y="148" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>burst_loss / edf_rr: on_time_rate mean 1 (min 1, max 1; n=5 seeds)</title></rect>
+<path class="s1" d="M382,348 L382,152 Q382,148 386,148 L392,148 Q396,148 396,152 L396,348 Z" fill="#eb6834"/>
+<rect x="381" y="148" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>burst_loss / edf_rr_ld: on_time_rate mean 1 (min 1, max 1; n=5 seeds)</title></rect>
+<path class="s2" d="M398,348 L398,152 Q398,148 402,148 L408,148 Q412,148 412,152 L412,348 Z" fill="#1baf7a"/>
+<rect x="397" y="148" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>burst_loss / fresh_nodefer: on_time_rate mean 1 (min 1, max 1; n=5 seeds)</title></rect>
+<path class="s3" d="M414,348 L414,152 Q414,148 418,148 L424,148 Q428,148 428,152 L428,348 Z" fill="#eda100"/>
+<rect x="413" y="148" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>burst_loss / fresh: on_time_rate mean 1 (min 1, max 1; n=5 seeds)</title></rect>
+<path class="s4" d="M430,348 L430,152 Q430,148 434,148 L440,148 Q444,148 444,152 L444,348 Z" fill="#e87ba4"/>
+<rect x="429" y="148" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>burst_loss / fresh_ld: on_time_rate mean 1 (min 1, max 1; n=5 seeds)</title></rect>
+<path class="s5" d="M446,348 L446,152 Q446,148 450,148 L456,148 Q460,148 460,152 L460,348 Z" fill="#008300"/>
+<rect x="445" y="148" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>burst_loss / fresh_so: on_time_rate mean 1 (min 1, max 1; n=5 seeds)</title></rect>
+<path class="s6" d="M462,348 L462,152 Q462,148 466,148 L472,148 Q476,148 476,152 L476,348 Z" fill="#4a3aa7"/>
+<rect x="461" y="148" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>burst_loss / fifo: on_time_rate mean 1 (min 1, max 1; n=5 seeds)</title></rect>
+<text class="ink2" x="421" y="366" font-size="11" text-anchor="middle" fill="#52514e">burst_loss</text>
+<path class="s0" d="M504,348 L504,152 Q504,148 508,148 L514,148 Q518,148 518,152 L518,348 Z" fill="#2a78d6"/>
+<rect x="503" y="148" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>ack_loss / edf_rr: on_time_rate mean 1 (min 1, max 1; n=5 seeds)</title></rect>
+<path class="s1" d="M520,348 L520,152 Q520,148 524,148 L530,148 Q534,148 534,152 L534,348 Z" fill="#eb6834"/>
+<rect x="519" y="148" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>ack_loss / edf_rr_ld: on_time_rate mean 1 (min 1, max 1; n=5 seeds)</title></rect>
+<path class="s2" d="M536,348 L536,152 Q536,148 540,148 L546,148 Q550,148 550,152 L550,348 Z" fill="#1baf7a"/>
+<rect x="535" y="148" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>ack_loss / fresh_nodefer: on_time_rate mean 1 (min 1, max 1; n=5 seeds)</title></rect>
+<path class="s3" d="M552,348 L552,152 Q552,148 556,148 L562,148 Q566,148 566,152 L566,348 Z" fill="#eda100"/>
+<rect x="551" y="148" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>ack_loss / fresh: on_time_rate mean 1 (min 1, max 1; n=5 seeds)</title></rect>
+<path class="s4" d="M568,348 L568,152 Q568,148 572,148 L578,148 Q582,148 582,152 L582,348 Z" fill="#e87ba4"/>
+<rect x="567" y="148" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>ack_loss / fresh_ld: on_time_rate mean 1 (min 1, max 1; n=5 seeds)</title></rect>
+<path class="s5" d="M584,348 L584,152 Q584,148 588,148 L594,148 Q598,148 598,152 L598,348 Z" fill="#008300"/>
+<rect x="583" y="148" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>ack_loss / fresh_so: on_time_rate mean 1 (min 1, max 1; n=5 seeds)</title></rect>
+<path class="s6" d="M600,348 L600,152 Q600,148 604,148 L610,148 Q614,148 614,152 L614,348 Z" fill="#4a3aa7"/>
+<rect x="599" y="148" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>ack_loss / fifo: on_time_rate mean 1 (min 1, max 1; n=5 seeds)</title></rect>
+<text class="ink2" x="559" y="366" font-size="11" text-anchor="middle" fill="#52514e">ack_loss</text>
+<path class="s0" d="M642,348 L642,152 Q642,148 646,148 L652,148 Q656,148 656,152 L656,348 Z" fill="#2a78d6"/>
+<rect x="641" y="148" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>reorder / edf_rr: on_time_rate mean 1 (min 1, max 1; n=5 seeds)</title></rect>
+<path class="s1" d="M658,348 L658,152 Q658,148 662,148 L668,148 Q672,148 672,152 L672,348 Z" fill="#eb6834"/>
+<rect x="657" y="148" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>reorder / edf_rr_ld: on_time_rate mean 1 (min 1, max 1; n=5 seeds)</title></rect>
+<path class="s2" d="M674,348 L674,152 Q674,148 678,148 L684,148 Q688,148 688,152 L688,348 Z" fill="#1baf7a"/>
+<rect x="673" y="148" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>reorder / fresh_nodefer: on_time_rate mean 1 (min 1, max 1; n=5 seeds)</title></rect>
+<path class="s3" d="M690,348 L690,152 Q690,148 694,148 L700,148 Q704,148 704,152 L704,348 Z" fill="#eda100"/>
+<rect x="689" y="148" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>reorder / fresh: on_time_rate mean 1 (min 1, max 1; n=5 seeds)</title></rect>
+<path class="s4" d="M706,348 L706,152 Q706,148 710,148 L716,148 Q720,148 720,152 L720,348 Z" fill="#e87ba4"/>
+<rect x="705" y="148" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>reorder / fresh_ld: on_time_rate mean 1 (min 1, max 1; n=5 seeds)</title></rect>
+<path class="s5" d="M722,348 L722,152 Q722,148 726,148 L732,148 Q736,148 736,152 L736,348 Z" fill="#008300"/>
+<rect x="721" y="148" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>reorder / fresh_so: on_time_rate mean 1 (min 1, max 1; n=5 seeds)</title></rect>
+<path class="s6" d="M738,348 L738,152 Q738,148 742,148 L748,148 Q752,148 752,152 L752,348 Z" fill="#4a3aa7"/>
+<rect x="737" y="148" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>reorder / fifo: on_time_rate mean 1 (min 1, max 1; n=5 seeds)</title></rect>
+<text class="ink2" x="697" y="366" font-size="11" text-anchor="middle" fill="#52514e">reorder</text>
+<path class="s0" d="M780,348 L780,252 Q780,248 784,248 L790,248 Q794,248 794,252 L794,348 Z" fill="#2a78d6"/>
+<rect x="779" y="148" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>overflow / edf_rr: on_time_rate mean 0.5 (min 0.5, max 0.5; n=5 seeds)</title></rect>
+<path class="s1" d="M796,348 L796,252 Q796,248 800,248 L806,248 Q810,248 810,252 L810,348 Z" fill="#eb6834"/>
+<rect x="795" y="148" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>overflow / edf_rr_ld: on_time_rate mean 0.5 (min 0.5, max 0.5; n=5 seeds)</title></rect>
+<path class="s2" d="M812,348 L812,252 Q812,248 816,248 L822,248 Q826,248 826,252 L826,348 Z" fill="#1baf7a"/>
+<rect x="811" y="148" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>overflow / fresh_nodefer: on_time_rate mean 0.5 (min 0.5, max 0.5; n=5 seeds)</title></rect>
+<path class="s3" d="M828,348 L828,252 Q828,248 832,248 L838,248 Q842,248 842,252 L842,348 Z" fill="#eda100"/>
+<rect x="827" y="148" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>overflow / fresh: on_time_rate mean 0.5 (min 0.5, max 0.5; n=5 seeds)</title></rect>
+<path class="s4" d="M844,348 L844,252 Q844,248 848,248 L854,248 Q858,248 858,252 L858,348 Z" fill="#e87ba4"/>
+<rect x="843" y="148" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>overflow / fresh_ld: on_time_rate mean 0.5 (min 0.5, max 0.5; n=5 seeds)</title></rect>
+<path class="s5" d="M860,348 L860,252 Q860,248 864,248 L870,248 Q874,248 874,252 L874,348 Z" fill="#008300"/>
+<rect x="859" y="148" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>overflow / fresh_so: on_time_rate mean 0.5 (min 0.5, max 0.5; n=5 seeds)</title></rect>
+<path class="s6" d="M876,348 L876,252 Q876,248 880,248 L886,248 Q890,248 890,252 L890,348 Z" fill="#4a3aa7"/>
+<rect x="875" y="148" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>overflow / fifo: on_time_rate mean 0.5 (min 0.5, max 0.5; n=5 seeds)</title></rect>
+<text class="ink2" x="835" y="366" font-size="11" text-anchor="middle" fill="#52514e">overflow</text>
+<path class="s0" d="M918,348 L918,197.18 Q918,193.18 922,193.18 L928,193.18 Q932,193.18 932,197.18 L932,348 Z" fill="#2a78d6"/>
+<line class="whisk" x1="925" y1="193.44" x2="925" y2="192.72" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="922" y1="193.44" x2="928" y2="193.44" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="922" y1="192.72" x2="928" y2="192.72" stroke="#52514e" stroke-width="1.5"/>
+<rect x="917" y="148" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>overload / edf_rr: on_time_rate mean 0.77408 (min 0.7728, max 0.7764; n=5 seeds)</title></rect>
+<path class="s1" d="M934,348 L934,198.29 Q934,194.29 938,194.29 L944,194.29 Q948,194.29 948,198.29 L948,348 Z" fill="#eb6834"/>
+<line class="whisk" x1="941" y1="198.32" x2="941" y2="191.28" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="938" y1="198.32" x2="944" y2="198.32" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="938" y1="191.28" x2="944" y2="191.28" stroke="#52514e" stroke-width="1.5"/>
+<rect x="933" y="148" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>overload / edf_rr_ld: on_time_rate mean 0.76856 (min 0.7484, max 0.7836; n=5 seeds)</title></rect>
+<path class="s2" d="M950,348 L950,197.18 Q950,193.18 954,193.18 L960,193.18 Q964,193.18 964,197.18 L964,348 Z" fill="#1baf7a"/>
+<line class="whisk" x1="957" y1="193.44" x2="957" y2="192.72" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="954" y1="193.44" x2="960" y2="193.44" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="954" y1="192.72" x2="960" y2="192.72" stroke="#52514e" stroke-width="1.5"/>
+<rect x="949" y="148" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>overload / fresh_nodefer: on_time_rate mean 0.77408 (min 0.7728, max 0.7764; n=5 seeds)</title></rect>
+<path class="s3" d="M966,348 L966,199.57 Q966,195.57 970,195.57 L976,195.57 Q980,195.57 980,199.57 L980,348 Z" fill="#eda100"/>
+<line class="whisk" x1="973" y1="196.16" x2="973" y2="194.48" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="970" y1="196.16" x2="976" y2="196.16" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="970" y1="194.48" x2="976" y2="194.48" stroke="#52514e" stroke-width="1.5"/>
+<rect x="965" y="148" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>overload / fresh: on_time_rate mean 0.76216 (min 0.7592, max 0.7676; n=5 seeds)</title></rect>
+<path class="s4" d="M982,348 L982,201.97 Q982,197.97 986,197.97 L992,197.97 Q996,197.97 996,201.97 L996,348 Z" fill="#e87ba4"/>
+<line class="whisk" x1="989" y1="200.24" x2="989" y2="195.84" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="986" y1="200.24" x2="992" y2="200.24" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="986" y1="195.84" x2="992" y2="195.84" stroke="#52514e" stroke-width="1.5"/>
+<rect x="981" y="148" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>overload / fresh_ld: on_time_rate mean 0.75016 (min 0.7388, max 0.7608; n=5 seeds)</title></rect>
+<path class="s5" d="M998,348 L998,200.8 Q998,196.8 1002,196.8 L1008,196.8 Q1012,196.8 1012,200.8 L1012,348 Z" fill="#008300"/>
+<line class="whisk" x1="1005" y1="197.6" x2="1005" y2="196.08" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="1002" y1="197.6" x2="1008" y2="197.6" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="1002" y1="196.08" x2="1008" y2="196.08" stroke="#52514e" stroke-width="1.5"/>
+<rect x="997" y="148" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>overload / fresh_so: on_time_rate mean 0.756 (min 0.752, max 0.7596; n=5 seeds)</title></rect>
+<path class="s6" d="M1014,348 L1014,221.73 Q1014,217.73 1018,217.73 L1024,217.73 Q1028,217.73 1028,221.73 L1028,348 Z" fill="#4a3aa7"/>
+<line class="whisk" x1="1021" y1="217.92" x2="1021" y2="217.36" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="1018" y1="217.92" x2="1024" y2="217.92" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="1018" y1="217.36" x2="1024" y2="217.36" stroke="#52514e" stroke-width="1.5"/>
+<rect x="1013" y="148" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>overload / fifo: on_time_rate mean 0.65136 (min 0.6504, max 0.6532; n=5 seeds)</title></rect>
+<text class="ink2" x="973" y="366" font-size="11" text-anchor="middle" fill="#52514e">overload</text>
+<path class="s0" d="M1056,348 L1056,164.63 Q1056,160.63 1060,160.63 L1066,160.63 Q1070,160.63 1070,164.63 L1070,348 Z" fill="#2a78d6"/>
+<line class="whisk" x1="1063" y1="163.79" x2="1063" y2="153.26" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="1060" y1="163.79" x2="1066" y2="163.79" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="1060" y1="153.26" x2="1066" y2="153.26" stroke="#52514e" stroke-width="1.5"/>
+<rect x="1055" y="148" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>tight_deadline / edf_rr: on_time_rate mean 0.936842 (min 0.921053, max 0.973684; n=5 seeds)</title></rect>
+<path class="s1" d="M1072,348 L1072,164.63 Q1072,160.63 1076,160.63 L1082,160.63 Q1086,160.63 1086,164.63 L1086,348 Z" fill="#eb6834"/>
+<line class="whisk" x1="1079" y1="163.79" x2="1079" y2="153.26" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="1076" y1="163.79" x2="1082" y2="163.79" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="1076" y1="153.26" x2="1082" y2="153.26" stroke="#52514e" stroke-width="1.5"/>
+<rect x="1071" y="148" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>tight_deadline / edf_rr_ld: on_time_rate mean 0.936842 (min 0.921053, max 0.973684; n=5 seeds)</title></rect>
+<path class="s2" d="M1088,348 L1088,164.63 Q1088,160.63 1092,160.63 L1098,160.63 Q1102,160.63 1102,164.63 L1102,348 Z" fill="#1baf7a"/>
+<line class="whisk" x1="1095" y1="163.79" x2="1095" y2="153.26" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="1092" y1="163.79" x2="1098" y2="163.79" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="1092" y1="153.26" x2="1098" y2="153.26" stroke="#52514e" stroke-width="1.5"/>
+<rect x="1087" y="148" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>tight_deadline / fresh_nodefer: on_time_rate mean 0.936842 (min 0.921053, max 0.973684; n=5 seeds)</title></rect>
+<path class="s3" d="M1104,348 L1104,162.53 Q1104,158.53 1108,158.53 L1114,158.53 Q1118,158.53 1118,162.53 L1118,348 Z" fill="#eda100"/>
+<line class="whisk" x1="1111" y1="169.05" x2="1111" y2="153.26" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="1108" y1="169.05" x2="1114" y2="169.05" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="1108" y1="153.26" x2="1114" y2="153.26" stroke="#52514e" stroke-width="1.5"/>
+<rect x="1103" y="148" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>tight_deadline / fresh: on_time_rate mean 0.947368 (min 0.894737, max 0.973684; n=5 seeds)</title></rect>
+<path class="s4" d="M1120,348 L1120,162.53 Q1120,158.53 1124,158.53 L1130,158.53 Q1134,158.53 1134,162.53 L1134,348 Z" fill="#e87ba4"/>
+<line class="whisk" x1="1127" y1="169.05" x2="1127" y2="153.26" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="1124" y1="169.05" x2="1130" y2="169.05" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="1124" y1="153.26" x2="1130" y2="153.26" stroke="#52514e" stroke-width="1.5"/>
+<rect x="1119" y="148" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>tight_deadline / fresh_ld: on_time_rate mean 0.947368 (min 0.894737, max 0.973684; n=5 seeds)</title></rect>
+<path class="s5" d="M1136,348 L1136,162.53 Q1136,158.53 1140,158.53 L1146,158.53 Q1150,158.53 1150,162.53 L1150,348 Z" fill="#008300"/>
+<line class="whisk" x1="1143" y1="169.05" x2="1143" y2="153.26" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="1140" y1="169.05" x2="1146" y2="169.05" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="1140" y1="153.26" x2="1146" y2="153.26" stroke="#52514e" stroke-width="1.5"/>
+<rect x="1135" y="148" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>tight_deadline / fresh_so: on_time_rate mean 0.947368 (min 0.894737, max 0.973684; n=5 seeds)</title></rect>
+<path class="s6" d="M1152,348 L1152,159.37 Q1152,155.37 1156,155.37 L1162,155.37 Q1166,155.37 1166,159.37 L1166,348 Z" fill="#4a3aa7"/>
+<line class="whisk" x1="1159" y1="158.53" x2="1159" y2="148" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="1156" y1="158.53" x2="1162" y2="158.53" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="1156" y1="148" x2="1162" y2="148" stroke="#52514e" stroke-width="1.5"/>
+<rect x="1151" y="148" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>tight_deadline / fifo: on_time_rate mean 0.963158 (min 0.947368, max 1; n=5 seeds)</title></rect>
+<text class="ink2" x="1111" y="366" font-size="11" text-anchor="middle" fill="#52514e">tight_deadline</text>
+<text class="ink" x="76" y="428" font-size="13" font-weight="600" fill="#0b0b0b">B. Mean AoI at the receiver (ms, time-weighted, averaged over streams)</text>
+<text class="muted" x="68" y="642" font-size="11" text-anchor="end" fill="#898781">0</text>
+<line class="grid" x1="76" y1="588" x2="1180" y2="588" stroke="#e1e0d9" stroke-width="1"/>
+<text class="muted" x="68" y="592" font-size="11" text-anchor="end" fill="#898781">2,000</text>
+<line class="grid" x1="76" y1="538" x2="1180" y2="538" stroke="#e1e0d9" stroke-width="1"/>
+<text class="muted" x="68" y="542" font-size="11" text-anchor="end" fill="#898781">4,000</text>
+<line class="grid" x1="76" y1="488" x2="1180" y2="488" stroke="#e1e0d9" stroke-width="1"/>
+<text class="muted" x="68" y="492" font-size="11" text-anchor="end" fill="#898781">6,000</text>
+<line class="grid" x1="76" y1="438" x2="1180" y2="438" stroke="#e1e0d9" stroke-width="1"/>
+<text class="muted" x="68" y="442" font-size="11" text-anchor="end" fill="#898781">8,000</text>
+<line class="axis" x1="76" y1="638" x2="1180" y2="638" stroke="#c3c2b7" stroke-width="1"/>
+<path class="s0" d="M90,638 L90,635.01 Q90,631.01 94,631.01 L100,631.01 Q104,631.01 104,635.01 L104,638 Z" fill="#2a78d6"/>
+<line class="whisk" x1="97" y1="631.11" x2="97" y2="630.88" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="94" y1="631.11" x2="100" y2="631.11" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="94" y1="630.88" x2="100" y2="630.88" stroke="#52514e" stroke-width="1.5"/>
+<rect x="89" y="438" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>healthy_light / edf_rr: aoi_mean_ms mean 279.675 (min 275.655, max 284.901; n=5 seeds)</title></rect>
+<path class="s1" d="M106,638 L106,635.01 Q106,631.01 110,631.01 L116,631.01 Q120,631.01 120,635.01 L120,638 Z" fill="#eb6834"/>
+<line class="whisk" x1="113" y1="631.11" x2="113" y2="630.88" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="110" y1="631.11" x2="116" y2="631.11" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="110" y1="630.88" x2="116" y2="630.88" stroke="#52514e" stroke-width="1.5"/>
+<rect x="105" y="438" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>healthy_light / edf_rr_ld: aoi_mean_ms mean 279.675 (min 275.655, max 284.901; n=5 seeds)</title></rect>
+<path class="s2" d="M122,638 L122,635.01 Q122,631.01 126,631.01 L132,631.01 Q136,631.01 136,635.01 L136,638 Z" fill="#1baf7a"/>
+<line class="whisk" x1="129" y1="631.11" x2="129" y2="630.88" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="126" y1="631.11" x2="132" y2="631.11" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="126" y1="630.88" x2="132" y2="630.88" stroke="#52514e" stroke-width="1.5"/>
+<rect x="121" y="438" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>healthy_light / fresh_nodefer: aoi_mean_ms mean 279.681 (min 275.655, max 284.89; n=5 seeds)</title></rect>
+<path class="s3" d="M138,638 L138,635.01 Q138,631.01 142,631.01 L148,631.01 Q152,631.01 152,635.01 L152,638 Z" fill="#eda100"/>
+<line class="whisk" x1="145" y1="631.11" x2="145" y2="630.88" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="142" y1="631.11" x2="148" y2="631.11" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="142" y1="630.88" x2="148" y2="630.88" stroke="#52514e" stroke-width="1.5"/>
+<rect x="137" y="438" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>healthy_light / fresh: aoi_mean_ms mean 279.681 (min 275.655, max 284.89; n=5 seeds)</title></rect>
+<path class="s4" d="M154,638 L154,635.01 Q154,631.01 158,631.01 L164,631.01 Q168,631.01 168,635.01 L168,638 Z" fill="#e87ba4"/>
+<line class="whisk" x1="161" y1="631.11" x2="161" y2="630.88" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="158" y1="631.11" x2="164" y2="631.11" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="158" y1="630.88" x2="164" y2="630.88" stroke="#52514e" stroke-width="1.5"/>
+<rect x="153" y="438" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>healthy_light / fresh_ld: aoi_mean_ms mean 279.681 (min 275.655, max 284.89; n=5 seeds)</title></rect>
+<path class="s5" d="M170,638 L170,635.01 Q170,631.01 174,631.01 L180,631.01 Q184,631.01 184,635.01 L184,638 Z" fill="#008300"/>
+<line class="whisk" x1="177" y1="631.11" x2="177" y2="630.88" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="174" y1="631.11" x2="180" y2="631.11" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="174" y1="630.88" x2="180" y2="630.88" stroke="#52514e" stroke-width="1.5"/>
+<rect x="169" y="438" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>healthy_light / fresh_so: aoi_mean_ms mean 279.681 (min 275.655, max 284.89; n=5 seeds)</title></rect>
+<path class="s6" d="M186,638 L186,635.01 Q186,631.01 190,631.01 L196,631.01 Q200,631.01 200,635.01 L200,638 Z" fill="#4a3aa7"/>
+<line class="whisk" x1="193" y1="631.11" x2="193" y2="630.88" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="190" y1="631.11" x2="196" y2="631.11" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="190" y1="630.88" x2="196" y2="630.88" stroke="#52514e" stroke-width="1.5"/>
+<rect x="185" y="438" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>healthy_light / fifo: aoi_mean_ms mean 279.664 (min 275.655, max 284.89; n=5 seeds)</title></rect>
+<text class="ink2" x="145" y="656" font-size="11" text-anchor="middle" fill="#52514e">healthy_light</text>
+<path class="s0" d="M228,638 L228,615.19 Q228,611.19 232,611.19 L238,611.19 Q242,611.19 242,615.19 L242,638 Z" fill="#2a78d6"/>
+<line class="whisk" x1="235" y1="611.76" x2="235" y2="610.95" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="232" y1="611.76" x2="238" y2="611.76" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="232" y1="610.95" x2="238" y2="610.95" stroke="#52514e" stroke-width="1.5"/>
+<rect x="227" y="438" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>alarm_outage / edf_rr: aoi_mean_ms mean 1072.59 (min 1049.54, max 1081.97; n=5 seeds)</title></rect>
+<path class="s1" d="M244,638 L244,615.19 Q244,611.19 248,611.19 L254,611.19 Q258,611.19 258,615.19 L258,638 Z" fill="#eb6834"/>
+<line class="whisk" x1="251" y1="611.76" x2="251" y2="610.95" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="248" y1="611.76" x2="254" y2="611.76" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="248" y1="610.95" x2="254" y2="610.95" stroke="#52514e" stroke-width="1.5"/>
+<rect x="243" y="438" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>alarm_outage / edf_rr_ld: aoi_mean_ms mean 1072.59 (min 1049.54, max 1081.97; n=5 seeds)</title></rect>
+<path class="s2" d="M260,638 L260,615.19 Q260,611.19 264,611.19 L270,611.19 Q274,611.19 274,615.19 L274,638 Z" fill="#1baf7a"/>
+<line class="whisk" x1="267" y1="611.77" x2="267" y2="610.95" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="264" y1="611.77" x2="270" y2="611.77" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="264" y1="610.95" x2="270" y2="610.95" stroke="#52514e" stroke-width="1.5"/>
+<rect x="259" y="438" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>alarm_outage / fresh_nodefer: aoi_mean_ms mean 1072.56 (min 1049.38, max 1081.97; n=5 seeds)</title></rect>
+<path class="s3" d="M276,638 L276,615.22 Q276,611.22 280,611.22 L286,611.22 Q290,611.22 290,615.22 L290,638 Z" fill="#eda100"/>
+<line class="whisk" x1="283" y1="611.82" x2="283" y2="610.98" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="280" y1="611.82" x2="286" y2="611.82" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="280" y1="610.98" x2="286" y2="610.98" stroke="#52514e" stroke-width="1.5"/>
+<rect x="275" y="438" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>alarm_outage / fresh: aoi_mean_ms mean 1071.19 (min 1047.21, max 1080.8; n=5 seeds)</title></rect>
+<path class="s4" d="M292,638 L292,615.22 Q292,611.22 296,611.22 L302,611.22 Q306,611.22 306,615.22 L306,638 Z" fill="#e87ba4"/>
+<line class="whisk" x1="299" y1="611.82" x2="299" y2="610.98" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="296" y1="611.82" x2="302" y2="611.82" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="296" y1="610.98" x2="302" y2="610.98" stroke="#52514e" stroke-width="1.5"/>
+<rect x="291" y="438" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>alarm_outage / fresh_ld: aoi_mean_ms mean 1071.19 (min 1047.21, max 1080.8; n=5 seeds)</title></rect>
+<path class="s5" d="M308,638 L308,615.22 Q308,611.22 312,611.22 L318,611.22 Q322,611.22 322,615.22 L322,638 Z" fill="#008300"/>
+<line class="whisk" x1="315" y1="611.82" x2="315" y2="610.98" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="312" y1="611.82" x2="318" y2="611.82" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="312" y1="610.98" x2="318" y2="610.98" stroke="#52514e" stroke-width="1.5"/>
+<rect x="307" y="438" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>alarm_outage / fresh_so: aoi_mean_ms mean 1071.19 (min 1047.21, max 1080.8; n=5 seeds)</title></rect>
+<path class="s6" d="M324,638 L324,615.19 Q324,611.19 328,611.19 L334,611.19 Q338,611.19 338,615.19 L338,638 Z" fill="#4a3aa7"/>
+<line class="whisk" x1="331" y1="611.76" x2="331" y2="610.95" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="328" y1="611.76" x2="334" y2="611.76" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="328" y1="610.95" x2="334" y2="610.95" stroke="#52514e" stroke-width="1.5"/>
+<rect x="323" y="438" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>alarm_outage / fifo: aoi_mean_ms mean 1072.59 (min 1049.54, max 1081.97; n=5 seeds)</title></rect>
+<text class="ink2" x="283" y="656" font-size="11" text-anchor="middle" fill="#52514e">alarm_outage</text>
+<path class="s0" d="M366,638 L366,633.27 Q366,629.27 370,629.27 L376,629.27 Q380,629.27 380,633.27 L380,638 Z" fill="#2a78d6"/>
+<line class="whisk" x1="373" y1="629.87" x2="373" y2="628.72" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="370" y1="629.87" x2="376" y2="629.87" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="370" y1="628.72" x2="376" y2="628.72" stroke="#52514e" stroke-width="1.5"/>
+<rect x="365" y="438" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>burst_loss / edf_rr: aoi_mean_ms mean 349.354 (min 325.234, max 371.005; n=5 seeds)</title></rect>
+<path class="s1" d="M382,638 L382,633.27 Q382,629.27 386,629.27 L392,629.27 Q396,629.27 396,633.27 L396,638 Z" fill="#eb6834"/>
+<line class="whisk" x1="389" y1="629.87" x2="389" y2="628.72" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="386" y1="629.87" x2="392" y2="629.87" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="386" y1="628.72" x2="392" y2="628.72" stroke="#52514e" stroke-width="1.5"/>
+<rect x="381" y="438" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>burst_loss / edf_rr_ld: aoi_mean_ms mean 349.354 (min 325.234, max 371.005; n=5 seeds)</title></rect>
+<path class="s2" d="M398,638 L398,633.27 Q398,629.27 402,629.27 L408,629.27 Q412,629.27 412,633.27 L412,638 Z" fill="#1baf7a"/>
+<line class="whisk" x1="405" y1="629.87" x2="405" y2="628.72" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="402" y1="629.87" x2="408" y2="629.87" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="402" y1="628.72" x2="408" y2="628.72" stroke="#52514e" stroke-width="1.5"/>
+<rect x="397" y="438" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>burst_loss / fresh_nodefer: aoi_mean_ms mean 349.372 (min 325.234, max 371.002; n=5 seeds)</title></rect>
+<path class="s3" d="M414,638 L414,633.27 Q414,629.27 418,629.27 L424,629.27 Q428,629.27 428,633.27 L428,638 Z" fill="#eda100"/>
+<line class="whisk" x1="421" y1="629.87" x2="421" y2="628.72" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="418" y1="629.87" x2="424" y2="629.87" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="418" y1="628.72" x2="424" y2="628.72" stroke="#52514e" stroke-width="1.5"/>
+<rect x="413" y="438" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>burst_loss / fresh: aoi_mean_ms mean 349.372 (min 325.234, max 371.002; n=5 seeds)</title></rect>
+<path class="s4" d="M430,638 L430,633.27 Q430,629.27 434,629.27 L440,629.27 Q444,629.27 444,633.27 L444,638 Z" fill="#e87ba4"/>
+<line class="whisk" x1="437" y1="629.87" x2="437" y2="628.72" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="434" y1="629.87" x2="440" y2="629.87" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="434" y1="628.72" x2="440" y2="628.72" stroke="#52514e" stroke-width="1.5"/>
+<rect x="429" y="438" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>burst_loss / fresh_ld: aoi_mean_ms mean 349.372 (min 325.234, max 371.002; n=5 seeds)</title></rect>
+<path class="s5" d="M446,638 L446,633.27 Q446,629.27 450,629.27 L456,629.27 Q460,629.27 460,633.27 L460,638 Z" fill="#008300"/>
+<line class="whisk" x1="453" y1="629.87" x2="453" y2="628.72" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="450" y1="629.87" x2="456" y2="629.87" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="450" y1="628.72" x2="456" y2="628.72" stroke="#52514e" stroke-width="1.5"/>
+<rect x="445" y="438" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>burst_loss / fresh_so: aoi_mean_ms mean 349.372 (min 325.234, max 371.002; n=5 seeds)</title></rect>
+<path class="s6" d="M462,638 L462,633.25 Q462,629.25 466,629.25 L472,629.25 Q476,629.25 476,633.25 L476,638 Z" fill="#4a3aa7"/>
+<line class="whisk" x1="469" y1="629.87" x2="469" y2="628.72" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="466" y1="629.87" x2="472" y2="629.87" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="466" y1="628.72" x2="472" y2="628.72" stroke="#52514e" stroke-width="1.5"/>
+<rect x="461" y="438" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>burst_loss / fifo: aoi_mean_ms mean 349.82 (min 325.234, max 371.002; n=5 seeds)</title></rect>
+<text class="ink2" x="421" y="656" font-size="11" text-anchor="middle" fill="#52514e">burst_loss</text>
+<path class="s0" d="M504,638 L504,634.54 Q504,630.54 508,630.54 L514,630.54 Q518,630.54 518,634.54 L518,638 Z" fill="#2a78d6"/>
+<line class="whisk" x1="511" y1="630.68" x2="511" y2="630.46" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="508" y1="630.68" x2="514" y2="630.68" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="508" y1="630.46" x2="514" y2="630.46" stroke="#52514e" stroke-width="1.5"/>
+<rect x="503" y="438" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>ack_loss / edf_rr: aoi_mean_ms mean 298.563 (min 292.821, max 301.452; n=5 seeds)</title></rect>
+<path class="s1" d="M520,638 L520,634.54 Q520,630.54 524,630.54 L530,630.54 Q534,630.54 534,634.54 L534,638 Z" fill="#eb6834"/>
+<line class="whisk" x1="527" y1="630.68" x2="527" y2="630.46" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="524" y1="630.68" x2="530" y2="630.68" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="524" y1="630.46" x2="530" y2="630.46" stroke="#52514e" stroke-width="1.5"/>
+<rect x="519" y="438" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>ack_loss / edf_rr_ld: aoi_mean_ms mean 298.563 (min 292.821, max 301.452; n=5 seeds)</title></rect>
+<path class="s2" d="M536,638 L536,634.53 Q536,630.53 540,630.53 L546,630.53 Q550,630.53 550,634.53 L550,638 Z" fill="#1baf7a"/>
+<line class="whisk" x1="543" y1="630.66" x2="543" y2="630.4" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="540" y1="630.66" x2="546" y2="630.66" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="540" y1="630.4" x2="546" y2="630.4" stroke="#52514e" stroke-width="1.5"/>
+<rect x="535" y="438" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>ack_loss / fresh_nodefer: aoi_mean_ms mean 298.746 (min 293.723, max 303.911; n=5 seeds)</title></rect>
+<path class="s3" d="M552,638 L552,634.53 Q552,630.53 556,630.53 L562,630.53 Q566,630.53 566,634.53 L566,638 Z" fill="#eda100"/>
+<line class="whisk" x1="559" y1="630.66" x2="559" y2="630.4" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="556" y1="630.66" x2="562" y2="630.66" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="556" y1="630.4" x2="562" y2="630.4" stroke="#52514e" stroke-width="1.5"/>
+<rect x="551" y="438" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>ack_loss / fresh: aoi_mean_ms mean 298.737 (min 293.678, max 303.911; n=5 seeds)</title></rect>
+<path class="s4" d="M568,638 L568,634.53 Q568,630.53 572,630.53 L578,630.53 Q582,630.53 582,634.53 L582,638 Z" fill="#e87ba4"/>
+<line class="whisk" x1="575" y1="630.66" x2="575" y2="630.4" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="572" y1="630.66" x2="578" y2="630.66" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="572" y1="630.4" x2="578" y2="630.4" stroke="#52514e" stroke-width="1.5"/>
+<rect x="567" y="438" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>ack_loss / fresh_ld: aoi_mean_ms mean 298.737 (min 293.678, max 303.911; n=5 seeds)</title></rect>
+<path class="s5" d="M584,638 L584,634.53 Q584,630.53 588,630.53 L594,630.53 Q598,630.53 598,634.53 L598,638 Z" fill="#008300"/>
+<line class="whisk" x1="591" y1="630.66" x2="591" y2="630.4" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="588" y1="630.66" x2="594" y2="630.66" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="588" y1="630.4" x2="594" y2="630.4" stroke="#52514e" stroke-width="1.5"/>
+<rect x="583" y="438" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>ack_loss / fresh_so: aoi_mean_ms mean 298.737 (min 293.678, max 303.911; n=5 seeds)</title></rect>
+<path class="s6" d="M600,638 L600,634.54 Q600,630.54 604,630.54 L610,630.54 Q614,630.54 614,634.54 L614,638 Z" fill="#4a3aa7"/>
+<line class="whisk" x1="607" y1="630.66" x2="607" y2="630.43" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="604" y1="630.66" x2="610" y2="630.66" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="604" y1="630.43" x2="610" y2="630.43" stroke="#52514e" stroke-width="1.5"/>
+<rect x="599" y="438" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>ack_loss / fifo: aoi_mean_ms mean 298.3 (min 293.678, max 302.638; n=5 seeds)</title></rect>
+<text class="ink2" x="559" y="656" font-size="11" text-anchor="middle" fill="#52514e">ack_loss</text>
+<path class="s0" d="M642,638 L642,636.57 Q642,632.57 646,632.57 L652,632.57 Q656,632.57 656,636.57 L656,638 Z" fill="#2a78d6"/>
+<line class="whisk" x1="649" y1="632.75" x2="649" y2="632.41" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="646" y1="632.75" x2="652" y2="632.75" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="646" y1="632.41" x2="652" y2="632.41" stroke="#52514e" stroke-width="1.5"/>
+<rect x="641" y="438" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>reorder / edf_rr: aoi_mean_ms mean 217.068 (min 210.109, max 223.797; n=5 seeds)</title></rect>
+<path class="s1" d="M658,638 L658,636.57 Q658,632.57 662,632.57 L668,632.57 Q672,632.57 672,636.57 L672,638 Z" fill="#eb6834"/>
+<line class="whisk" x1="665" y1="632.75" x2="665" y2="632.41" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="662" y1="632.75" x2="668" y2="632.75" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="662" y1="632.41" x2="668" y2="632.41" stroke="#52514e" stroke-width="1.5"/>
+<rect x="657" y="438" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>reorder / edf_rr_ld: aoi_mean_ms mean 217.068 (min 210.109, max 223.797; n=5 seeds)</title></rect>
+<path class="s2" d="M674,638 L674,636.61 Q674,632.61 678,632.61 L684,632.61 Q688,632.61 688,636.61 L688,638 Z" fill="#1baf7a"/>
+<line class="whisk" x1="681" y1="632.78" x2="681" y2="632.44" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="678" y1="632.78" x2="684" y2="632.78" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="678" y1="632.44" x2="684" y2="632.44" stroke="#52514e" stroke-width="1.5"/>
+<rect x="673" y="438" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>reorder / fresh_nodefer: aoi_mean_ms mean 215.537 (min 208.958, max 222.334; n=5 seeds)</title></rect>
+<path class="s3" d="M690,638 L690,636.61 Q690,632.61 694,632.61 L700,632.61 Q704,632.61 704,636.61 L704,638 Z" fill="#eda100"/>
+<line class="whisk" x1="697" y1="632.78" x2="697" y2="632.44" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="694" y1="632.78" x2="700" y2="632.78" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="694" y1="632.44" x2="700" y2="632.44" stroke="#52514e" stroke-width="1.5"/>
+<rect x="689" y="438" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>reorder / fresh: aoi_mean_ms mean 215.537 (min 208.958, max 222.334; n=5 seeds)</title></rect>
+<path class="s4" d="M706,638 L706,636.61 Q706,632.61 710,632.61 L716,632.61 Q720,632.61 720,636.61 L720,638 Z" fill="#e87ba4"/>
+<line class="whisk" x1="713" y1="632.78" x2="713" y2="632.44" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="710" y1="632.78" x2="716" y2="632.78" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="710" y1="632.44" x2="716" y2="632.44" stroke="#52514e" stroke-width="1.5"/>
+<rect x="705" y="438" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>reorder / fresh_ld: aoi_mean_ms mean 215.537 (min 208.958, max 222.334; n=5 seeds)</title></rect>
+<path class="s5" d="M722,638 L722,636.61 Q722,632.61 726,632.61 L732,632.61 Q736,632.61 736,636.61 L736,638 Z" fill="#008300"/>
+<line class="whisk" x1="729" y1="632.78" x2="729" y2="632.44" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="726" y1="632.78" x2="732" y2="632.78" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="726" y1="632.44" x2="732" y2="632.44" stroke="#52514e" stroke-width="1.5"/>
+<rect x="721" y="438" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>reorder / fresh_so: aoi_mean_ms mean 215.537 (min 208.958, max 222.334; n=5 seeds)</title></rect>
+<path class="s6" d="M738,638 L738,636.61 Q738,632.61 742,632.61 L748,632.61 Q752,632.61 752,636.61 L752,638 Z" fill="#4a3aa7"/>
+<line class="whisk" x1="745" y1="632.75" x2="745" y2="632.47" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="742" y1="632.75" x2="748" y2="632.75" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="742" y1="632.47" x2="748" y2="632.47" stroke="#52514e" stroke-width="1.5"/>
+<rect x="737" y="438" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>reorder / fifo: aoi_mean_ms mean 215.67 (min 210.181, max 221.312; n=5 seeds)</title></rect>
+<text class="ink2" x="697" y="656" font-size="11" text-anchor="middle" fill="#52514e">reorder</text>
+<path class="s0" d="M780,638 L780,613.55 Q780,609.55 784,609.55 L790,609.55 Q794,609.55 794,613.55 L794,638 Z" fill="#2a78d6"/>
+<line class="whisk" x1="787" y1="609.97" x2="787" y2="608.72" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="784" y1="609.97" x2="790" y2="609.97" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="784" y1="608.72" x2="790" y2="608.72" stroke="#52514e" stroke-width="1.5"/>
+<rect x="779" y="438" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>overflow / edf_rr: aoi_mean_ms mean 1138.03 (min 1121.17, max 1171.26; n=5 seeds)</title></rect>
+<path class="s1" d="M796,638 L796,613.55 Q796,609.55 800,609.55 L806,609.55 Q810,609.55 810,613.55 L810,638 Z" fill="#eb6834"/>
+<line class="whisk" x1="803" y1="609.97" x2="803" y2="608.72" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="800" y1="609.97" x2="806" y2="609.97" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="800" y1="608.72" x2="806" y2="608.72" stroke="#52514e" stroke-width="1.5"/>
+<rect x="795" y="438" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>overflow / edf_rr_ld: aoi_mean_ms mean 1138 (min 1121.17, max 1171.26; n=5 seeds)</title></rect>
+<path class="s2" d="M812,638 L812,613.55 Q812,609.55 816,609.55 L822,609.55 Q826,609.55 826,613.55 L826,638 Z" fill="#1baf7a"/>
+<line class="whisk" x1="819" y1="609.97" x2="819" y2="608.72" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="816" y1="609.97" x2="822" y2="609.97" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="816" y1="608.72" x2="822" y2="608.72" stroke="#52514e" stroke-width="1.5"/>
+<rect x="811" y="438" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>overflow / fresh_nodefer: aoi_mean_ms mean 1137.92 (min 1121.17, max 1171.26; n=5 seeds)</title></rect>
+<path class="s3" d="M828,638 L828,613.56 Q828,609.56 832,609.56 L838,609.56 Q842,609.56 842,613.56 L842,638 Z" fill="#eda100"/>
+<line class="whisk" x1="835" y1="610" x2="835" y2="608.73" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="832" y1="610" x2="838" y2="610" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="832" y1="608.73" x2="838" y2="608.73" stroke="#52514e" stroke-width="1.5"/>
+<rect x="827" y="438" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>overflow / fresh: aoi_mean_ms mean 1137.44 (min 1119.99, max 1170.67; n=5 seeds)</title></rect>
+<path class="s4" d="M844,638 L844,613.56 Q844,609.56 848,609.56 L854,609.56 Q858,609.56 858,613.56 L858,638 Z" fill="#e87ba4"/>
+<line class="whisk" x1="851" y1="610" x2="851" y2="608.73" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="848" y1="610" x2="854" y2="610" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="848" y1="608.73" x2="854" y2="608.73" stroke="#52514e" stroke-width="1.5"/>
+<rect x="843" y="438" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>overflow / fresh_ld: aoi_mean_ms mean 1137.41 (min 1119.99, max 1170.67; n=5 seeds)</title></rect>
+<path class="s5" d="M860,638 L860,613.56 Q860,609.56 864,609.56 L870,609.56 Q874,609.56 874,613.56 L874,638 Z" fill="#008300"/>
+<line class="whisk" x1="867" y1="610" x2="867" y2="608.73" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="864" y1="610" x2="870" y2="610" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="864" y1="608.73" x2="870" y2="608.73" stroke="#52514e" stroke-width="1.5"/>
+<rect x="859" y="438" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>overflow / fresh_so: aoi_mean_ms mean 1137.44 (min 1119.99, max 1170.67; n=5 seeds)</title></rect>
+<path class="s6" d="M876,638 L876,613.58 Q876,609.58 880,609.58 L886,609.58 Q890,609.58 890,613.58 L890,638 Z" fill="#4a3aa7"/>
+<line class="whisk" x1="883" y1="610.03" x2="883" y2="608.74" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="880" y1="610.03" x2="886" y2="610.03" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="880" y1="608.74" x2="886" y2="608.74" stroke="#52514e" stroke-width="1.5"/>
+<rect x="875" y="438" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>overflow / fifo: aoi_mean_ms mean 1136.89 (min 1118.81, max 1170.58; n=5 seeds)</title></rect>
+<text class="ink2" x="835" y="656" font-size="11" text-anchor="middle" fill="#52514e">overflow</text>
+<path class="s0" d="M918,638 L918,486.19 Q918,482.19 922,482.19 L928,482.19 Q932,482.19 932,486.19 L932,638 Z" fill="#2a78d6"/>
+<line class="whisk" x1="925" y1="527.85" x2="925" y2="465.62" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="922" y1="527.85" x2="928" y2="527.85" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="922" y1="465.62" x2="928" y2="465.62" stroke="#52514e" stroke-width="1.5"/>
+<rect x="917" y="438" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>overload / edf_rr: aoi_mean_ms mean 6232.47 (min 4405.85, max 6895.3; n=5 seeds)</title></rect>
+<path class="s1" d="M934,638 L934,602.08 Q934,598.08 938,598.08 L944,598.08 Q948,598.08 948,602.08 L948,638 Z" fill="#eb6834"/>
+<line class="whisk" x1="941" y1="615.08" x2="941" y2="574.84" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="938" y1="615.08" x2="944" y2="615.08" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="938" y1="574.84" x2="944" y2="574.84" stroke="#52514e" stroke-width="1.5"/>
+<rect x="933" y="438" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>overload / edf_rr_ld: aoi_mean_ms mean 1596.85 (min 916.651, max 2526.59; n=5 seeds)</title></rect>
+<path class="s2" d="M950,638 L950,486.19 Q950,482.19 954,482.19 L960,482.19 Q964,482.19 964,486.19 L964,638 Z" fill="#1baf7a"/>
+<line class="whisk" x1="957" y1="527.85" x2="957" y2="465.62" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="954" y1="527.85" x2="960" y2="527.85" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="954" y1="465.62" x2="960" y2="465.62" stroke="#52514e" stroke-width="1.5"/>
+<rect x="949" y="438" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>overload / fresh_nodefer: aoi_mean_ms mean 6232.47 (min 4405.85, max 6895.3; n=5 seeds)</title></rect>
+<path class="s3" d="M966,638 L966,611.74 Q966,607.74 970,607.74 L976,607.74 Q980,607.74 980,611.74 L980,638 Z" fill="#eda100"/>
+<line class="whisk" x1="973" y1="614.21" x2="973" y2="596.96" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="970" y1="614.21" x2="976" y2="614.21" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="970" y1="596.96" x2="976" y2="596.96" stroke="#52514e" stroke-width="1.5"/>
+<rect x="965" y="438" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>overload / fresh: aoi_mean_ms mean 1210.22 (min 951.627, max 1641.43; n=5 seeds)</title></rect>
+<path class="s4" d="M982,638 L982,627.82 Q982,623.82 986,623.82 L992,623.82 Q996,623.82 996,627.82 L996,638 Z" fill="#e87ba4"/>
+<line class="whisk" x1="989" y1="626.18" x2="989" y2="622.74" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="986" y1="626.18" x2="992" y2="626.18" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="986" y1="622.74" x2="992" y2="622.74" stroke="#52514e" stroke-width="1.5"/>
+<rect x="981" y="438" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>overload / fresh_ld: aoi_mean_ms mean 567.277 (min 472.63, max 610.592; n=5 seeds)</title></rect>
+<path class="s5" d="M998,638 L998,624.1 Q998,620.1 1002,620.1 L1008,620.1 Q1012,620.1 1012,624.1 L1012,638 Z" fill="#008300"/>
+<line class="whisk" x1="1005" y1="621.06" x2="1005" y2="619.15" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="1002" y1="621.06" x2="1008" y2="621.06" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="1002" y1="619.15" x2="1008" y2="619.15" stroke="#52514e" stroke-width="1.5"/>
+<rect x="997" y="438" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>overload / fresh_so: aoi_mean_ms mean 716.138 (min 677.788, max 754.101; n=5 seeds)</title></rect>
+<path class="s6" d="M1014,638 L1014,637.46 Q1014,633.46 1018,633.46 L1024,633.46 Q1028,633.46 1028,637.46 L1028,638 Z" fill="#4a3aa7"/>
+<line class="whisk" x1="1021" y1="633.48" x2="1021" y2="633.41" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="1018" y1="633.48" x2="1024" y2="633.48" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="1018" y1="633.41" x2="1024" y2="633.41" stroke="#52514e" stroke-width="1.5"/>
+<rect x="1013" y="438" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>overload / fifo: aoi_mean_ms mean 181.608 (min 180.836, max 183.595; n=5 seeds)</title></rect>
+<text class="ink2" x="973" y="656" font-size="11" text-anchor="middle" fill="#52514e">overload</text>
+<path class="s0" d="M1056,638 L1056,629.26 Q1056,625.26 1060,625.26 L1066,625.26 Q1070,625.26 1070,629.26 L1070,638 Z" fill="#2a78d6"/>
+<line class="whisk" x1="1063" y1="625.65" x2="1063" y2="624.99" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="1060" y1="625.65" x2="1066" y2="625.65" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="1060" y1="624.99" x2="1066" y2="624.99" stroke="#52514e" stroke-width="1.5"/>
+<rect x="1055" y="438" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>tight_deadline / edf_rr: aoi_mean_ms mean 509.707 (min 494.133, max 520.352; n=5 seeds)</title></rect>
+<path class="s1" d="M1072,638 L1072,629.26 Q1072,625.26 1076,625.26 L1082,625.26 Q1086,625.26 1086,629.26 L1086,638 Z" fill="#eb6834"/>
+<line class="whisk" x1="1079" y1="625.65" x2="1079" y2="625.01" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="1076" y1="625.65" x2="1082" y2="625.65" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="1076" y1="625.01" x2="1082" y2="625.01" stroke="#52514e" stroke-width="1.5"/>
+<rect x="1071" y="438" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>tight_deadline / edf_rr_ld: aoi_mean_ms mean 509.496 (min 494.133, max 519.443; n=5 seeds)</title></rect>
+<path class="s2" d="M1088,638 L1088,629.25 Q1088,625.25 1092,625.25 L1098,625.25 Q1102,625.25 1102,629.25 L1102,638 Z" fill="#1baf7a"/>
+<line class="whisk" x1="1095" y1="625.45" x2="1095" y2="624.99" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="1092" y1="625.45" x2="1098" y2="625.45" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="1092" y1="624.99" x2="1098" y2="624.99" stroke="#52514e" stroke-width="1.5"/>
+<rect x="1087" y="438" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>tight_deadline / fresh_nodefer: aoi_mean_ms mean 509.816 (min 502.103, max 520.497; n=5 seeds)</title></rect>
+<path class="s3" d="M1104,638 L1104,629.19 Q1104,625.19 1108,625.19 L1114,625.19 Q1118,625.19 1118,629.19 L1118,638 Z" fill="#eda100"/>
+<line class="whisk" x1="1111" y1="625.34" x2="1111" y2="624.76" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="1108" y1="625.34" x2="1114" y2="625.34" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="1108" y1="624.76" x2="1114" y2="624.76" stroke="#52514e" stroke-width="1.5"/>
+<rect x="1103" y="438" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>tight_deadline / fresh: aoi_mean_ms mean 512.563 (min 506.27, max 529.415; n=5 seeds)</title></rect>
+<path class="s4" d="M1120,638 L1120,629.19 Q1120,625.19 1124,625.19 L1130,625.19 Q1134,625.19 1134,629.19 L1134,638 Z" fill="#e87ba4"/>
+<line class="whisk" x1="1127" y1="625.35" x2="1127" y2="624.77" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="1124" y1="625.35" x2="1130" y2="625.35" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="1124" y1="624.77" x2="1130" y2="624.77" stroke="#52514e" stroke-width="1.5"/>
+<rect x="1119" y="438" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>tight_deadline / fresh_ld: aoi_mean_ms mean 512.504 (min 506.14, max 529.378; n=5 seeds)</title></rect>
+<path class="s5" d="M1136,638 L1136,629.19 Q1136,625.19 1140,625.19 L1146,625.19 Q1150,625.19 1150,629.19 L1150,638 Z" fill="#008300"/>
+<line class="whisk" x1="1143" y1="625.34" x2="1143" y2="624.76" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="1140" y1="625.34" x2="1146" y2="625.34" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="1140" y1="624.76" x2="1146" y2="624.76" stroke="#52514e" stroke-width="1.5"/>
+<rect x="1135" y="438" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>tight_deadline / fresh_so: aoi_mean_ms mean 512.563 (min 506.27, max 529.415; n=5 seeds)</title></rect>
+<path class="s6" d="M1152,638 L1152,629.07 Q1152,625.07 1156,625.07 L1162,625.07 Q1166,625.07 1166,629.07 L1166,638 Z" fill="#4a3aa7"/>
+<line class="whisk" x1="1159" y1="625.4" x2="1159" y2="624.6" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="1156" y1="625.4" x2="1162" y2="625.4" stroke="#52514e" stroke-width="1.5"/>
+<line class="whisk" x1="1156" y1="624.6" x2="1162" y2="624.6" stroke="#52514e" stroke-width="1.5"/>
+<rect x="1151" y="438" width="16" height="200" fill="#000" fill-opacity="0" pointer-events="all"><title>tight_deadline / fifo: aoi_mean_ms mean 517.188 (min 503.829, max 535.923; n=5 seeds)</title></rect>
+<text class="ink2" x="1111" y="656" font-size="11" text-anchor="middle" fill="#52514e">tight_deadline</text>
+<text class="muted" x="76" y="688" font-size="11" fill="#898781">HOST SIMULATION on a desktop CPU (docs/DESIGN.md scope label); no microcontroller board has run this code. Same workload, config and matched channel trace for every policy</text>
+<text class="muted" x="76" y="703" font-size="11" fill="#898781">within a scenario x seed.</text>
+<text class="muted" x="76" y="718" font-size="11" fill="#898781">Whiskers = min/max over seeds. Colour identifies the policy (fixed slot per name); the legend, the tooltips and the tables carry the same identity and values. Bytes are not</text>
+<text class="muted" x="76" y="733" font-size="11" fill="#898781">energy.</text>
+</svg>

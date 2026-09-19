@@ -1,0 +1,49 @@
+# Clean-worktree reproduction proof (HOST SIMULATION)
+# Every command below was run in a fresh 'git worktree add --detach <commit>' checkout with no local modifications.
+date_utc=2026-09-19T11:53:48Z
+commit=f18d875212fa25b4e15055b34e26592583d29f77
+git_status_porcelain_lines=0
+compiler=gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+clang=Ubuntu clang version 18.1.3 (1ubuntu1)
+python=Python 3.11.15
+os=Linux 6.18.44-fc-v37 x86_64
+cpus=4
+## make all
+clean build, no warnings (-Werror)
+## make test
+test_events: 247 checks, 0 failures
+test_fixtures: 151 checks, 0 failures
+test_frame_time: 163 checks, 0 failures
+test_policy: 1849 checks, 0 failures
+test_sim: 344 checks, 0 failures
+test_state_rx: 1273 checks, 0 failures
+ALL C TESTS PASSED
+## make sanitize (ASan+UBSan, gcc)
+test_events: 247 checks, 0 failures
+test_fixtures: 151 checks, 0 failures
+test_frame_time: 163 checks, 0 failures
+test_policy: 1849 checks, 0 failures
+test_sim: 344 checks, 0 failures
+test_state_rx: 1273 checks, 0 failures
+ALL C TESTS PASSED
+## make clang-check
+clang-check ok
+## make tools-test
+Ran 15 tests in 0.123s
+OK
+## make matrix
+run_matrix: HOST SIMULATION matrix done: 320 flsim runs, 280 aggregated rows, 56 scenario x policy rows, checks 697/697 passed -> /tmp/claude-0/-home-user-freshness-lab/519aa1be-aa97-5cca-86e5-ba4a5894a046/scratchpad/wt-verify3/results/matrix
+host_wall_seconds=2.67 (host runtime only, desktop CPU)
+flsim_sha256=86f9a2637bb90b1e3e83362bc8aeb101427db5d2ec3c7c80ffd153129c09225e
+summary_all_sha256_worktree=e421fcd61fccd622c853d77760d2b358c71b41d670ad36df4281970bdcca7d3b
+summary_all_sha256_retained=e421fcd61fccd622c853d77760d2b358c71b41d670ad36df4281970bdcca7d3b
+manifest_file_hash_diff_lines=0 (of 1080 files)
+manifest_git_head_worktree=f18d875212fa25b4e15055b34e26592583d29f77 dirty_tracked= False
+checks_all_passed=True
+## reducer
+reduce_counterexample: reduced 2980 -> 13 rows in 148 flsim runs (73 predicate tests, 32 cache hits); 1-minimal: yes; after: baseline 1, candidate 0.916667. Outputs in /tmp/claude-0/-home-user-freshness-lab/519aa1be-aa97-5cca-86e5-ba4a5894a046/scratchpad/wt-reduce3
+reduced_workload_sha256_worktree=7552648afa1df1dfba14c9c5cd71471853fb9708be9afc65d9853b4066e90929
+reduced_workload_sha256_retained=7552648afa1df1dfba14c9c5cd71471853fb9708be9afc65d9853b4066e90929
+## README single-run commands
+HOST SIMULATION edf_rr: gen=2 adm=2 rej=0 acked=2 exh=0 exp=0 pend=0 | rx del=2 ontime=0 late=2 dup=0 oow=0 | aoi_mean_s0=1222.5 | bytes=4311 | interval_viol=0 core_err=0
+single_run_events_csv_identical_to_retained=yes

@@ -1,0 +1,5714 @@
+{
+  "ablation_defer0_bytes": [
+    {
+      "detail": "identical (116623 bytes)",
+      "passed": true,
+      "scenario": "healthy_light",
+      "seed": 101
+    },
+    {
+      "detail": "identical (116700 bytes)",
+      "passed": true,
+      "scenario": "healthy_light",
+      "seed": 102
+    },
+    {
+      "detail": "identical (116642 bytes)",
+      "passed": true,
+      "scenario": "healthy_light",
+      "seed": 103
+    },
+    {
+      "detail": "identical (116691 bytes)",
+      "passed": true,
+      "scenario": "healthy_light",
+      "seed": 104
+    },
+    {
+      "detail": "identical (116642 bytes)",
+      "passed": true,
+      "scenario": "healthy_light",
+      "seed": 105
+    },
+    {
+      "detail": "identical (113888 bytes)",
+      "passed": true,
+      "scenario": "alarm_outage",
+      "seed": 101
+    },
+    {
+      "detail": "identical (113869 bytes)",
+      "passed": true,
+      "scenario": "alarm_outage",
+      "seed": 102
+    },
+    {
+      "detail": "identical (113878 bytes)",
+      "passed": true,
+      "scenario": "alarm_outage",
+      "seed": 103
+    },
+    {
+      "detail": "identical (113869 bytes)",
+      "passed": true,
+      "scenario": "alarm_outage",
+      "seed": 104
+    },
+    {
+      "detail": "identical (113869 bytes)",
+      "passed": true,
+      "scenario": "alarm_outage",
+      "seed": 105
+    },
+    {
+      "detail": "identical (117070 bytes)",
+      "passed": true,
+      "scenario": "burst_loss",
+      "seed": 101
+    },
+    {
+      "detail": "identical (117143 bytes)",
+      "passed": true,
+      "scenario": "burst_loss",
+      "seed": 102
+    },
+    {
+      "detail": "identical (117204 bytes)",
+      "passed": true,
+      "scenario": "burst_loss",
+      "seed": 103
+    },
+    {
+      "detail": "identical (117157 bytes)",
+      "passed": true,
+      "scenario": "burst_loss",
+      "seed": 104
+    },
+    {
+      "detail": "identical (117154 bytes)",
+      "passed": true,
+      "scenario": "burst_loss",
+      "seed": 105
+    },
+    {
+      "detail": "identical (118501 bytes)",
+      "passed": true,
+      "scenario": "ack_loss",
+      "seed": 101
+    },
+    {
+      "detail": "identical (118545 bytes)",
+      "passed": true,
+      "scenario": "ack_loss",
+      "seed": 102
+    },
+    {
+      "detail": "identical (118709 bytes)",
+      "passed": true,
+      "scenario": "ack_loss",
+      "seed": 103
+    },
+    {
+      "detail": "identical (118489 bytes)",
+      "passed": true,
+      "scenario": "ack_loss",
+      "seed": 104
+    },
+    {
+      "detail": "identical (118605 bytes)",
+      "passed": true,
+      "scenario": "ack_loss",
+      "seed": 105
+    },
+    {
+      "detail": "identical (123522 bytes)",
+      "passed": true,
+      "scenario": "reorder",
+      "seed": 101
+    },
+    {
+      "detail": "identical (123500 bytes)",
+      "passed": true,
+      "scenario": "reorder",
+      "seed": 102
+    },
+    {
+      "detail": "identical (123558 bytes)",
+      "passed": true,
+      "scenario": "reorder",
+      "seed": 103
+    },
+    {
+      "detail": "identical (123584 bytes)",
+      "passed": true,
+      "scenario": "reorder",
+      "seed": 104
+    },
+    {
+      "detail": "identical (123633 bytes)",
+      "passed": true,
+      "scenario": "reorder",
+      "seed": 105
+    },
+    {
+      "detail": "identical (118318 bytes)",
+      "passed": true,
+      "scenario": "overflow",
+      "seed": 101
+    },
+    {
+      "detail": "identical (118328 bytes)",
+      "passed": true,
+      "scenario": "overflow",
+      "seed": 102
+    },
+    {
+      "detail": "identical (118327 bytes)",
+      "passed": true,
+      "scenario": "overflow",
+      "seed": 103
+    },
+    {
+      "detail": "identical (118317 bytes)",
+      "passed": true,
+      "scenario": "overflow",
+      "seed": 104
+    },
+    {
+      "detail": "identical (118376 bytes)",
+      "passed": true,
+      "scenario": "overflow",
+      "seed": 105
+    },
+    {
+      "detail": "identical (152000 bytes)",
+      "passed": true,
+      "scenario": "overload",
+      "seed": 101
+    },
+    {
+      "detail": "identical (151978 bytes)",
+      "passed": true,
+      "scenario": "overload",
+      "seed": 102
+    },
+    {
+      "detail": "identical (152016 bytes)",
+      "passed": true,
+      "scenario": "overload",
+      "seed": 103
+    },
+    {
+      "detail": "identical (152062 bytes)",
+      "passed": true,
+      "scenario": "overload",
+      "seed": 104
+    },
+    {
+      "detail": "identical (152069 bytes)",
+      "passed": true,
+      "scenario": "overload",
+      "seed": 105
+    },
+    {
+      "detail": "identical (133801 bytes)",
+      "passed": true,
+      "scenario": "tight_deadline",
+      "seed": 101
+    },
+    {
+      "detail": "identical (134029 bytes)",
+      "passed": true,
+      "scenario": "tight_deadline",
+      "seed": 102
+    },
+    {
+      "detail": "identical (134209 bytes)",
+      "passed": true,
+      "scenario": "tight_deadline",
+      "seed": 103
+    },
+    {
+      "detail": "identical (133482 bytes)",
+      "passed": true,
+      "scenario": "tight_deadline",
+      "seed": 104
+    },
+    {
+      "detail": "identical (134220 bytes)",
+      "passed": true,
+      "scenario": "tight_deadline",
+      "seed": 105
+    }
+  ],
+  "ablation_defer0_summary": [
+    {
+      "diffs": {},
+      "passed": true,
+      "scenario": "healthy_light",
+      "seed": 101
+    },
+    {
+      "diffs": {},
+      "passed": true,
+      "scenario": "healthy_light",
+      "seed": 102
+    },
+    {
+      "diffs": {},
+      "passed": true,
+      "scenario": "healthy_light",
+      "seed": 103
+    },
+    {
+      "diffs": {},
+      "passed": true,
+      "scenario": "healthy_light",
+      "seed": 104
+    },
+    {
+      "diffs": {},
+      "passed": true,
+      "scenario": "healthy_light",
+      "seed": 105
+    },
+    {
+      "diffs": {},
+      "passed": true,
+      "scenario": "alarm_outage",
+      "seed": 101
+    },
+    {
+      "diffs": {},
+      "passed": true,
+      "scenario": "alarm_outage",
+      "seed": 102
+    },
+    {
+      "diffs": {},
+      "passed": true,
+      "scenario": "alarm_outage",
+      "seed": 103
+    },
+    {
+      "diffs": {},
+      "passed": true,
+      "scenario": "alarm_outage",
+      "seed": 104
+    },
+    {
+      "diffs": {},
+      "passed": true,
+      "scenario": "alarm_outage",
+      "seed": 105
+    },
+    {
+      "diffs": {},
+      "passed": true,
+      "scenario": "burst_loss",
+      "seed": 101
+    },
+    {
+      "diffs": {},
+      "passed": true,
+      "scenario": "burst_loss",
+      "seed": 102
+    },
+    {
+      "diffs": {},
+      "passed": true,
+      "scenario": "burst_loss",
+      "seed": 103
+    },
+    {
+      "diffs": {},
+      "passed": true,
+      "scenario": "burst_loss",
+      "seed": 104
+    },
+    {
+      "diffs": {},
+      "passed": true,
+      "scenario": "burst_loss",
+      "seed": 105
+    },
+    {
+      "diffs": {},
+      "passed": true,
+      "scenario": "ack_loss",
+      "seed": 101
+    },
+    {
+      "diffs": {},
+      "passed": true,
+      "scenario": "ack_loss",
+      "seed": 102
+    },
+    {
+      "diffs": {},
+      "passed": true,
+      "scenario": "ack_loss",
+      "seed": 103
+    },
+    {
+      "diffs": {},
+      "passed": true,
+      "scenario": "ack_loss",
+      "seed": 104
+    },
+    {
+      "diffs": {},
+      "passed": true,
+      "scenario": "ack_loss",
+      "seed": 105
+    },
+    {
+      "diffs": {},
+      "passed": true,
+      "scenario": "reorder",
+      "seed": 101
+    },
+    {
+      "diffs": {},
+      "passed": true,
+      "scenario": "reorder",
+      "seed": 102
+    },
+    {
+      "diffs": {},
+      "passed": true,
+      "scenario": "reorder",
+      "seed": 103
+    },
+    {
+      "diffs": {},
+      "passed": true,
+      "scenario": "reorder",
+      "seed": 104
+    },
+    {
+      "diffs": {},
+      "passed": true,
+      "scenario": "reorder",
+      "seed": 105
+    },
+    {
+      "diffs": {},
+      "passed": true,
+      "scenario": "overflow",
+      "seed": 101
+    },
+    {
+      "diffs": {},
+      "passed": true,
+      "scenario": "overflow",
+      "seed": 102
+    },
+    {
+      "diffs": {},
+      "passed": true,
+      "scenario": "overflow",
+      "seed": 103
+    },
+    {
+      "diffs": {},
+      "passed": true,
+      "scenario": "overflow",
+      "seed": 104
+    },
+    {
+      "diffs": {},
+      "passed": true,
+      "scenario": "overflow",
+      "seed": 105
+    },
+    {
+      "diffs": {},
+      "passed": true,
+      "scenario": "overload",
+      "seed": 101
+    },
+    {
+      "diffs": {},
+      "passed": true,
+      "scenario": "overload",
+      "seed": 102
+    },
+    {
+      "diffs": {},
+      "passed": true,
+      "scenario": "overload",
+      "seed": 103
+    },
+    {
+      "diffs": {},
+      "passed": true,
+      "scenario": "overload",
+      "seed": 104
+    },
+    {
+      "diffs": {},
+      "passed": true,
+      "scenario": "overload",
+      "seed": 105
+    },
+    {
+      "diffs": {},
+      "passed": true,
+      "scenario": "tight_deadline",
+      "seed": 101
+    },
+    {
+      "diffs": {},
+      "passed": true,
+      "scenario": "tight_deadline",
+      "seed": 102
+    },
+    {
+      "diffs": {},
+      "passed": true,
+      "scenario": "tight_deadline",
+      "seed": 103
+    },
+    {
+      "diffs": {},
+      "passed": true,
+      "scenario": "tight_deadline",
+      "seed": 104
+    },
+    {
+      "diffs": {},
+      "passed": true,
+      "scenario": "tight_deadline",
+      "seed": 105
+    }
+  ],
+  "accounting_identity": [
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "healthy_light",
+      "seed": 101
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "healthy_light",
+      "seed": 101
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "healthy_light",
+      "seed": 101
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "healthy_light",
+      "seed": 101
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "healthy_light",
+      "seed": 101
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "healthy_light",
+      "seed": 101
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "healthy_light",
+      "seed": 101
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "healthy_light",
+      "seed": 102
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "healthy_light",
+      "seed": 102
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "healthy_light",
+      "seed": 102
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "healthy_light",
+      "seed": 102
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "healthy_light",
+      "seed": 102
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "healthy_light",
+      "seed": 102
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "healthy_light",
+      "seed": 102
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "healthy_light",
+      "seed": 103
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "healthy_light",
+      "seed": 103
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "healthy_light",
+      "seed": 103
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "healthy_light",
+      "seed": 103
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "healthy_light",
+      "seed": 103
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "healthy_light",
+      "seed": 103
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "healthy_light",
+      "seed": 103
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "healthy_light",
+      "seed": 104
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "healthy_light",
+      "seed": 104
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "healthy_light",
+      "seed": 104
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "healthy_light",
+      "seed": 104
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "healthy_light",
+      "seed": 104
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "healthy_light",
+      "seed": 104
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "healthy_light",
+      "seed": 104
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "healthy_light",
+      "seed": 105
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "healthy_light",
+      "seed": 105
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "healthy_light",
+      "seed": 105
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "healthy_light",
+      "seed": 105
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "healthy_light",
+      "seed": 105
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "healthy_light",
+      "seed": 105
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "healthy_light",
+      "seed": 105
+    },
+    {
+      "detail": "generated 2 vs sum of outcomes 2",
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "alarm_outage",
+      "seed": 101
+    },
+    {
+      "detail": "generated 2 vs sum of outcomes 2",
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "alarm_outage",
+      "seed": 101
+    },
+    {
+      "detail": "generated 2 vs sum of outcomes 2",
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "alarm_outage",
+      "seed": 101
+    },
+    {
+      "detail": "generated 2 vs sum of outcomes 2",
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "alarm_outage",
+      "seed": 101
+    },
+    {
+      "detail": "generated 2 vs sum of outcomes 2",
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "alarm_outage",
+      "seed": 101
+    },
+    {
+      "detail": "generated 2 vs sum of outcomes 2",
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "alarm_outage",
+      "seed": 101
+    },
+    {
+      "detail": "generated 2 vs sum of outcomes 2",
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "alarm_outage",
+      "seed": 101
+    },
+    {
+      "detail": "generated 2 vs sum of outcomes 2",
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "alarm_outage",
+      "seed": 102
+    },
+    {
+      "detail": "generated 2 vs sum of outcomes 2",
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "alarm_outage",
+      "seed": 102
+    },
+    {
+      "detail": "generated 2 vs sum of outcomes 2",
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "alarm_outage",
+      "seed": 102
+    },
+    {
+      "detail": "generated 2 vs sum of outcomes 2",
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "alarm_outage",
+      "seed": 102
+    },
+    {
+      "detail": "generated 2 vs sum of outcomes 2",
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "alarm_outage",
+      "seed": 102
+    },
+    {
+      "detail": "generated 2 vs sum of outcomes 2",
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "alarm_outage",
+      "seed": 102
+    },
+    {
+      "detail": "generated 2 vs sum of outcomes 2",
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "alarm_outage",
+      "seed": 102
+    },
+    {
+      "detail": "generated 2 vs sum of outcomes 2",
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "alarm_outage",
+      "seed": 103
+    },
+    {
+      "detail": "generated 2 vs sum of outcomes 2",
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "alarm_outage",
+      "seed": 103
+    },
+    {
+      "detail": "generated 2 vs sum of outcomes 2",
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "alarm_outage",
+      "seed": 103
+    },
+    {
+      "detail": "generated 2 vs sum of outcomes 2",
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "alarm_outage",
+      "seed": 103
+    },
+    {
+      "detail": "generated 2 vs sum of outcomes 2",
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "alarm_outage",
+      "seed": 103
+    },
+    {
+      "detail": "generated 2 vs sum of outcomes 2",
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "alarm_outage",
+      "seed": 103
+    },
+    {
+      "detail": "generated 2 vs sum of outcomes 2",
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "alarm_outage",
+      "seed": 103
+    },
+    {
+      "detail": "generated 2 vs sum of outcomes 2",
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "alarm_outage",
+      "seed": 104
+    },
+    {
+      "detail": "generated 2 vs sum of outcomes 2",
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "alarm_outage",
+      "seed": 104
+    },
+    {
+      "detail": "generated 2 vs sum of outcomes 2",
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "alarm_outage",
+      "seed": 104
+    },
+    {
+      "detail": "generated 2 vs sum of outcomes 2",
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "alarm_outage",
+      "seed": 104
+    },
+    {
+      "detail": "generated 2 vs sum of outcomes 2",
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "alarm_outage",
+      "seed": 104
+    },
+    {
+      "detail": "generated 2 vs sum of outcomes 2",
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "alarm_outage",
+      "seed": 104
+    },
+    {
+      "detail": "generated 2 vs sum of outcomes 2",
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "alarm_outage",
+      "seed": 104
+    },
+    {
+      "detail": "generated 2 vs sum of outcomes 2",
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "alarm_outage",
+      "seed": 105
+    },
+    {
+      "detail": "generated 2 vs sum of outcomes 2",
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "alarm_outage",
+      "seed": 105
+    },
+    {
+      "detail": "generated 2 vs sum of outcomes 2",
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "alarm_outage",
+      "seed": 105
+    },
+    {
+      "detail": "generated 2 vs sum of outcomes 2",
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "alarm_outage",
+      "seed": 105
+    },
+    {
+      "detail": "generated 2 vs sum of outcomes 2",
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "alarm_outage",
+      "seed": 105
+    },
+    {
+      "detail": "generated 2 vs sum of outcomes 2",
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "alarm_outage",
+      "seed": 105
+    },
+    {
+      "detail": "generated 2 vs sum of outcomes 2",
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "alarm_outage",
+      "seed": 105
+    },
+    {
+      "detail": "generated 20 vs sum of outcomes 20",
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "burst_loss",
+      "seed": 101
+    },
+    {
+      "detail": "generated 20 vs sum of outcomes 20",
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "burst_loss",
+      "seed": 101
+    },
+    {
+      "detail": "generated 20 vs sum of outcomes 20",
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "burst_loss",
+      "seed": 101
+    },
+    {
+      "detail": "generated 20 vs sum of outcomes 20",
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "burst_loss",
+      "seed": 101
+    },
+    {
+      "detail": "generated 20 vs sum of outcomes 20",
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "burst_loss",
+      "seed": 101
+    },
+    {
+      "detail": "generated 20 vs sum of outcomes 20",
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "burst_loss",
+      "seed": 101
+    },
+    {
+      "detail": "generated 20 vs sum of outcomes 20",
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "burst_loss",
+      "seed": 101
+    },
+    {
+      "detail": "generated 20 vs sum of outcomes 20",
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "burst_loss",
+      "seed": 102
+    },
+    {
+      "detail": "generated 20 vs sum of outcomes 20",
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "burst_loss",
+      "seed": 102
+    },
+    {
+      "detail": "generated 20 vs sum of outcomes 20",
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "burst_loss",
+      "seed": 102
+    },
+    {
+      "detail": "generated 20 vs sum of outcomes 20",
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "burst_loss",
+      "seed": 102
+    },
+    {
+      "detail": "generated 20 vs sum of outcomes 20",
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "burst_loss",
+      "seed": 102
+    },
+    {
+      "detail": "generated 20 vs sum of outcomes 20",
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "burst_loss",
+      "seed": 102
+    },
+    {
+      "detail": "generated 20 vs sum of outcomes 20",
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "burst_loss",
+      "seed": 102
+    },
+    {
+      "detail": "generated 20 vs sum of outcomes 20",
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "burst_loss",
+      "seed": 103
+    },
+    {
+      "detail": "generated 20 vs sum of outcomes 20",
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "burst_loss",
+      "seed": 103
+    },
+    {
+      "detail": "generated 20 vs sum of outcomes 20",
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "burst_loss",
+      "seed": 103
+    },
+    {
+      "detail": "generated 20 vs sum of outcomes 20",
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "burst_loss",
+      "seed": 103
+    },
+    {
+      "detail": "generated 20 vs sum of outcomes 20",
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "burst_loss",
+      "seed": 103
+    },
+    {
+      "detail": "generated 20 vs sum of outcomes 20",
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "burst_loss",
+      "seed": 103
+    },
+    {
+      "detail": "generated 20 vs sum of outcomes 20",
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "burst_loss",
+      "seed": 103
+    },
+    {
+      "detail": "generated 20 vs sum of outcomes 20",
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "burst_loss",
+      "seed": 104
+    },
+    {
+      "detail": "generated 20 vs sum of outcomes 20",
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "burst_loss",
+      "seed": 104
+    },
+    {
+      "detail": "generated 20 vs sum of outcomes 20",
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "burst_loss",
+      "seed": 104
+    },
+    {
+      "detail": "generated 20 vs sum of outcomes 20",
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "burst_loss",
+      "seed": 104
+    },
+    {
+      "detail": "generated 20 vs sum of outcomes 20",
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "burst_loss",
+      "seed": 104
+    },
+    {
+      "detail": "generated 20 vs sum of outcomes 20",
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "burst_loss",
+      "seed": 104
+    },
+    {
+      "detail": "generated 20 vs sum of outcomes 20",
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "burst_loss",
+      "seed": 104
+    },
+    {
+      "detail": "generated 20 vs sum of outcomes 20",
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "burst_loss",
+      "seed": 105
+    },
+    {
+      "detail": "generated 20 vs sum of outcomes 20",
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "burst_loss",
+      "seed": 105
+    },
+    {
+      "detail": "generated 20 vs sum of outcomes 20",
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "burst_loss",
+      "seed": 105
+    },
+    {
+      "detail": "generated 20 vs sum of outcomes 20",
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "burst_loss",
+      "seed": 105
+    },
+    {
+      "detail": "generated 20 vs sum of outcomes 20",
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "burst_loss",
+      "seed": 105
+    },
+    {
+      "detail": "generated 20 vs sum of outcomes 20",
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "burst_loss",
+      "seed": 105
+    },
+    {
+      "detail": "generated 20 vs sum of outcomes 20",
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "burst_loss",
+      "seed": 105
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "ack_loss",
+      "seed": 101
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "ack_loss",
+      "seed": 101
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "ack_loss",
+      "seed": 101
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "ack_loss",
+      "seed": 101
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "ack_loss",
+      "seed": 101
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "ack_loss",
+      "seed": 101
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "ack_loss",
+      "seed": 101
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "ack_loss",
+      "seed": 102
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "ack_loss",
+      "seed": 102
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "ack_loss",
+      "seed": 102
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "ack_loss",
+      "seed": 102
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "ack_loss",
+      "seed": 102
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "ack_loss",
+      "seed": 102
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "ack_loss",
+      "seed": 102
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "ack_loss",
+      "seed": 103
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "ack_loss",
+      "seed": 103
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "ack_loss",
+      "seed": 103
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "ack_loss",
+      "seed": 103
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "ack_loss",
+      "seed": 103
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "ack_loss",
+      "seed": 103
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "ack_loss",
+      "seed": 103
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "ack_loss",
+      "seed": 104
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "ack_loss",
+      "seed": 104
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "ack_loss",
+      "seed": 104
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "ack_loss",
+      "seed": 104
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "ack_loss",
+      "seed": 104
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "ack_loss",
+      "seed": 104
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "ack_loss",
+      "seed": 104
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "ack_loss",
+      "seed": 105
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "ack_loss",
+      "seed": 105
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "ack_loss",
+      "seed": 105
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "ack_loss",
+      "seed": 105
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "ack_loss",
+      "seed": 105
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "ack_loss",
+      "seed": 105
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "ack_loss",
+      "seed": 105
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "reorder",
+      "seed": 101
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "reorder",
+      "seed": 101
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "reorder",
+      "seed": 101
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "reorder",
+      "seed": 101
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "reorder",
+      "seed": 101
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "reorder",
+      "seed": 101
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "reorder",
+      "seed": 101
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "reorder",
+      "seed": 102
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "reorder",
+      "seed": 102
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "reorder",
+      "seed": 102
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "reorder",
+      "seed": 102
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "reorder",
+      "seed": 102
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "reorder",
+      "seed": 102
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "reorder",
+      "seed": 102
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "reorder",
+      "seed": 103
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "reorder",
+      "seed": 103
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "reorder",
+      "seed": 103
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "reorder",
+      "seed": 103
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "reorder",
+      "seed": 103
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "reorder",
+      "seed": 103
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "reorder",
+      "seed": 103
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "reorder",
+      "seed": 104
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "reorder",
+      "seed": 104
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "reorder",
+      "seed": 104
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "reorder",
+      "seed": 104
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "reorder",
+      "seed": 104
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "reorder",
+      "seed": 104
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "reorder",
+      "seed": 104
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "reorder",
+      "seed": 105
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "reorder",
+      "seed": 105
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "reorder",
+      "seed": 105
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "reorder",
+      "seed": 105
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "reorder",
+      "seed": 105
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "reorder",
+      "seed": 105
+    },
+    {
+      "detail": "generated 12 vs sum of outcomes 12",
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "reorder",
+      "seed": 105
+    },
+    {
+      "detail": "generated 40 vs sum of outcomes 40",
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "overflow",
+      "seed": 101
+    },
+    {
+      "detail": "generated 40 vs sum of outcomes 40",
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "overflow",
+      "seed": 101
+    },
+    {
+      "detail": "generated 40 vs sum of outcomes 40",
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "overflow",
+      "seed": 101
+    },
+    {
+      "detail": "generated 40 vs sum of outcomes 40",
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "overflow",
+      "seed": 101
+    },
+    {
+      "detail": "generated 40 vs sum of outcomes 40",
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "overflow",
+      "seed": 101
+    },
+    {
+      "detail": "generated 40 vs sum of outcomes 40",
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "overflow",
+      "seed": 101
+    },
+    {
+      "detail": "generated 40 vs sum of outcomes 40",
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "overflow",
+      "seed": 101
+    },
+    {
+      "detail": "generated 40 vs sum of outcomes 40",
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "overflow",
+      "seed": 102
+    },
+    {
+      "detail": "generated 40 vs sum of outcomes 40",
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "overflow",
+      "seed": 102
+    },
+    {
+      "detail": "generated 40 vs sum of outcomes 40",
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "overflow",
+      "seed": 102
+    },
+    {
+      "detail": "generated 40 vs sum of outcomes 40",
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "overflow",
+      "seed": 102
+    },
+    {
+      "detail": "generated 40 vs sum of outcomes 40",
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "overflow",
+      "seed": 102
+    },
+    {
+      "detail": "generated 40 vs sum of outcomes 40",
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "overflow",
+      "seed": 102
+    },
+    {
+      "detail": "generated 40 vs sum of outcomes 40",
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "overflow",
+      "seed": 102
+    },
+    {
+      "detail": "generated 40 vs sum of outcomes 40",
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "overflow",
+      "seed": 103
+    },
+    {
+      "detail": "generated 40 vs sum of outcomes 40",
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "overflow",
+      "seed": 103
+    },
+    {
+      "detail": "generated 40 vs sum of outcomes 40",
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "overflow",
+      "seed": 103
+    },
+    {
+      "detail": "generated 40 vs sum of outcomes 40",
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "overflow",
+      "seed": 103
+    },
+    {
+      "detail": "generated 40 vs sum of outcomes 40",
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "overflow",
+      "seed": 103
+    },
+    {
+      "detail": "generated 40 vs sum of outcomes 40",
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "overflow",
+      "seed": 103
+    },
+    {
+      "detail": "generated 40 vs sum of outcomes 40",
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "overflow",
+      "seed": 103
+    },
+    {
+      "detail": "generated 40 vs sum of outcomes 40",
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "overflow",
+      "seed": 104
+    },
+    {
+      "detail": "generated 40 vs sum of outcomes 40",
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "overflow",
+      "seed": 104
+    },
+    {
+      "detail": "generated 40 vs sum of outcomes 40",
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "overflow",
+      "seed": 104
+    },
+    {
+      "detail": "generated 40 vs sum of outcomes 40",
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "overflow",
+      "seed": 104
+    },
+    {
+      "detail": "generated 40 vs sum of outcomes 40",
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "overflow",
+      "seed": 104
+    },
+    {
+      "detail": "generated 40 vs sum of outcomes 40",
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "overflow",
+      "seed": 104
+    },
+    {
+      "detail": "generated 40 vs sum of outcomes 40",
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "overflow",
+      "seed": 104
+    },
+    {
+      "detail": "generated 40 vs sum of outcomes 40",
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "overflow",
+      "seed": 105
+    },
+    {
+      "detail": "generated 40 vs sum of outcomes 40",
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "overflow",
+      "seed": 105
+    },
+    {
+      "detail": "generated 40 vs sum of outcomes 40",
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "overflow",
+      "seed": 105
+    },
+    {
+      "detail": "generated 40 vs sum of outcomes 40",
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "overflow",
+      "seed": 105
+    },
+    {
+      "detail": "generated 40 vs sum of outcomes 40",
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "overflow",
+      "seed": 105
+    },
+    {
+      "detail": "generated 40 vs sum of outcomes 40",
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "overflow",
+      "seed": 105
+    },
+    {
+      "detail": "generated 40 vs sum of outcomes 40",
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "overflow",
+      "seed": 105
+    },
+    {
+      "detail": "generated 2500 vs sum of outcomes 2500",
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "overload",
+      "seed": 101
+    },
+    {
+      "detail": "generated 2500 vs sum of outcomes 2500",
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "overload",
+      "seed": 101
+    },
+    {
+      "detail": "generated 2500 vs sum of outcomes 2500",
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "overload",
+      "seed": 101
+    },
+    {
+      "detail": "generated 2500 vs sum of outcomes 2500",
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "overload",
+      "seed": 101
+    },
+    {
+      "detail": "generated 2500 vs sum of outcomes 2500",
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "overload",
+      "seed": 101
+    },
+    {
+      "detail": "generated 2500 vs sum of outcomes 2500",
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "overload",
+      "seed": 101
+    },
+    {
+      "detail": "generated 2500 vs sum of outcomes 2500",
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "overload",
+      "seed": 101
+    },
+    {
+      "detail": "generated 2500 vs sum of outcomes 2500",
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "overload",
+      "seed": 102
+    },
+    {
+      "detail": "generated 2500 vs sum of outcomes 2500",
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "overload",
+      "seed": 102
+    },
+    {
+      "detail": "generated 2500 vs sum of outcomes 2500",
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "overload",
+      "seed": 102
+    },
+    {
+      "detail": "generated 2500 vs sum of outcomes 2500",
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "overload",
+      "seed": 102
+    },
+    {
+      "detail": "generated 2500 vs sum of outcomes 2500",
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "overload",
+      "seed": 102
+    },
+    {
+      "detail": "generated 2500 vs sum of outcomes 2500",
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "overload",
+      "seed": 102
+    },
+    {
+      "detail": "generated 2500 vs sum of outcomes 2500",
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "overload",
+      "seed": 102
+    },
+    {
+      "detail": "generated 2500 vs sum of outcomes 2500",
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "overload",
+      "seed": 103
+    },
+    {
+      "detail": "generated 2500 vs sum of outcomes 2500",
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "overload",
+      "seed": 103
+    },
+    {
+      "detail": "generated 2500 vs sum of outcomes 2500",
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "overload",
+      "seed": 103
+    },
+    {
+      "detail": "generated 2500 vs sum of outcomes 2500",
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "overload",
+      "seed": 103
+    },
+    {
+      "detail": "generated 2500 vs sum of outcomes 2500",
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "overload",
+      "seed": 103
+    },
+    {
+      "detail": "generated 2500 vs sum of outcomes 2500",
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "overload",
+      "seed": 103
+    },
+    {
+      "detail": "generated 2500 vs sum of outcomes 2500",
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "overload",
+      "seed": 103
+    },
+    {
+      "detail": "generated 2500 vs sum of outcomes 2500",
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "overload",
+      "seed": 104
+    },
+    {
+      "detail": "generated 2500 vs sum of outcomes 2500",
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "overload",
+      "seed": 104
+    },
+    {
+      "detail": "generated 2500 vs sum of outcomes 2500",
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "overload",
+      "seed": 104
+    },
+    {
+      "detail": "generated 2500 vs sum of outcomes 2500",
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "overload",
+      "seed": 104
+    },
+    {
+      "detail": "generated 2500 vs sum of outcomes 2500",
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "overload",
+      "seed": 104
+    },
+    {
+      "detail": "generated 2500 vs sum of outcomes 2500",
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "overload",
+      "seed": 104
+    },
+    {
+      "detail": "generated 2500 vs sum of outcomes 2500",
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "overload",
+      "seed": 104
+    },
+    {
+      "detail": "generated 2500 vs sum of outcomes 2500",
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "overload",
+      "seed": 105
+    },
+    {
+      "detail": "generated 2500 vs sum of outcomes 2500",
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "overload",
+      "seed": 105
+    },
+    {
+      "detail": "generated 2500 vs sum of outcomes 2500",
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "overload",
+      "seed": 105
+    },
+    {
+      "detail": "generated 2500 vs sum of outcomes 2500",
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "overload",
+      "seed": 105
+    },
+    {
+      "detail": "generated 2500 vs sum of outcomes 2500",
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "overload",
+      "seed": 105
+    },
+    {
+      "detail": "generated 2500 vs sum of outcomes 2500",
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "overload",
+      "seed": 105
+    },
+    {
+      "detail": "generated 2500 vs sum of outcomes 2500",
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "overload",
+      "seed": 105
+    },
+    {
+      "detail": "generated 38 vs sum of outcomes 38",
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "tight_deadline",
+      "seed": 101
+    },
+    {
+      "detail": "generated 38 vs sum of outcomes 38",
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "tight_deadline",
+      "seed": 101
+    },
+    {
+      "detail": "generated 38 vs sum of outcomes 38",
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "tight_deadline",
+      "seed": 101
+    },
+    {
+      "detail": "generated 38 vs sum of outcomes 38",
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "tight_deadline",
+      "seed": 101
+    },
+    {
+      "detail": "generated 38 vs sum of outcomes 38",
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "tight_deadline",
+      "seed": 101
+    },
+    {
+      "detail": "generated 38 vs sum of outcomes 38",
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "tight_deadline",
+      "seed": 101
+    },
+    {
+      "detail": "generated 38 vs sum of outcomes 38",
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "tight_deadline",
+      "seed": 101
+    },
+    {
+      "detail": "generated 38 vs sum of outcomes 38",
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "tight_deadline",
+      "seed": 102
+    },
+    {
+      "detail": "generated 38 vs sum of outcomes 38",
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "tight_deadline",
+      "seed": 102
+    },
+    {
+      "detail": "generated 38 vs sum of outcomes 38",
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "tight_deadline",
+      "seed": 102
+    },
+    {
+      "detail": "generated 38 vs sum of outcomes 38",
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "tight_deadline",
+      "seed": 102
+    },
+    {
+      "detail": "generated 38 vs sum of outcomes 38",
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "tight_deadline",
+      "seed": 102
+    },
+    {
+      "detail": "generated 38 vs sum of outcomes 38",
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "tight_deadline",
+      "seed": 102
+    },
+    {
+      "detail": "generated 38 vs sum of outcomes 38",
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "tight_deadline",
+      "seed": 102
+    },
+    {
+      "detail": "generated 38 vs sum of outcomes 38",
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "tight_deadline",
+      "seed": 103
+    },
+    {
+      "detail": "generated 38 vs sum of outcomes 38",
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "tight_deadline",
+      "seed": 103
+    },
+    {
+      "detail": "generated 38 vs sum of outcomes 38",
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "tight_deadline",
+      "seed": 103
+    },
+    {
+      "detail": "generated 38 vs sum of outcomes 38",
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "tight_deadline",
+      "seed": 103
+    },
+    {
+      "detail": "generated 38 vs sum of outcomes 38",
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "tight_deadline",
+      "seed": 103
+    },
+    {
+      "detail": "generated 38 vs sum of outcomes 38",
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "tight_deadline",
+      "seed": 103
+    },
+    {
+      "detail": "generated 38 vs sum of outcomes 38",
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "tight_deadline",
+      "seed": 103
+    },
+    {
+      "detail": "generated 38 vs sum of outcomes 38",
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "tight_deadline",
+      "seed": 104
+    },
+    {
+      "detail": "generated 38 vs sum of outcomes 38",
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "tight_deadline",
+      "seed": 104
+    },
+    {
+      "detail": "generated 38 vs sum of outcomes 38",
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "tight_deadline",
+      "seed": 104
+    },
+    {
+      "detail": "generated 38 vs sum of outcomes 38",
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "tight_deadline",
+      "seed": 104
+    },
+    {
+      "detail": "generated 38 vs sum of outcomes 38",
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "tight_deadline",
+      "seed": 104
+    },
+    {
+      "detail": "generated 38 vs sum of outcomes 38",
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "tight_deadline",
+      "seed": 104
+    },
+    {
+      "detail": "generated 38 vs sum of outcomes 38",
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "tight_deadline",
+      "seed": 104
+    },
+    {
+      "detail": "generated 38 vs sum of outcomes 38",
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "tight_deadline",
+      "seed": 105
+    },
+    {
+      "detail": "generated 38 vs sum of outcomes 38",
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "tight_deadline",
+      "seed": 105
+    },
+    {
+      "detail": "generated 38 vs sum of outcomes 38",
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "tight_deadline",
+      "seed": 105
+    },
+    {
+      "detail": "generated 38 vs sum of outcomes 38",
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "tight_deadline",
+      "seed": 105
+    },
+    {
+      "detail": "generated 38 vs sum of outcomes 38",
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "tight_deadline",
+      "seed": 105
+    },
+    {
+      "detail": "generated 38 vs sum of outcomes 38",
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "tight_deadline",
+      "seed": 105
+    },
+    {
+      "detail": "generated 38 vs sum of outcomes 38",
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "tight_deadline",
+      "seed": 105
+    }
+  ],
+  "all_passed": true,
+  "edf_rr_vs_fresh_nodefer_event_slots": [
+    {
+      "first_mismatch": null,
+      "mismatches": 0,
+      "n_elig_ev_mismatches": 0,
+      "passed": true,
+      "scenario": "healthy_light",
+      "seed": 101,
+      "slots_compared": 12,
+      "slots_total": 3000
+    },
+    {
+      "first_mismatch": null,
+      "mismatches": 0,
+      "n_elig_ev_mismatches": 0,
+      "passed": true,
+      "scenario": "healthy_light",
+      "seed": 102,
+      "slots_compared": 12,
+      "slots_total": 3000
+    },
+    {
+      "first_mismatch": null,
+      "mismatches": 0,
+      "n_elig_ev_mismatches": 0,
+      "passed": true,
+      "scenario": "healthy_light",
+      "seed": 103,
+      "slots_compared": 12,
+      "slots_total": 3000
+    },
+    {
+      "first_mismatch": null,
+      "mismatches": 0,
+      "n_elig_ev_mismatches": 0,
+      "passed": true,
+      "scenario": "healthy_light",
+      "seed": 104,
+      "slots_compared": 12,
+      "slots_total": 3000
+    },
+    {
+      "first_mismatch": null,
+      "mismatches": 0,
+      "n_elig_ev_mismatches": 0,
+      "passed": true,
+      "scenario": "healthy_light",
+      "seed": 105,
+      "slots_compared": 12,
+      "slots_total": 3000
+    },
+    {
+      "first_mismatch": null,
+      "mismatches": 0,
+      "n_elig_ev_mismatches": 0,
+      "passed": true,
+      "scenario": "alarm_outage",
+      "seed": 101,
+      "slots_compared": 29,
+      "slots_total": 3000
+    },
+    {
+      "first_mismatch": null,
+      "mismatches": 0,
+      "n_elig_ev_mismatches": 0,
+      "passed": true,
+      "scenario": "alarm_outage",
+      "seed": 102,
+      "slots_compared": 29,
+      "slots_total": 3000
+    },
+    {
+      "first_mismatch": null,
+      "mismatches": 0,
+      "n_elig_ev_mismatches": 0,
+      "passed": true,
+      "scenario": "alarm_outage",
+      "seed": 103,
+      "slots_compared": 29,
+      "slots_total": 3000
+    },
+    {
+      "first_mismatch": null,
+      "mismatches": 0,
+      "n_elig_ev_mismatches": 0,
+      "passed": true,
+      "scenario": "alarm_outage",
+      "seed": 104,
+      "slots_compared": 29,
+      "slots_total": 3000
+    },
+    {
+      "first_mismatch": null,
+      "mismatches": 0,
+      "n_elig_ev_mismatches": 0,
+      "passed": true,
+      "scenario": "alarm_outage",
+      "seed": 105,
+      "slots_compared": 29,
+      "slots_total": 3000
+    },
+    {
+      "first_mismatch": null,
+      "mismatches": 0,
+      "n_elig_ev_mismatches": 0,
+      "passed": true,
+      "scenario": "burst_loss",
+      "seed": 101,
+      "slots_compared": 23,
+      "slots_total": 3000
+    },
+    {
+      "first_mismatch": null,
+      "mismatches": 0,
+      "n_elig_ev_mismatches": 0,
+      "passed": true,
+      "scenario": "burst_loss",
+      "seed": 102,
+      "slots_compared": 27,
+      "slots_total": 3000
+    },
+    {
+      "first_mismatch": null,
+      "mismatches": 0,
+      "n_elig_ev_mismatches": 0,
+      "passed": true,
+      "scenario": "burst_loss",
+      "seed": 103,
+      "slots_compared": 31,
+      "slots_total": 3000
+    },
+    {
+      "first_mismatch": null,
+      "mismatches": 0,
+      "n_elig_ev_mismatches": 0,
+      "passed": true,
+      "scenario": "burst_loss",
+      "seed": 104,
+      "slots_compared": 27,
+      "slots_total": 3000
+    },
+    {
+      "first_mismatch": null,
+      "mismatches": 0,
+      "n_elig_ev_mismatches": 0,
+      "passed": true,
+      "scenario": "burst_loss",
+      "seed": 105,
+      "slots_compared": 28,
+      "slots_total": 3000
+    },
+    {
+      "first_mismatch": null,
+      "mismatches": 0,
+      "n_elig_ev_mismatches": 0,
+      "passed": true,
+      "scenario": "ack_loss",
+      "seed": 101,
+      "slots_compared": 20,
+      "slots_total": 3000
+    },
+    {
+      "first_mismatch": null,
+      "mismatches": 0,
+      "n_elig_ev_mismatches": 0,
+      "passed": true,
+      "scenario": "ack_loss",
+      "seed": 102,
+      "slots_compared": 22,
+      "slots_total": 3000
+    },
+    {
+      "first_mismatch": null,
+      "mismatches": 0,
+      "n_elig_ev_mismatches": 0,
+      "passed": true,
+      "scenario": "ack_loss",
+      "seed": 103,
+      "slots_compared": 17,
+      "slots_total": 3000
+    },
+    {
+      "first_mismatch": null,
+      "mismatches": 0,
+      "n_elig_ev_mismatches": 0,
+      "passed": true,
+      "scenario": "ack_loss",
+      "seed": 104,
+      "slots_compared": 19,
+      "slots_total": 3000
+    },
+    {
+      "first_mismatch": null,
+      "mismatches": 0,
+      "n_elig_ev_mismatches": 0,
+      "passed": true,
+      "scenario": "ack_loss",
+      "seed": 105,
+      "slots_compared": 17,
+      "slots_total": 3000
+    },
+    {
+      "first_mismatch": null,
+      "mismatches": 0,
+      "n_elig_ev_mismatches": 0,
+      "passed": true,
+      "scenario": "reorder",
+      "seed": 101,
+      "slots_compared": 16,
+      "slots_total": 3000
+    },
+    {
+      "first_mismatch": null,
+      "mismatches": 0,
+      "n_elig_ev_mismatches": 0,
+      "passed": true,
+      "scenario": "reorder",
+      "seed": 102,
+      "slots_compared": 13,
+      "slots_total": 3000
+    },
+    {
+      "first_mismatch": null,
+      "mismatches": 0,
+      "n_elig_ev_mismatches": 0,
+      "passed": true,
+      "scenario": "reorder",
+      "seed": 103,
+      "slots_compared": 15,
+      "slots_total": 3000
+    },
+    {
+      "first_mismatch": null,
+      "mismatches": 0,
+      "n_elig_ev_mismatches": 0,
+      "passed": true,
+      "scenario": "reorder",
+      "seed": 104,
+      "slots_compared": 14,
+      "slots_total": 3000
+    },
+    {
+      "first_mismatch": null,
+      "mismatches": 0,
+      "n_elig_ev_mismatches": 0,
+      "passed": true,
+      "scenario": "reorder",
+      "seed": 105,
+      "slots_compared": 16,
+      "slots_total": 3000
+    },
+    {
+      "first_mismatch": null,
+      "mismatches": 0,
+      "n_elig_ev_mismatches": 0,
+      "passed": true,
+      "scenario": "overflow",
+      "seed": 101,
+      "slots_compared": 206,
+      "slots_total": 3000
+    },
+    {
+      "first_mismatch": null,
+      "mismatches": 0,
+      "n_elig_ev_mismatches": 0,
+      "passed": true,
+      "scenario": "overflow",
+      "seed": 102,
+      "slots_compared": 205,
+      "slots_total": 3000
+    },
+    {
+      "first_mismatch": null,
+      "mismatches": 0,
+      "n_elig_ev_mismatches": 0,
+      "passed": true,
+      "scenario": "overflow",
+      "seed": 103,
+      "slots_compared": 205,
+      "slots_total": 3000
+    },
+    {
+      "first_mismatch": null,
+      "mismatches": 0,
+      "n_elig_ev_mismatches": 0,
+      "passed": true,
+      "scenario": "overflow",
+      "seed": 104,
+      "slots_compared": 207,
+      "slots_total": 3000
+    },
+    {
+      "first_mismatch": null,
+      "mismatches": 0,
+      "n_elig_ev_mismatches": 0,
+      "passed": true,
+      "scenario": "overflow",
+      "seed": 105,
+      "slots_compared": 206,
+      "slots_total": 3000
+    },
+    {
+      "first_mismatch": null,
+      "mismatches": 0,
+      "n_elig_ev_mismatches": 0,
+      "passed": true,
+      "scenario": "overload",
+      "seed": 101,
+      "slots_compared": 1998,
+      "slots_total": 3000
+    },
+    {
+      "first_mismatch": null,
+      "mismatches": 0,
+      "n_elig_ev_mismatches": 0,
+      "passed": true,
+      "scenario": "overload",
+      "seed": 102,
+      "slots_compared": 2004,
+      "slots_total": 3000
+    },
+    {
+      "first_mismatch": null,
+      "mismatches": 0,
+      "n_elig_ev_mismatches": 0,
+      "passed": true,
+      "scenario": "overload",
+      "seed": 103,
+      "slots_compared": 2004,
+      "slots_total": 3000
+    },
+    {
+      "first_mismatch": null,
+      "mismatches": 0,
+      "n_elig_ev_mismatches": 0,
+      "passed": true,
+      "scenario": "overload",
+      "seed": 104,
+      "slots_compared": 2004,
+      "slots_total": 3000
+    },
+    {
+      "first_mismatch": null,
+      "mismatches": 0,
+      "n_elig_ev_mismatches": 0,
+      "passed": true,
+      "scenario": "overload",
+      "seed": 105,
+      "slots_compared": 2005,
+      "slots_total": 3000
+    },
+    {
+      "first_mismatch": null,
+      "mismatches": 0,
+      "n_elig_ev_mismatches": 0,
+      "passed": true,
+      "scenario": "tight_deadline",
+      "seed": 101,
+      "slots_compared": 55,
+      "slots_total": 3000
+    },
+    {
+      "first_mismatch": null,
+      "mismatches": 0,
+      "n_elig_ev_mismatches": 0,
+      "passed": true,
+      "scenario": "tight_deadline",
+      "seed": 102,
+      "slots_compared": 55,
+      "slots_total": 3000
+    },
+    {
+      "first_mismatch": null,
+      "mismatches": 0,
+      "n_elig_ev_mismatches": 0,
+      "passed": true,
+      "scenario": "tight_deadline",
+      "seed": 103,
+      "slots_compared": 56,
+      "slots_total": 3000
+    },
+    {
+      "first_mismatch": null,
+      "mismatches": 0,
+      "n_elig_ev_mismatches": 0,
+      "passed": true,
+      "scenario": "tight_deadline",
+      "seed": 104,
+      "slots_compared": 58,
+      "slots_total": 3000
+    },
+    {
+      "first_mismatch": null,
+      "mismatches": 0,
+      "n_elig_ev_mismatches": 0,
+      "passed": true,
+      "scenario": "tight_deadline",
+      "seed": 105,
+      "slots_compared": 52,
+      "slots_total": 3000
+    }
+  ],
+  "interval_violations_zero": [
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "healthy_light",
+      "seed": 101
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "healthy_light",
+      "seed": 101
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "healthy_light",
+      "seed": 101
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "healthy_light",
+      "seed": 101
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "healthy_light",
+      "seed": 101
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "healthy_light",
+      "seed": 101
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "healthy_light",
+      "seed": 101
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "healthy_light",
+      "seed": 102
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "healthy_light",
+      "seed": 102
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "healthy_light",
+      "seed": 102
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "healthy_light",
+      "seed": 102
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "healthy_light",
+      "seed": 102
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "healthy_light",
+      "seed": 102
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "healthy_light",
+      "seed": 102
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "healthy_light",
+      "seed": 103
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "healthy_light",
+      "seed": 103
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "healthy_light",
+      "seed": 103
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "healthy_light",
+      "seed": 103
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "healthy_light",
+      "seed": 103
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "healthy_light",
+      "seed": 103
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "healthy_light",
+      "seed": 103
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "healthy_light",
+      "seed": 104
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "healthy_light",
+      "seed": 104
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "healthy_light",
+      "seed": 104
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "healthy_light",
+      "seed": 104
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "healthy_light",
+      "seed": 104
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "healthy_light",
+      "seed": 104
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "healthy_light",
+      "seed": 104
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "healthy_light",
+      "seed": 105
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "healthy_light",
+      "seed": 105
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "healthy_light",
+      "seed": 105
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "healthy_light",
+      "seed": 105
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "healthy_light",
+      "seed": 105
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "healthy_light",
+      "seed": 105
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "healthy_light",
+      "seed": 105
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "alarm_outage",
+      "seed": 101
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "alarm_outage",
+      "seed": 101
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "alarm_outage",
+      "seed": 101
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "alarm_outage",
+      "seed": 101
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "alarm_outage",
+      "seed": 101
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "alarm_outage",
+      "seed": 101
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "alarm_outage",
+      "seed": 101
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "alarm_outage",
+      "seed": 102
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "alarm_outage",
+      "seed": 102
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "alarm_outage",
+      "seed": 102
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "alarm_outage",
+      "seed": 102
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "alarm_outage",
+      "seed": 102
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "alarm_outage",
+      "seed": 102
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "alarm_outage",
+      "seed": 102
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "alarm_outage",
+      "seed": 103
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "alarm_outage",
+      "seed": 103
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "alarm_outage",
+      "seed": 103
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "alarm_outage",
+      "seed": 103
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "alarm_outage",
+      "seed": 103
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "alarm_outage",
+      "seed": 103
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "alarm_outage",
+      "seed": 103
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "alarm_outage",
+      "seed": 104
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "alarm_outage",
+      "seed": 104
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "alarm_outage",
+      "seed": 104
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "alarm_outage",
+      "seed": 104
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "alarm_outage",
+      "seed": 104
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "alarm_outage",
+      "seed": 104
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "alarm_outage",
+      "seed": 104
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "alarm_outage",
+      "seed": 105
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "alarm_outage",
+      "seed": 105
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "alarm_outage",
+      "seed": 105
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "alarm_outage",
+      "seed": 105
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "alarm_outage",
+      "seed": 105
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "alarm_outage",
+      "seed": 105
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "alarm_outage",
+      "seed": 105
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "burst_loss",
+      "seed": 101
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "burst_loss",
+      "seed": 101
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "burst_loss",
+      "seed": 101
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "burst_loss",
+      "seed": 101
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "burst_loss",
+      "seed": 101
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "burst_loss",
+      "seed": 101
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "burst_loss",
+      "seed": 101
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "burst_loss",
+      "seed": 102
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "burst_loss",
+      "seed": 102
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "burst_loss",
+      "seed": 102
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "burst_loss",
+      "seed": 102
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "burst_loss",
+      "seed": 102
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "burst_loss",
+      "seed": 102
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "burst_loss",
+      "seed": 102
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "burst_loss",
+      "seed": 103
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "burst_loss",
+      "seed": 103
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "burst_loss",
+      "seed": 103
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "burst_loss",
+      "seed": 103
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "burst_loss",
+      "seed": 103
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "burst_loss",
+      "seed": 103
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "burst_loss",
+      "seed": 103
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "burst_loss",
+      "seed": 104
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "burst_loss",
+      "seed": 104
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "burst_loss",
+      "seed": 104
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "burst_loss",
+      "seed": 104
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "burst_loss",
+      "seed": 104
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "burst_loss",
+      "seed": 104
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "burst_loss",
+      "seed": 104
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "burst_loss",
+      "seed": 105
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "burst_loss",
+      "seed": 105
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "burst_loss",
+      "seed": 105
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "burst_loss",
+      "seed": 105
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "burst_loss",
+      "seed": 105
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "burst_loss",
+      "seed": 105
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "burst_loss",
+      "seed": 105
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "ack_loss",
+      "seed": 101
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "ack_loss",
+      "seed": 101
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "ack_loss",
+      "seed": 101
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "ack_loss",
+      "seed": 101
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "ack_loss",
+      "seed": 101
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "ack_loss",
+      "seed": 101
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "ack_loss",
+      "seed": 101
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "ack_loss",
+      "seed": 102
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "ack_loss",
+      "seed": 102
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "ack_loss",
+      "seed": 102
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "ack_loss",
+      "seed": 102
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "ack_loss",
+      "seed": 102
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "ack_loss",
+      "seed": 102
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "ack_loss",
+      "seed": 102
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "ack_loss",
+      "seed": 103
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "ack_loss",
+      "seed": 103
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "ack_loss",
+      "seed": 103
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "ack_loss",
+      "seed": 103
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "ack_loss",
+      "seed": 103
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "ack_loss",
+      "seed": 103
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "ack_loss",
+      "seed": 103
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "ack_loss",
+      "seed": 104
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "ack_loss",
+      "seed": 104
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "ack_loss",
+      "seed": 104
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "ack_loss",
+      "seed": 104
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "ack_loss",
+      "seed": 104
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "ack_loss",
+      "seed": 104
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "ack_loss",
+      "seed": 104
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "ack_loss",
+      "seed": 105
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "ack_loss",
+      "seed": 105
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "ack_loss",
+      "seed": 105
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "ack_loss",
+      "seed": 105
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "ack_loss",
+      "seed": 105
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "ack_loss",
+      "seed": 105
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "ack_loss",
+      "seed": 105
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "reorder",
+      "seed": 101
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "reorder",
+      "seed": 101
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "reorder",
+      "seed": 101
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "reorder",
+      "seed": 101
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "reorder",
+      "seed": 101
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "reorder",
+      "seed": 101
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "reorder",
+      "seed": 101
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "reorder",
+      "seed": 102
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "reorder",
+      "seed": 102
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "reorder",
+      "seed": 102
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "reorder",
+      "seed": 102
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "reorder",
+      "seed": 102
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "reorder",
+      "seed": 102
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "reorder",
+      "seed": 102
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "reorder",
+      "seed": 103
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "reorder",
+      "seed": 103
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "reorder",
+      "seed": 103
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "reorder",
+      "seed": 103
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "reorder",
+      "seed": 103
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "reorder",
+      "seed": 103
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "reorder",
+      "seed": 103
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "reorder",
+      "seed": 104
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "reorder",
+      "seed": 104
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "reorder",
+      "seed": 104
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "reorder",
+      "seed": 104
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "reorder",
+      "seed": 104
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "reorder",
+      "seed": 104
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "reorder",
+      "seed": 104
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "reorder",
+      "seed": 105
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "reorder",
+      "seed": 105
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "reorder",
+      "seed": 105
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "reorder",
+      "seed": 105
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "reorder",
+      "seed": 105
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "reorder",
+      "seed": 105
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "reorder",
+      "seed": 105
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "overflow",
+      "seed": 101
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "overflow",
+      "seed": 101
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "overflow",
+      "seed": 101
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "overflow",
+      "seed": 101
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "overflow",
+      "seed": 101
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "overflow",
+      "seed": 101
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "overflow",
+      "seed": 101
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "overflow",
+      "seed": 102
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "overflow",
+      "seed": 102
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "overflow",
+      "seed": 102
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "overflow",
+      "seed": 102
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "overflow",
+      "seed": 102
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "overflow",
+      "seed": 102
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "overflow",
+      "seed": 102
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "overflow",
+      "seed": 103
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "overflow",
+      "seed": 103
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "overflow",
+      "seed": 103
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "overflow",
+      "seed": 103
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "overflow",
+      "seed": 103
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "overflow",
+      "seed": 103
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "overflow",
+      "seed": 103
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "overflow",
+      "seed": 104
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "overflow",
+      "seed": 104
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "overflow",
+      "seed": 104
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "overflow",
+      "seed": 104
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "overflow",
+      "seed": 104
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "overflow",
+      "seed": 104
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "overflow",
+      "seed": 104
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "overflow",
+      "seed": 105
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "overflow",
+      "seed": 105
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "overflow",
+      "seed": 105
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "overflow",
+      "seed": 105
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "overflow",
+      "seed": 105
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "overflow",
+      "seed": 105
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "overflow",
+      "seed": 105
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "overload",
+      "seed": 101
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "overload",
+      "seed": 101
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "overload",
+      "seed": 101
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "overload",
+      "seed": 101
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "overload",
+      "seed": 101
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "overload",
+      "seed": 101
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "overload",
+      "seed": 101
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "overload",
+      "seed": 102
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "overload",
+      "seed": 102
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "overload",
+      "seed": 102
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "overload",
+      "seed": 102
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "overload",
+      "seed": 102
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "overload",
+      "seed": 102
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "overload",
+      "seed": 102
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "overload",
+      "seed": 103
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "overload",
+      "seed": 103
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "overload",
+      "seed": 103
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "overload",
+      "seed": 103
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "overload",
+      "seed": 103
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "overload",
+      "seed": 103
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "overload",
+      "seed": 103
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "overload",
+      "seed": 104
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "overload",
+      "seed": 104
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "overload",
+      "seed": 104
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "overload",
+      "seed": 104
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "overload",
+      "seed": 104
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "overload",
+      "seed": 104
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "overload",
+      "seed": 104
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "overload",
+      "seed": 105
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "overload",
+      "seed": 105
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "overload",
+      "seed": 105
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "overload",
+      "seed": 105
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "overload",
+      "seed": 105
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "overload",
+      "seed": 105
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "overload",
+      "seed": 105
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "tight_deadline",
+      "seed": 101
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "tight_deadline",
+      "seed": 101
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "tight_deadline",
+      "seed": 101
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "tight_deadline",
+      "seed": 101
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "tight_deadline",
+      "seed": 101
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "tight_deadline",
+      "seed": 101
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "tight_deadline",
+      "seed": 101
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "tight_deadline",
+      "seed": 102
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "tight_deadline",
+      "seed": 102
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "tight_deadline",
+      "seed": 102
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "tight_deadline",
+      "seed": 102
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "tight_deadline",
+      "seed": 102
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "tight_deadline",
+      "seed": 102
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "tight_deadline",
+      "seed": 102
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "tight_deadline",
+      "seed": 103
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "tight_deadline",
+      "seed": 103
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "tight_deadline",
+      "seed": 103
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "tight_deadline",
+      "seed": 103
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "tight_deadline",
+      "seed": 103
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "tight_deadline",
+      "seed": 103
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "tight_deadline",
+      "seed": 103
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "tight_deadline",
+      "seed": 104
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "tight_deadline",
+      "seed": 104
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "tight_deadline",
+      "seed": 104
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "tight_deadline",
+      "seed": 104
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "tight_deadline",
+      "seed": 104
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "tight_deadline",
+      "seed": 104
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "tight_deadline",
+      "seed": 104
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr",
+      "scenario": "tight_deadline",
+      "seed": 105
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "edf_rr_ld",
+      "scenario": "tight_deadline",
+      "seed": 105
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_nodefer",
+      "scenario": "tight_deadline",
+      "seed": 105
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh",
+      "scenario": "tight_deadline",
+      "seed": 105
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_ld",
+      "scenario": "tight_deadline",
+      "seed": 105
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fresh_so",
+      "scenario": "tight_deadline",
+      "seed": 105
+    },
+    {
+      "interval_violations": 0,
+      "passed": true,
+      "policy": "fifo",
+      "scenario": "tight_deadline",
+      "seed": 105
+    }
+  ],
+  "label": "HOST SIMULATION",
+  "ledger_fixtures": [
+    {
+      "expected": {
+        "exit": "1",
+        "summary_written": "False"
+      },
+      "fixture": "F1_out_of_run_row_rejected",
+      "mismatches": {},
+      "note": "workload row at t=run_ms can never execute (S8.1); must be rejected, not a phantom PENDING row",
+      "observed": {
+        "exit": "1",
+        "stderr": "sim: workload row 0 at t=10 is outside run_ms=10 (rejected)\nflsim: simulation failed",
+        "summary_written": "False"
+      },
+      "passed": true,
+      "policy": "edf_rr"
+    },
+    {
+      "expected": {
+        "core_error": "0",
+        "ev_generated": "0",
+        "ev_pending_end": "0",
+        "events_rows": "0",
+        "exit": "0",
+        "ledger_mismatch": "0"
+      },
+      "fixture": "F2_no_events_no_phantom_rows",
+      "mismatches": {},
+      "note": "no event generated -> no ledger record, ev_pending_end=0 (S8.5 identity with generated=0)",
+      "observed": {
+        "core_error": "0",
+        "ev_generated": "0",
+        "ev_pending_end": "0",
+        "events_rows": "0",
+        "exit": "0",
+        "ledger_mismatch": "0"
+      },
+      "passed": true,
+      "policy": "edf_rr"
+    },
+    {
+      "expected": {
+        "attempts": "0",
+        "ev_admitted": "1",
+        "ev_generated": "1",
+        "ev_pending_end": "1",
+        "event_tx": "0",
+        "events_rows": "1",
+        "exit": "0",
+        "first_tx_time": "-",
+        "id": "1",
+        "ledger_mismatch": "0",
+        "outcome": "PENDING"
+      },
+      "fixture": "F3_late_row_never_transmitted",
+      "mismatches": {},
+      "note": "event posted at t=9 after the only slot (t=0): generated, admitted, never sent, censored PENDING",
+      "observed": {
+        "attempts": "0",
+        "ev_admitted": "1",
+        "ev_generated": "1",
+        "ev_pending_end": "1",
+        "event_tx": "0",
+        "events_rows": "1",
+        "exit": "0",
+        "first_tx_time": "-",
+        "id": "1",
+        "ledger_mismatch": "0",
+        "outcome": "PENDING"
+      },
+      "passed": true,
+      "policy": "edf_rr"
+    },
+    {
+      "expected": {
+        "ack_frames": "0",
+        "attempts": "1",
+        "attempts_sum": "1",
+        "bytes_ack_tx": "0",
+        "bytes_data_tx": "27",
+        "bytes_total_tx": "27",
+        "core_error": "0",
+        "data_frames": "1",
+        "dec_attempt": "1",
+        "dec_kind": "EVENT",
+        "dec_lost": "1",
+        "dec_n_elig_ev": "1",
+        "dec_reason": "EVENT_EDF",
+        "dec_ref": "1",
+        "dec_slot": "0",
+        "dec_t": "0",
+        "decision_rows": "1",
+        "ev_acked": "0",
+        "ev_admitted": "1",
+        "ev_generated": "1",
+        "ev_pending_end": "1",
+        "event_decisions": "1",
+        "event_retries": "0",
+        "event_tx": "1",
+        "events_rows": "1",
+        "exit": "0",
+        "first_tx_time": "0",
+        "ledger_mismatch": "0",
+        "outcome": "PENDING",
+        "rx_ev_delivered": "0",
+        "terminal_time": "-"
+      },
+      "fixture": "F4_pending_attempt_counted_at_cutoff",
+      "mismatches": {},
+      "note": "1 ms run: event sent (lost) at t=0, still pending at cutoff -> attempts=1 must be in events.csv",
+      "observed": {
+        "ack_frames": "0",
+        "attempts": "1",
+        "attempts_sum": "1",
+        "bytes_ack_tx": "0",
+        "bytes_data_tx": "27",
+        "bytes_total_tx": "27",
+        "core_error": "0",
+        "data_frames": "1",
+        "dec_attempt": "1",
+        "dec_kind": "EVENT",
+        "dec_lost": "1",
+        "dec_n_elig_ev": "1",
+        "dec_reason": "EVENT_EDF",
+        "dec_ref": "1",
+        "dec_slot": "0",
+        "dec_t": "0",
+        "decision_rows": "1",
+        "ev_acked": "0",
+        "ev_admitted": "1",
+        "ev_generated": "1",
+        "ev_pending_end": "1",
+        "event_decisions": "1",
+        "event_retries": "0",
+        "event_tx": "1",
+        "events_rows": "1",
+        "exit": "0",
+        "first_tx_time": "0",
+        "ledger_mismatch": "0",
+        "outcome": "PENDING",
+        "rx_ev_delivered": "0",
+        "terminal_time": "-"
+      },
+      "passed": true,
+      "policy": "edf_rr"
+    },
+    {
+      "expected": {
+        "attempts": "3",
+        "attempts_sum": "3",
+        "bytes_data_tx": "81",
+        "core_error": "0",
+        "data_frames": "3",
+        "dec_attempts": "1;2;3",
+        "ev_generated": "1",
+        "ev_pending_end": "1",
+        "ev_retry_exhausted": "0",
+        "event_decisions": "3",
+        "event_retries": "2",
+        "event_tx": "3",
+        "events_rows": "1",
+        "exit": "0",
+        "first_tx_time": "0",
+        "ledger_mismatch": "0",
+        "outcome": "PENDING"
+      },
+      "fixture": "F5_retries_reconcile_at_cutoff",
+      "mismatches": {},
+      "note": "three lost attempts (ack_timeout 1 ms) then cutoff: attempts=3 == event_tx == EVENT decisions",
+      "observed": {
+        "attempts": "3",
+        "attempts_sum": "3",
+        "bytes_data_tx": "81",
+        "core_error": "0",
+        "data_frames": "3",
+        "dec_attempts": "1;2;3",
+        "ev_generated": "1",
+        "ev_pending_end": "1",
+        "ev_retry_exhausted": "0",
+        "event_decisions": "3",
+        "event_retries": "2",
+        "event_tx": "3",
+        "events_rows": "1",
+        "exit": "0",
+        "first_tx_time": "0",
+        "ledger_mismatch": "0",
+        "outcome": "PENDING"
+      },
+      "passed": true,
+      "policy": "edf_rr"
+    },
+    {
+      "expected": {
+        "ack_frames": "0",
+        "attempts": "1",
+        "attempts_sum": "1",
+        "bytes_ack_tx": "0",
+        "bytes_data_tx": "27",
+        "bytes_total_tx": "27",
+        "core_error": "0",
+        "data_frames": "1",
+        "dec_attempt": "1",
+        "dec_kind": "EVENT",
+        "dec_lost": "1",
+        "dec_n_elig_ev": "1",
+        "dec_reason": "EVENT_EDF",
+        "dec_ref": "1",
+        "dec_slot": "0",
+        "dec_t": "0",
+        "decision_rows": "1",
+        "ev_acked": "0",
+        "ev_admitted": "1",
+        "ev_generated": "1",
+        "ev_pending_end": "1",
+        "event_decisions": "1",
+        "event_retries": "0",
+        "event_tx": "1",
+        "events_rows": "1",
+        "exit": "0",
+        "first_tx_time": "0",
+        "ledger_mismatch": "0",
+        "outcome": "PENDING",
+        "rx_ev_delivered": "0",
+        "terminal_time": "-"
+      },
+      "fixture": "F4_pending_attempt_counted_at_cutoff",
+      "mismatches": {},
+      "note": "1 ms run: event sent (lost) at t=0, still pending at cutoff -> attempts=1 must be in events.csv",
+      "observed": {
+        "ack_frames": "0",
+        "attempts": "1",
+        "attempts_sum": "1",
+        "bytes_ack_tx": "0",
+        "bytes_data_tx": "27",
+        "bytes_total_tx": "27",
+        "core_error": "0",
+        "data_frames": "1",
+        "dec_attempt": "1",
+        "dec_kind": "EVENT",
+        "dec_lost": "1",
+        "dec_n_elig_ev": "1",
+        "dec_reason": "EVENT_EDF",
+        "dec_ref": "1",
+        "dec_slot": "0",
+        "dec_t": "0",
+        "decision_rows": "1",
+        "ev_acked": "0",
+        "ev_admitted": "1",
+        "ev_generated": "1",
+        "ev_pending_end": "1",
+        "event_decisions": "1",
+        "event_retries": "0",
+        "event_tx": "1",
+        "events_rows": "1",
+        "exit": "0",
+        "first_tx_time": "0",
+        "ledger_mismatch": "0",
+        "outcome": "PENDING",
+        "rx_ev_delivered": "0",
+        "terminal_time": "-"
+      },
+      "passed": true,
+      "policy": "edf_rr_ld"
+    },
+    {
+      "expected": {
+        "attempts": "3",
+        "attempts_sum": "3",
+        "bytes_data_tx": "81",
+        "core_error": "0",
+        "data_frames": "3",
+        "dec_attempts": "1;2;3",
+        "ev_generated": "1",
+        "ev_pending_end": "1",
+        "ev_retry_exhausted": "0",
+        "event_decisions": "3",
+        "event_retries": "2",
+        "event_tx": "3",
+        "events_rows": "1",
+        "exit": "0",
+        "first_tx_time": "0",
+        "ledger_mismatch": "0",
+        "outcome": "PENDING"
+      },
+      "fixture": "F5_retries_reconcile_at_cutoff",
+      "mismatches": {},
+      "note": "three lost attempts (ack_timeout 1 ms) then cutoff: attempts=3 == event_tx == EVENT decisions",
+      "observed": {
+        "attempts": "3",
+        "attempts_sum": "3",
+        "bytes_data_tx": "81",
+        "core_error": "0",
+        "data_frames": "3",
+        "dec_attempts": "1;2;3",
+        "ev_generated": "1",
+        "ev_pending_end": "1",
+        "ev_retry_exhausted": "0",
+        "event_decisions": "3",
+        "event_retries": "2",
+        "event_tx": "3",
+        "events_rows": "1",
+        "exit": "0",
+        "first_tx_time": "0",
+        "ledger_mismatch": "0",
+        "outcome": "PENDING"
+      },
+      "passed": true,
+      "policy": "edf_rr_ld"
+    },
+    {
+      "expected": {
+        "ack_frames": "0",
+        "attempts": "1",
+        "attempts_sum": "1",
+        "bytes_ack_tx": "0",
+        "bytes_data_tx": "27",
+        "bytes_total_tx": "27",
+        "core_error": "0",
+        "data_frames": "1",
+        "dec_attempt": "1",
+        "dec_kind": "EVENT",
+        "dec_lost": "1",
+        "dec_n_elig_ev": "1",
+        "dec_reason": "EVENT_EDF",
+        "dec_ref": "1",
+        "dec_slot": "0",
+        "dec_t": "0",
+        "decision_rows": "1",
+        "ev_acked": "0",
+        "ev_admitted": "1",
+        "ev_generated": "1",
+        "ev_pending_end": "1",
+        "event_decisions": "1",
+        "event_retries": "0",
+        "event_tx": "1",
+        "events_rows": "1",
+        "exit": "0",
+        "first_tx_time": "0",
+        "ledger_mismatch": "0",
+        "outcome": "PENDING",
+        "rx_ev_delivered": "0",
+        "terminal_time": "-"
+      },
+      "fixture": "F4_pending_attempt_counted_at_cutoff",
+      "mismatches": {},
+      "note": "1 ms run: event sent (lost) at t=0, still pending at cutoff -> attempts=1 must be in events.csv",
+      "observed": {
+        "ack_frames": "0",
+        "attempts": "1",
+        "attempts_sum": "1",
+        "bytes_ack_tx": "0",
+        "bytes_data_tx": "27",
+        "bytes_total_tx": "27",
+        "core_error": "0",
+        "data_frames": "1",
+        "dec_attempt": "1",
+        "dec_kind": "EVENT",
+        "dec_lost": "1",
+        "dec_n_elig_ev": "1",
+        "dec_reason": "EVENT_EDF",
+        "dec_ref": "1",
+        "dec_slot": "0",
+        "dec_t": "0",
+        "decision_rows": "1",
+        "ev_acked": "0",
+        "ev_admitted": "1",
+        "ev_generated": "1",
+        "ev_pending_end": "1",
+        "event_decisions": "1",
+        "event_retries": "0",
+        "event_tx": "1",
+        "events_rows": "1",
+        "exit": "0",
+        "first_tx_time": "0",
+        "ledger_mismatch": "0",
+        "outcome": "PENDING",
+        "rx_ev_delivered": "0",
+        "terminal_time": "-"
+      },
+      "passed": true,
+      "policy": "fresh_nodefer"
+    },
+    {
+      "expected": {
+        "attempts": "3",
+        "attempts_sum": "3",
+        "bytes_data_tx": "81",
+        "core_error": "0",
+        "data_frames": "3",
+        "dec_attempts": "1;2;3",
+        "ev_generated": "1",
+        "ev_pending_end": "1",
+        "ev_retry_exhausted": "0",
+        "event_decisions": "3",
+        "event_retries": "2",
+        "event_tx": "3",
+        "events_rows": "1",
+        "exit": "0",
+        "first_tx_time": "0",
+        "ledger_mismatch": "0",
+        "outcome": "PENDING"
+      },
+      "fixture": "F5_retries_reconcile_at_cutoff",
+      "mismatches": {},
+      "note": "three lost attempts (ack_timeout 1 ms) then cutoff: attempts=3 == event_tx == EVENT decisions",
+      "observed": {
+        "attempts": "3",
+        "attempts_sum": "3",
+        "bytes_data_tx": "81",
+        "core_error": "0",
+        "data_frames": "3",
+        "dec_attempts": "1;2;3",
+        "ev_generated": "1",
+        "ev_pending_end": "1",
+        "ev_retry_exhausted": "0",
+        "event_decisions": "3",
+        "event_retries": "2",
+        "event_tx": "3",
+        "events_rows": "1",
+        "exit": "0",
+        "first_tx_time": "0",
+        "ledger_mismatch": "0",
+        "outcome": "PENDING"
+      },
+      "passed": true,
+      "policy": "fresh_nodefer"
+    },
+    {
+      "expected": {
+        "ack_frames": "0",
+        "attempts": "1",
+        "attempts_sum": "1",
+        "bytes_ack_tx": "0",
+        "bytes_data_tx": "27",
+        "bytes_total_tx": "27",
+        "core_error": "0",
+        "data_frames": "1",
+        "dec_attempt": "1",
+        "dec_kind": "EVENT",
+        "dec_lost": "1",
+        "dec_n_elig_ev": "1",
+        "dec_reason": "EVENT_EDF",
+        "dec_ref": "1",
+        "dec_slot": "0",
+        "dec_t": "0",
+        "decision_rows": "1",
+        "ev_acked": "0",
+        "ev_admitted": "1",
+        "ev_generated": "1",
+        "ev_pending_end": "1",
+        "event_decisions": "1",
+        "event_retries": "0",
+        "event_tx": "1",
+        "events_rows": "1",
+        "exit": "0",
+        "first_tx_time": "0",
+        "ledger_mismatch": "0",
+        "outcome": "PENDING",
+        "rx_ev_delivered": "0",
+        "terminal_time": "-"
+      },
+      "fixture": "F4_pending_attempt_counted_at_cutoff",
+      "mismatches": {},
+      "note": "1 ms run: event sent (lost) at t=0, still pending at cutoff -> attempts=1 must be in events.csv",
+      "observed": {
+        "ack_frames": "0",
+        "attempts": "1",
+        "attempts_sum": "1",
+        "bytes_ack_tx": "0",
+        "bytes_data_tx": "27",
+        "bytes_total_tx": "27",
+        "core_error": "0",
+        "data_frames": "1",
+        "dec_attempt": "1",
+        "dec_kind": "EVENT",
+        "dec_lost": "1",
+        "dec_n_elig_ev": "1",
+        "dec_reason": "EVENT_EDF",
+        "dec_ref": "1",
+        "dec_slot": "0",
+        "dec_t": "0",
+        "decision_rows": "1",
+        "ev_acked": "0",
+        "ev_admitted": "1",
+        "ev_generated": "1",
+        "ev_pending_end": "1",
+        "event_decisions": "1",
+        "event_retries": "0",
+        "event_tx": "1",
+        "events_rows": "1",
+        "exit": "0",
+        "first_tx_time": "0",
+        "ledger_mismatch": "0",
+        "outcome": "PENDING",
+        "rx_ev_delivered": "0",
+        "terminal_time": "-"
+      },
+      "passed": true,
+      "policy": "fresh"
+    },
+    {
+      "expected": {
+        "attempts": "3",
+        "attempts_sum": "3",
+        "bytes_data_tx": "81",
+        "core_error": "0",
+        "data_frames": "3",
+        "dec_attempts": "1;2;3",
+        "ev_generated": "1",
+        "ev_pending_end": "1",
+        "ev_retry_exhausted": "0",
+        "event_decisions": "3",
+        "event_retries": "2",
+        "event_tx": "3",
+        "events_rows": "1",
+        "exit": "0",
+        "first_tx_time": "0",
+        "ledger_mismatch": "0",
+        "outcome": "PENDING"
+      },
+      "fixture": "F5_retries_reconcile_at_cutoff",
+      "mismatches": {},
+      "note": "three lost attempts (ack_timeout 1 ms) then cutoff: attempts=3 == event_tx == EVENT decisions",
+      "observed": {
+        "attempts": "3",
+        "attempts_sum": "3",
+        "bytes_data_tx": "81",
+        "core_error": "0",
+        "data_frames": "3",
+        "dec_attempts": "1;2;3",
+        "ev_generated": "1",
+        "ev_pending_end": "1",
+        "ev_retry_exhausted": "0",
+        "event_decisions": "3",
+        "event_retries": "2",
+        "event_tx": "3",
+        "events_rows": "1",
+        "exit": "0",
+        "first_tx_time": "0",
+        "ledger_mismatch": "0",
+        "outcome": "PENDING"
+      },
+      "passed": true,
+      "policy": "fresh"
+    },
+    {
+      "expected": {
+        "ack_frames": "0",
+        "attempts": "1",
+        "attempts_sum": "1",
+        "bytes_ack_tx": "0",
+        "bytes_data_tx": "27",
+        "bytes_total_tx": "27",
+        "core_error": "0",
+        "data_frames": "1",
+        "dec_attempt": "1",
+        "dec_kind": "EVENT",
+        "dec_lost": "1",
+        "dec_n_elig_ev": "1",
+        "dec_reason": "EVENT_EDF",
+        "dec_ref": "1",
+        "dec_slot": "0",
+        "dec_t": "0",
+        "decision_rows": "1",
+        "ev_acked": "0",
+        "ev_admitted": "1",
+        "ev_generated": "1",
+        "ev_pending_end": "1",
+        "event_decisions": "1",
+        "event_retries": "0",
+        "event_tx": "1",
+        "events_rows": "1",
+        "exit": "0",
+        "first_tx_time": "0",
+        "ledger_mismatch": "0",
+        "outcome": "PENDING",
+        "rx_ev_delivered": "0",
+        "terminal_time": "-"
+      },
+      "fixture": "F4_pending_attempt_counted_at_cutoff",
+      "mismatches": {},
+      "note": "1 ms run: event sent (lost) at t=0, still pending at cutoff -> attempts=1 must be in events.csv",
+      "observed": {
+        "ack_frames": "0",
+        "attempts": "1",
+        "attempts_sum": "1",
+        "bytes_ack_tx": "0",
+        "bytes_data_tx": "27",
+        "bytes_total_tx": "27",
+        "core_error": "0",
+        "data_frames": "1",
+        "dec_attempt": "1",
+        "dec_kind": "EVENT",
+        "dec_lost": "1",
+        "dec_n_elig_ev": "1",
+        "dec_reason": "EVENT_EDF",
+        "dec_ref": "1",
+        "dec_slot": "0",
+        "dec_t": "0",
+        "decision_rows": "1",
+        "ev_acked": "0",
+        "ev_admitted": "1",
+        "ev_generated": "1",
+        "ev_pending_end": "1",
+        "event_decisions": "1",
+        "event_retries": "0",
+        "event_tx": "1",
+        "events_rows": "1",
+        "exit": "0",
+        "first_tx_time": "0",
+        "ledger_mismatch": "0",
+        "outcome": "PENDING",
+        "rx_ev_delivered": "0",
+        "terminal_time": "-"
+      },
+      "passed": true,
+      "policy": "fresh_ld"
+    },
+    {
+      "expected": {
+        "attempts": "3",
+        "attempts_sum": "3",
+        "bytes_data_tx": "81",
+        "core_error": "0",
+        "data_frames": "3",
+        "dec_attempts": "1;2;3",
+        "ev_generated": "1",
+        "ev_pending_end": "1",
+        "ev_retry_exhausted": "0",
+        "event_decisions": "3",
+        "event_retries": "2",
+        "event_tx": "3",
+        "events_rows": "1",
+        "exit": "0",
+        "first_tx_time": "0",
+        "ledger_mismatch": "0",
+        "outcome": "PENDING"
+      },
+      "fixture": "F5_retries_reconcile_at_cutoff",
+      "mismatches": {},
+      "note": "three lost attempts (ack_timeout 1 ms) then cutoff: attempts=3 == event_tx == EVENT decisions",
+      "observed": {
+        "attempts": "3",
+        "attempts_sum": "3",
+        "bytes_data_tx": "81",
+        "core_error": "0",
+        "data_frames": "3",
+        "dec_attempts": "1;2;3",
+        "ev_generated": "1",
+        "ev_pending_end": "1",
+        "ev_retry_exhausted": "0",
+        "event_decisions": "3",
+        "event_retries": "2",
+        "event_tx": "3",
+        "events_rows": "1",
+        "exit": "0",
+        "first_tx_time": "0",
+        "ledger_mismatch": "0",
+        "outcome": "PENDING"
+      },
+      "passed": true,
+      "policy": "fresh_ld"
+    },
+    {
+      "expected": {
+        "ack_frames": "0",
+        "attempts": "1",
+        "attempts_sum": "1",
+        "bytes_ack_tx": "0",
+        "bytes_data_tx": "27",
+        "bytes_total_tx": "27",
+        "core_error": "0",
+        "data_frames": "1",
+        "dec_attempt": "1",
+        "dec_kind": "EVENT",
+        "dec_lost": "1",
+        "dec_n_elig_ev": "1",
+        "dec_reason": "EVENT_EDF",
+        "dec_ref": "1",
+        "dec_slot": "0",
+        "dec_t": "0",
+        "decision_rows": "1",
+        "ev_acked": "0",
+        "ev_admitted": "1",
+        "ev_generated": "1",
+        "ev_pending_end": "1",
+        "event_decisions": "1",
+        "event_retries": "0",
+        "event_tx": "1",
+        "events_rows": "1",
+        "exit": "0",
+        "first_tx_time": "0",
+        "ledger_mismatch": "0",
+        "outcome": "PENDING",
+        "rx_ev_delivered": "0",
+        "terminal_time": "-"
+      },
+      "fixture": "F4_pending_attempt_counted_at_cutoff",
+      "mismatches": {},
+      "note": "1 ms run: event sent (lost) at t=0, still pending at cutoff -> attempts=1 must be in events.csv",
+      "observed": {
+        "ack_frames": "0",
+        "attempts": "1",
+        "attempts_sum": "1",
+        "bytes_ack_tx": "0",
+        "bytes_data_tx": "27",
+        "bytes_total_tx": "27",
+        "core_error": "0",
+        "data_frames": "1",
+        "dec_attempt": "1",
+        "dec_kind": "EVENT",
+        "dec_lost": "1",
+        "dec_n_elig_ev": "1",
+        "dec_reason": "EVENT_EDF",
+        "dec_ref": "1",
+        "dec_slot": "0",
+        "dec_t": "0",
+        "decision_rows": "1",
+        "ev_acked": "0",
+        "ev_admitted": "1",
+        "ev_generated": "1",
+        "ev_pending_end": "1",
+        "event_decisions": "1",
+        "event_retries": "0",
+        "event_tx": "1",
+        "events_rows": "1",
+        "exit": "0",
+        "first_tx_time": "0",
+        "ledger_mismatch": "0",
+        "outcome": "PENDING",
+        "rx_ev_delivered": "0",
+        "terminal_time": "-"
+      },
+      "passed": true,
+      "policy": "fresh_so"
+    },
+    {
+      "expected": {
+        "attempts": "3",
+        "attempts_sum": "3",
+        "bytes_data_tx": "81",
+        "core_error": "0",
+        "data_frames": "3",
+        "dec_attempts": "1;2;3",
+        "ev_generated": "1",
+        "ev_pending_end": "1",
+        "ev_retry_exhausted": "0",
+        "event_decisions": "3",
+        "event_retries": "2",
+        "event_tx": "3",
+        "events_rows": "1",
+        "exit": "0",
+        "first_tx_time": "0",
+        "ledger_mismatch": "0",
+        "outcome": "PENDING"
+      },
+      "fixture": "F5_retries_reconcile_at_cutoff",
+      "mismatches": {},
+      "note": "three lost attempts (ack_timeout 1 ms) then cutoff: attempts=3 == event_tx == EVENT decisions",
+      "observed": {
+        "attempts": "3",
+        "attempts_sum": "3",
+        "bytes_data_tx": "81",
+        "core_error": "0",
+        "data_frames": "3",
+        "dec_attempts": "1;2;3",
+        "ev_generated": "1",
+        "ev_pending_end": "1",
+        "ev_retry_exhausted": "0",
+        "event_decisions": "3",
+        "event_retries": "2",
+        "event_tx": "3",
+        "events_rows": "1",
+        "exit": "0",
+        "first_tx_time": "0",
+        "ledger_mismatch": "0",
+        "outcome": "PENDING"
+      },
+      "passed": true,
+      "policy": "fresh_so"
+    },
+    {
+      "expected": {
+        "ack_frames": "0",
+        "attempts": "1",
+        "attempts_sum": "1",
+        "bytes_ack_tx": "0",
+        "bytes_data_tx": "27",
+        "bytes_total_tx": "27",
+        "core_error": "0",
+        "data_frames": "1",
+        "dec_attempt": "1",
+        "dec_kind": "EVENT",
+        "dec_lost": "1",
+        "dec_n_elig_ev": "1",
+        "dec_reason": "FIFO_OLDEST",
+        "dec_ref": "1",
+        "dec_slot": "0",
+        "dec_t": "0",
+        "decision_rows": "1",
+        "ev_acked": "0",
+        "ev_admitted": "1",
+        "ev_generated": "1",
+        "ev_pending_end": "1",
+        "event_decisions": "1",
+        "event_retries": "0",
+        "event_tx": "1",
+        "events_rows": "1",
+        "exit": "0",
+        "first_tx_time": "0",
+        "ledger_mismatch": "0",
+        "outcome": "PENDING",
+        "rx_ev_delivered": "0",
+        "terminal_time": "-"
+      },
+      "fixture": "F4_pending_attempt_counted_at_cutoff",
+      "mismatches": {},
+      "note": "1 ms run: event sent (lost) at t=0, still pending at cutoff -> attempts=1 must be in events.csv",
+      "observed": {
+        "ack_frames": "0",
+        "attempts": "1",
+        "attempts_sum": "1",
+        "bytes_ack_tx": "0",
+        "bytes_data_tx": "27",
+        "bytes_total_tx": "27",
+        "core_error": "0",
+        "data_frames": "1",
+        "dec_attempt": "1",
+        "dec_kind": "EVENT",
+        "dec_lost": "1",
+        "dec_n_elig_ev": "1",
+        "dec_reason": "FIFO_OLDEST",
+        "dec_ref": "1",
+        "dec_slot": "0",
+        "dec_t": "0",
+        "decision_rows": "1",
+        "ev_acked": "0",
+        "ev_admitted": "1",
+        "ev_generated": "1",
+        "ev_pending_end": "1",
+        "event_decisions": "1",
+        "event_retries": "0",
+        "event_tx": "1",
+        "events_rows": "1",
+        "exit": "0",
+        "first_tx_time": "0",
+        "ledger_mismatch": "0",
+        "outcome": "PENDING",
+        "rx_ev_delivered": "0",
+        "terminal_time": "-"
+      },
+      "passed": true,
+      "policy": "fifo"
+    },
+    {
+      "expected": {
+        "attempts": "3",
+        "attempts_sum": "3",
+        "bytes_data_tx": "81",
+        "core_error": "0",
+        "data_frames": "3",
+        "dec_attempts": "1;2;3",
+        "ev_generated": "1",
+        "ev_pending_end": "1",
+        "ev_retry_exhausted": "0",
+        "event_decisions": "3",
+        "event_retries": "2",
+        "event_tx": "3",
+        "events_rows": "1",
+        "exit": "0",
+        "first_tx_time": "0",
+        "ledger_mismatch": "0",
+        "outcome": "PENDING"
+      },
+      "fixture": "F5_retries_reconcile_at_cutoff",
+      "mismatches": {},
+      "note": "three lost attempts (ack_timeout 1 ms) then cutoff: attempts=3 == event_tx == EVENT decisions",
+      "observed": {
+        "attempts": "3",
+        "attempts_sum": "3",
+        "bytes_data_tx": "81",
+        "core_error": "0",
+        "data_frames": "3",
+        "dec_attempts": "1;2;3",
+        "ev_generated": "1",
+        "ev_pending_end": "1",
+        "ev_retry_exhausted": "0",
+        "event_decisions": "3",
+        "event_retries": "2",
+        "event_tx": "3",
+        "events_rows": "1",
+        "exit": "0",
+        "first_tx_time": "0",
+        "ledger_mismatch": "0",
+        "outcome": "PENDING"
+      },
+      "passed": true,
+      "policy": "fifo"
+    }
+  ]
+}

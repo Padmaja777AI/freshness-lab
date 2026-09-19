@@ -1,0 +1,2 @@
+slot,t,kind,reason,ref,attempt,seq,n_elig_ev,n_elig_st,lost,delay_ms,ack_type,ack_lost
+0,0,EVENT,EVENT_EDF,1,1,0,1,0,1,1,,0

@@ -1,0 +1,2 @@
+slot,t,kind,reason,ref,attempt,seq,n_elig_ev,n_elig_st,lost,delay_ms,ack_type,ack_lost
+0,0,NONE,IDLE,0,0,0,0,0,0,0,,0

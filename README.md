@@ -40,7 +40,7 @@ better. See `docs/REPORT.md` for the walkthrough with the actual trace.
 | Continuous-time AoI accumulator (exact integer arithmetic), unknown time, peak, over-threshold time | **Implemented, tested against a hand fixture** | `host/aoi.[ch]` |
 | Accounting identity checked on every run; ledger reconciliation; receiver-seq interval check | **Implemented, tested** | `host/sim.c`, `tests/test_sim.c` |
 | Scenario generators (8 scenarios, seeded), matrix runner, aggregation, SVG plot, manifest with hashes | **Implemented** | `tools/` |
-| Counterexample reducer (ddmin over workload rows, trace and time axis fixed) | **Implemented** (see report for what it was run on) | `tools/reduce_counterexample.py` |
+| Counterexample reducer (ddmin over workload rows, trace and time axis fixed) | **Implemented, run on the overload loss** (`results/reduce/`) | `tools/reduce_counterexample.py` |
 | Strict warnings (gcc + clang `-Weverything`), ASan/UBSan test run | **Implemented** | `Makefile` |
 
 ## What is planned (not implemented; do not cite as done)
@@ -100,10 +100,38 @@ Outputs per run: `summary.csv`, `events.csv` (per-event ledger, both ends),
 Full specification: `docs/DESIGN.md`. Memory: `docs/MEMORY.md`. Prior art
 and positioning: `docs/RELATED_WORK.md`. Results: `docs/REPORT.md`.
 
-## Results
+## Results (HOST SIMULATION, exploratory/pilot matrix)
 
-See `docs/REPORT.md` (generated from `results/matrix/`). Summary table and
-plot: `results/matrix/summary.md`, `results/matrix/plot.svg`.
+Full report: `docs/REPORT.md`. Tables: `results/matrix/summary.md`; plot:
+`results/matrix/plot.svg`; provenance: `results/matrix/manifest.json` and
+`results/reproduction_log.txt` (clean-worktree rebuild, tests, sanitizers,
+matrix regeneration with identical hashes).
+
+* 280 policy runs (7 policies × 8 scenarios × 5 pilot seeds) + 40 `fresh --defer 0`
+  ablation runs = 320 runs; 697/697 consistency checks passed
+  (accounting identity, ablation byte-equality, interval check on every run).
+* **Semantics demo (`alarm_outage`):** the receiver never sees
+  `alarm_active = 1` on the state stream; the event ledger delivers both
+  occurrences late (0/2 on time, 2/2 recall) and in reversed arrival order.
+  The ledger preserves history; it does not by itself establish correct
+  reordered alarm-state application.
+* **Explicit rejection (`overflow`):** 28/40 events delivered eventually,
+  20/40 on time, 12 rejected at admission with burned IDs; identical for
+  every policy.
+* **Candidate `fresh` vs baselines:** no measurable difference on healthy,
+  bursty, ACK-loss or reordering links; under persistent overload it
+  **loses** about one percentage point of event recall (0.770 vs 0.782) while
+  cutting mean AoI about five-fold (1210 vs 6232 ms); the scenario built to
+  make it lose (`tight_deadline`) did not, and `fifo` had the highest on-time
+  rate there with overlapping seed ranges. No superiority claim.
+* **Negative finding kept:** with 8 attempts × 300 ms ACK timeout, events
+  exhausted retries inside a 6 s outage and the declared 17 s retention was
+  unreachable (`results/pilot/`); the outage scenarios now use 40 attempts
+  for every policy.
+* **Reduced counterexample:** `results/reduce/overload_seed101_recall/`
+  shrinks the overload loss to 13 workload rows (1-minimal) with a
+  side-by-side decision walkthrough.
+* Seeds 101..105 are development seeds; a held-out study is a later milestone.
 
 ## Layout
 

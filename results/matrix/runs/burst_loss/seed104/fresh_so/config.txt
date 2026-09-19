@@ -1,0 +1,23 @@
+# HOST SIMULATION resolved configuration
+policy=fresh_so
+family=fresh
+defer=1
+late_demote=0
+starvation_override=1
+run_ms=30000
+slot_ms=10
+n_streams=4
+session_id=7
+ack_timeout_ms=300
+max_attempts=8
+aoi_threshold_ms=2000
+event_service_ms=40
+slack_guard_ms=100
+state_stale_ms=1000
+state_starvation_ms=2000
+FL_MAX_STREAMS=8
+FL_EVENT_CAPACITY=8
+FL_RX_DEDUP_WINDOW=64
+FL_RX_ACK_QUEUE=4
+sizeof_sender=888
+sizeof_receiver=296

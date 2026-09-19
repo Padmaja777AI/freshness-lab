@@ -1,0 +1,2 @@
+# HOST runtime only (desktop CPU); not an embedded measurement
+host_runtime_us=3

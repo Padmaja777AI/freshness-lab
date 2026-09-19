@@ -1,0 +1,5 @@
+stream,published,sent,applied,stale_dropped,unknown_ms,aoi_mean_ms,aoi_area_ms2,aoi_peak_ms,final_age_ms,over_threshold_ms
+0,150,148,145,0,30,226.651,6792730.0,651,412,0
+1,150,146,141,0,80,209.433,6266250.0,638,355,0
+2,150,146,146,0,140,226.515,6763730.0,602,98,0
+3,150,149,148,0,190,201.487,6006330.0,546,45,0
