@@ -1,0 +1,8 @@
+build/
+build-*/
+__pycache__/
+*.pyc
+results/matrix/runs/**/decisions.csv
+results/matrix/runs/**/rx.csv
+results/matrix/runs/**/runtime.txt
+results/matrix/inputs/**/trace.csv
