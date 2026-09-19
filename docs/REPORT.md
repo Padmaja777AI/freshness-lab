@@ -85,8 +85,11 @@ outage (from `rx.csv`):
 
 Seq 9 (value 0, generated 8000) is the last snapshot applied before the
 outage; the next applied snapshot is seq 16 (value 0, generated 15000). The
-two snapshots carrying value 1 (seq 11 at 10000 and seq 12 at 11000) were
-transmitted into the outage, lost, and superseded by newer waiting snapshots.
+two snapshots carrying value 1 (seq 11 generated at 10000 and seq 12 at
+11000) were each transmitted three times into the outage (10200–10800 and
+11100–11700 in `decisions.csv`), lost every time, and then replaced as the
+stream's latest snapshot by the value-0 snapshots generated from 12000 on;
+nothing carrying value 1 ever reached the receiver.
 Stream 0 published 30 snapshots, transmitted 44 frames (retries during the
 outage) and had 24 applied; its AoI peaked at 7030 ms, spent
 5030 ms above the 2000 ms threshold, was unknown for the first 20 ms,
