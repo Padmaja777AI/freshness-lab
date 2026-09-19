@@ -529,9 +529,12 @@ The candidate therefore **obeys its event guard**: it only defers an event
 whose declared slack allows it. This gives no deadline guarantee under
 arbitrary loss — the guard assumes the declared service time and no loss, and
 the `tight_deadline` scenario is designed to violate that assumption. Under
-persistent event overload every event is urgent and the candidate degenerates
-to `fresh_nodefer`, i.e. state starves; that is a measured consequence, not
-hidden. **No strict starvation bound is claimed:** the guard only acts when
+persistent event overload the candidate degenerates to `fresh_nodefer` only
+while three or more events are *simultaneously eligible* (in-flight events
+do not count); the pilot `overload` runs show that it still defers often
+enough to cut mean AoI about five-fold at the cost of about one percentage
+point of event recall (docs/REPORT.md). That trade-off is measured, not
+hidden, and the reduced counterexample shows the mechanism. **No strict starvation bound is claimed:** the guard only acts when
 no event is urgent, so the time between two transmissions of a stream is
 bounded only under the assumption that urgent events do not occupy every
 slot.
