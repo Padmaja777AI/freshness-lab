@@ -83,24 +83,14 @@ walkthrough in [docs/REPORT.md](docs/REPORT.md#3-the-demonstration-alarm-raised-
 ## Architecture
 
 ```mermaid
-flowchart LR
-  subgraph HOST["host/  HOST SIMULATION harness (heap and stdio allowed)"]
-    WL["workload.csv<br/>STATE / RAISE / CLEAR rows"] --> SIM["sim.c<br/>1 ms loop, one frame per slot<br/>per direction (slot_ms configurable,<br/>10 ms in all scenarios)"]
-    TR["trace.csv<br/>loss + delay per slot,<br/>DATA and ACK directions"] --> SIM
-    SIM --> OUTF["summary / events / decisions /<br/>state / rx CSV files"]
-  end
-  subgraph CORE["core/  C11 core (fixed arrays, no heap, no I/O)"]
-    S["fl_sender<br/>latest + in-flight STATE per stream<br/>8 EVENT slots, retry limit, retention<br/>ACK validation"]
-    P["fl_policy<br/>edf_rr / fresh_nodefer / fresh / fifo<br/>sees only a read-only view"]
-    R["fl_receiver<br/>never-regress STATE<br/>64-ID dedup window<br/>4-entry ACK ring"]
-    S -- "sched view" --> P
-    P -- "choice" --> S
-  end
-  SIM -- "now, publish, post_event, step" --> S
-  S -- "DATA frame 22 / 27 B" --> SIM
-  SIM -- "DATA frame (delayed or lost)" --> R
-  R -- "ACK frame 14 / 10 B" --> SIM
-  SIM -- "ACK (delayed or lost)" --> S
+flowchart TB
+  IN["Workload + fault trace<br/>(scripted, seeded)"] --> SIM["Host simulator<br/>1 ms loop, one frame per slot"]
+  SIM --> TX["Sender core<br/>latest STATE, EVENT slots"]
+  TX <--> POL["Policy<br/>chooses the next frame<br/>from the sender's view only"]
+  TX -- "DATA frames" --> SIM
+  SIM -- "DATA (delayed or lost)" --> RX["Receiver core<br/>never-regress STATE,<br/>bounded event dedup"]
+  RX -- "ACK (delayed or lost)" --> SIM
+  SIM --> OUT["Evidence<br/>ledgers, decisions, metrics CSV"]
 ```
 
 Selected properties, all grounded in `core/` and `host/`:
