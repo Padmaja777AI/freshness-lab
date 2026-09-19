@@ -14,3 +14,4 @@ results/matrix/runs/**/runtime.txt
 !results/matrix/runs/tight_deadline/seed101/*/decisions.csv
 !results/matrix/runs/tight_deadline/seed101/*/rx.csv
 results/matrix/runs/overload/seed10[2-5]/*/events.csv
+results/matrix/checks/**/runtime.txt
