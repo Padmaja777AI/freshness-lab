@@ -605,12 +605,12 @@ policy** run on that scenario; only the policy name differs between runs.
   `state_starvation_ms=2000`) were set from the link parameters (10 ms slot,
   20 ms one-way delay, 300 ms ACK timeout) before any comparison run; no
   tuning sweep was performed on any seed.
-* **Held-out seeds.** The reported matrix uses a seed set chosen *after* the
-  freeze and *after* all tool and test authoring finished, verified unused by
-  searching the repository, the scratch directories and the agent
-  transcripts for those seed values. The set and the verification command
-  are recorded in `docs/REPORT.md`. If that verification fails, the matrix
-  is labelled **exploratory/pilot** instead.
+* **This first matrix is exploratory / pilot.** It is run on seeds
+  `101..105` (development seeds by the history above) and is labelled
+  exploratory/pilot everywhere it is reported. It is *not* a held-out
+  evaluation and no preregistration is claimed. A separate held-out study,
+  with seeds chosen after this milestone and audited for prior use, is a
+  later milestone (*PLANNED*).
 * The `alarm_outage` scenario's stream 0 and its two events do not depend on
   the seed at all (only stream 1's jitter and values do), so the demo
   walkthrough is the same story on any seed; it is still reported from a
