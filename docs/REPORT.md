@@ -428,7 +428,8 @@ that claim.
 
 ## 11. Limitations
 
-* Host simulation only; no MCU timing, RAM or flash measurements.
+* Host simulation only; MCU timing, power and flash have not been measured
+  (hardware is unavailable and outside the project's scope).
 * Exploratory/pilot seeds; no held-out evaluation; five seeds per cell.
 * Channel model: per-slot independent or two-state loss and fixed per-slot
   delay; no corruption, partial frames or clock drift.
@@ -440,9 +441,15 @@ that claim.
 * The alarm demo shows history preservation, not correct reordered
   alarm-state application.
 
-## 12. Next milestone (planned, not done)
+## 12. Scope and future work (software-only)
 
-Port `core/` to a Cortex-M board with a UART link (host as receiver), measure
-RAM/flash/cycles per `fl_sender_step`, replay the same traces through a link
-emulator, add a CRC and corruption to the channel model, and run a held-out
-seed study with seeds chosen and audited after this milestone.
+This project is software-only: hardware is unavailable and outside its
+scope, so MCU timing, power and flash have not been measured and no board
+has run this code. That is a factual limitation of the evidence, not a
+pending task. Future work, none of it implemented, would stay in software:
+an unseen-seed evaluation after freezing the policies and configurations;
+workload and budget sensitivity (event rate, deadline, retry budget, buffer
+capacity); stronger adversarial fault combinations (overlapping outages,
+ACK-only loss during overload, reordering under overload); and CRC plus
+corruption in the channel model. A short summary for new readers is in
+`docs/RESULTS_SUMMARY.md`.

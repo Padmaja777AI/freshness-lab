@@ -2,7 +2,8 @@
 
 **Status:** implemented as described unless a section is marked *PLANNED*.
 **Scope label:** everything measured in this repository is **HOST SIMULATION** on a
-desktop CPU. No microcontroller board has run this code yet.
+desktop CPU. This is a software-only project: no microcontroller board has
+run this code, and hardware is outside its scope.
 
 This document is the normative reference for the C11 core (`core/`), the host
 harness (`host/`), the tests (`tests/`) and the experiment tooling (`tools/`).

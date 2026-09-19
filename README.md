@@ -4,13 +4,19 @@ Bounded-memory C11 telemetry core for **replaceable STATE snapshots** and
 **non-replaceable EVENT occurrences**, with a deterministic **HOST SIMULATION**
 harness for replaying matched fault traces and comparing scheduling policies.
 
-> **Scope, stated plainly.** Everything measured here is a host simulation on
-> a desktop CPU. No microcontroller has run this code. The scheduler
-> comparison is an experiment with a possible negative result, not a claim of
-> superiority over anything. This repository makes no world-first,
-> university-affiliation, safety-certification, hardware-performance or
-> universal-superiority claims. The code was written and tested with AI
-> assistance (Claude Code) in this repository; commits carry that attribution.
+> **Scope, stated plainly.** This is a **software-only research and
+> simulation project**: it runs entirely on a desktop, no board is required,
+> and no hardware was used. Every number here is a host simulation on
+> development seeds; the scheduler comparison is an experiment with a
+> possible negative result, not a claim of superiority over anything. This
+> repository makes no world-first, university-affiliation,
+> safety-certification, hardware-performance or universal-superiority claims.
+> The code was written and tested with AI assistance (Claude Code) in this
+> repository; commits carry that attribution.
+
+**Start here:** [`docs/RESULTS_SUMMARY.md`](docs/RESULTS_SUMMARY.md) (two-page
+summary for a new reader) and [`docs/REPORT.md`](docs/REPORT.md) (full report
+with walkthroughs, review reconciliation and the clean reproduction proof).
 
 ## The one-minute demo
 
@@ -43,15 +49,20 @@ better. See `docs/REPORT.md` for the walkthrough with the actual trace.
 | Counterexample reducer (ddmin over workload rows, trace and time axis fixed) | **Implemented, run on the overload loss** (`results/reduce/`) | `tools/reduce_counterexample.py` |
 | Strict warnings (gcc + clang `-Weverything`), ASan/UBSan test run | **Implemented** | `Makefile` |
 
-## What is planned (not implemented; do not cite as done)
+## What is not done (do not cite as done)
 
-* Port to a Cortex-M class board with a real UART/radio link; measure RAM,
-  flash, cycles per step. **Milestone 2.**
-* CRC trailer on frames; corruption (not only loss/delay) in the trace.
-* Receiver-visible loss notification (so the receiver learns about
-  `REJECTED_FULL` / expiry); currently accounting is local to each end.
-* AoII-style metric; sender-side receiver-state estimator.
-* Larger dedup windows or per-stream event ledgers; session negotiation.
+Hardware is unavailable and outside the scope of this project: MCU timing,
+power and flash have **not** been measured, and no board has run this code.
+Software-only future work, none of it implemented:
+
+* Unseen-seed evaluation after freezing the policies and configurations
+  (the current matrix uses development seeds).
+* Workload and budget sensitivity: event rate, deadline, retry budget,
+  buffer capacity.
+* Stronger adversarial fault combinations (overlapping outages, ACK-only
+  loss during overload, reordering under overload).
+* CRC trailer and corruption in the channel model; receiver-visible loss
+  notification; an AoII-style metric; session negotiation.
 
 ## Build, test, reproduce
 
@@ -97,15 +108,22 @@ Outputs per run: `summary.csv`, `events.csv` (per-event ledger, both ends),
 * **Budget**: every transmitted frame, lost or not, data or ACK, is charged
   its bytes. Bytes are not energy.
 
-Full specification: `docs/DESIGN.md`. Memory: `docs/MEMORY.md`. Prior art
-and positioning: `docs/RELATED_WORK.md`. Results: `docs/REPORT.md`.
+Full specification: [`docs/DESIGN.md`](docs/DESIGN.md). Memory:
+[`docs/MEMORY.md`](docs/MEMORY.md). Prior art and positioning:
+[`docs/RELATED_WORK.md`](docs/RELATED_WORK.md). Results:
+[`docs/RESULTS_SUMMARY.md`](docs/RESULTS_SUMMARY.md) and
+[`docs/REPORT.md`](docs/REPORT.md).
 
 ## Results (HOST SIMULATION, exploratory/pilot matrix)
 
-Full report: `docs/REPORT.md`. Tables: `results/matrix/summary.md`; plot:
-`results/matrix/plot.svg`; provenance: `results/matrix/manifest.json` and
-`results/reproduction_log.txt` (clean-worktree rebuild, tests, sanitizers,
-matrix regeneration with identical hashes).
+Summary: [`docs/RESULTS_SUMMARY.md`](docs/RESULTS_SUMMARY.md). Full report:
+[`docs/REPORT.md`](docs/REPORT.md). Tables:
+[`results/matrix/summary.md`](results/matrix/summary.md); plot:
+[`results/matrix/plot.svg`](results/matrix/plot.svg); provenance:
+[`results/matrix/manifest.json`](results/matrix/manifest.json) and
+[`results/reproduction_log.txt`](results/reproduction_log.txt)
+(clean-worktree rebuild, tests, sanitizers, matrix regeneration with
+identical hashes).
 
 * 280 policy runs (7 policies × 8 scenarios × 5 pilot seeds) + 40 `fresh --defer 0`
   ablation runs = 320 runs; 697/697 consistency checks passed
@@ -131,7 +149,8 @@ matrix regeneration with identical hashes).
 * **Reduced counterexample:** `results/reduce/overload_seed101_recall/`
   shrinks the overload loss to 13 workload rows (1-minimal) with a
   side-by-side decision walkthrough.
-* Seeds 101..105 are development seeds; a held-out study is a later milestone.
+* Seeds 101..105 are development seeds; an unseen-seed evaluation is
+  software-only future work.
 
 ## Layout
 
