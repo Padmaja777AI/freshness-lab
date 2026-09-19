@@ -283,22 +283,50 @@ int load_config(const char *path, sim_config_t *cfg)
             fclose(fp);
             return -1;
         }
-        if (strcmp(key, "run_ms") == 0) cfg->run_ms = v;
-        else if (strcmp(key, "slot_ms") == 0) cfg->slot_ms = v;
-        else if (strcmp(key, "n_streams") == 0) cfg->n_streams = (uint8_t)v;
-        else if (strcmp(key, "session_id") == 0) cfg->session_id = (uint16_t)v;
-        else if (strcmp(key, "ack_timeout_ms") == 0) cfg->ack_timeout_ms = v;
-        else if (strcmp(key, "max_attempts") == 0) cfg->max_attempts = (uint8_t)v;
-        else if (strcmp(key, "aoi_threshold_ms") == 0) cfg->aoi_threshold_ms = v;
-        else if (strcmp(key, "event_service_ms") == 0) cfg->policy.event_service_ms = v;
-        else if (strcmp(key, "slack_guard_ms") == 0) cfg->policy.slack_guard_ms = v;
-        else if (strcmp(key, "state_stale_ms") == 0) cfg->policy.state_stale_ms = v;
-        else if (strcmp(key, "state_starvation_ms") == 0) cfg->policy.state_starvation_ms = v;
-        else {
+        /* Range-check BEFORE narrowing so a wrapped value can never pass the core validator. */
+        if (strcmp(key, "run_ms") == 0) {
+            if (v < 1u || v > FL_TIME_HORIZON_MS) goto range;
+            cfg->run_ms = v;
+        } else if (strcmp(key, "slot_ms") == 0) {
+            if (v < 1u || v > FL_MAX_REL_MS) goto range;
+            cfg->slot_ms = v;
+        } else if (strcmp(key, "n_streams") == 0) {
+            if (v < 1u || v > FL_MAX_STREAMS) goto range;
+            cfg->n_streams = (uint8_t)v;
+        } else if (strcmp(key, "session_id") == 0) {
+            if (v > 0xFFFFu) goto range;
+            cfg->session_id = (uint16_t)v;
+        } else if (strcmp(key, "ack_timeout_ms") == 0) {
+            if (v < 1u || v > FL_MAX_REL_MS) goto range;
+            cfg->ack_timeout_ms = v;
+        } else if (strcmp(key, "max_attempts") == 0) {
+            if (v < 1u || v > 255u) goto range;
+            cfg->max_attempts = (uint8_t)v;
+        } else if (strcmp(key, "aoi_threshold_ms") == 0) {
+            if (v > FL_MAX_REL_MS) goto range;
+            cfg->aoi_threshold_ms = v;
+        } else if (strcmp(key, "event_service_ms") == 0) {
+            if (v > FL_MAX_REL_MS) goto range;
+            cfg->policy.event_service_ms = v;
+        } else if (strcmp(key, "slack_guard_ms") == 0) {
+            if (v > FL_MAX_REL_MS) goto range;
+            cfg->policy.slack_guard_ms = v;
+        } else if (strcmp(key, "state_stale_ms") == 0) {
+            if (v > FL_MAX_REL_MS) goto range;
+            cfg->policy.state_stale_ms = v;
+        } else if (strcmp(key, "state_starvation_ms") == 0) {
+            if (v > FL_MAX_REL_MS) goto range;
+            cfg->policy.state_starvation_ms = v;
+        } else {
             fprintf(stderr, "config:%u: unknown key %s\n", lineno, key);
             fclose(fp);
             return -1;
         }
+        continue;
+    range:
+        fprintf(stderr, "config:%u: %s=%u out of range\n", lineno, key, v);
+        fclose(fp);
+        return -1;
     }
     fclose(fp);
     return 0;

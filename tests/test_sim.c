@@ -4,8 +4,10 @@
  * equivalence, ledger independence under ACK loss, late != on time.
  * SPDX-License-Identifier: MIT
  */
+#define _POSIX_C_SOURCE 200809L
 #include "fltest.h"
 #include <stdlib.h>
+#include <unistd.h>
 #include "../host/sim.h"
 
 static void mk_trace(trace_t *tr, uint32_t n_slots, fl_time_t delay)
@@ -449,8 +451,67 @@ static void test_aoi_through_harness(void)
     trace_free(&tr);
 }
 
+/* Writes a config file with one key=value line and loads it; returns load_config's rc. */
+static int load_one(const char *key, unsigned long v, sim_config_t *cfg)
+{
+    char path[] = "/tmp/flcfgXXXXXX";
+    int fd = mkstemp(path);
+    FILE *fp;
+    int rc;
+    if (fd < 0) {
+        return -99;
+    }
+    fp = fdopen(fd, "w");
+    if (fp == 0) {
+        return -99;
+    }
+    fprintf(fp, "%s=%lu\n", key, v);
+    fclose(fp);
+    sim_config_defaults(cfg);
+    rc = load_config(path, cfg);
+    unlink(path);
+    return rc;
+}
+
+/*
+ * Config regression: values must be range-checked BEFORE narrowing.
+ * n_streams=260 would wrap to 4, max_attempts=264 to 8, session_id=65543 to 7
+ * if cast first; all must be rejected. Exact boundaries are accepted.
+ */
+static void test_config_ranges_before_narrowing(void)
+{
+    sim_config_t c;
+    CHECK_EQI(load_one("n_streams", FL_MAX_STREAMS, &c), 0);
+    CHECK_EQ(c.n_streams, FL_MAX_STREAMS);
+    CHECK_EQI(load_one("n_streams", FL_MAX_STREAMS + 1u, &c), -1);
+    CHECK_EQI(load_one("n_streams", 0, &c), -1);
+    CHECK_EQI(load_one("n_streams", 260, &c), -1);   /* would wrap to 4 */
+    CHECK_EQI(load_one("max_attempts", 255, &c), 0);
+    CHECK_EQ(c.max_attempts, 255);
+    CHECK_EQI(load_one("max_attempts", 256, &c), -1);
+    CHECK_EQI(load_one("max_attempts", 264, &c), -1); /* would wrap to 8 */
+    CHECK_EQI(load_one("max_attempts", 0, &c), -1);
+    CHECK_EQI(load_one("session_id", 65535, &c), 0);
+    CHECK_EQ(c.session_id, 65535);
+    CHECK_EQI(load_one("session_id", 65536, &c), -1);
+    CHECK_EQI(load_one("session_id", 65543, &c), -1); /* would wrap to 7 */
+    CHECK_EQI(load_one("session_id", 0, &c), 0);
+    CHECK_EQI(load_one("run_ms", FL_TIME_HORIZON_MS, &c), 0);
+    CHECK_EQI(load_one("run_ms", (unsigned long)FL_TIME_HORIZON_MS + 1ul, &c), -1);
+    CHECK_EQI(load_one("run_ms", 0, &c), -1);
+    CHECK_EQI(load_one("slot_ms", 0, &c), -1);
+    CHECK_EQI(load_one("ack_timeout_ms", FL_MAX_REL_MS, &c), 0);
+    CHECK_EQI(load_one("ack_timeout_ms", (unsigned long)FL_MAX_REL_MS + 1ul, &c), -1);
+    CHECK_EQI(load_one("ack_timeout_ms", 0, &c), -1);
+    CHECK_EQI(load_one("state_stale_ms", (unsigned long)FL_MAX_REL_MS + 1ul, &c), -1);
+    CHECK_EQI(load_one("event_service_ms", 0, &c), 0);
+    CHECK_EQI(load_one("bogus_key", 1, &c), -1);
+    CHECK_EQI(load_one("n_streams", 4294967296ul, &c), -1); /* > UINT32: parse rejects */
+}
+
 int main(void)
 {
+    RUN(test_config_ranges_before_narrowing);
     RUN(test_reject_out_of_run_rows);
     RUN(test_attempts_recorded_when_pending);
     RUN(test_reject_zero_delay);
