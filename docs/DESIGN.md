@@ -575,8 +575,9 @@ whether or not the candidate wins.
 ## 10. Scenarios (all HOST SIMULATION)
 
 Each scenario = config + workload generator + trace generator, keyed by seed.
-Tuning seeds `1..3` were used while choosing candidate parameters; evaluation
-seeds `101..105` are never used for tuning.
+Every parameter in a scenario's `.cfg` (retry limit, ACK timeout, service
+slot, capacities, candidate parameters) applies **identically to every
+policy** run on that scenario; only the policy name differs between runs.
 
 | Name | Purpose |
 |---|---|
@@ -589,7 +590,47 @@ seeds `101..105` are never used for tuning.
 | `overload` | persistent event overload: state starvation vs guard |
 | `tight_deadline` | short deadlines + loss: designed so the slack candidate loses |
 
----
+### 10.1 Seed provenance (accurate history, no preregistration claimed)
+
+* **Development / pilot seeds: `1, 2, 3, 101, 102, 103, 104, 105`.** These
+  were used while building the generators (structural checks over all of
+  them), while verifying the tools (seeds 101/102), and while inspecting the
+  `alarm_outage` and `overflow` demos (seed 101). The decision to raise
+  `max_attempts` for the two outage scenarios (§10.2) was taken **after**
+  looking at seed-101 output. None of these seeds is therefore an untouched
+  evaluation seed, and nothing about them was preregistered.
+* **Configuration freeze.** After that change no scenario configuration or
+  candidate parameter is modified. The candidate's four parameters
+  (`event_service_ms=40`, `slack_guard_ms=100`, `state_stale_ms=1000`,
+  `state_starvation_ms=2000`) were set from the link parameters (10 ms slot,
+  20 ms one-way delay, 300 ms ACK timeout) before any comparison run; no
+  tuning sweep was performed on any seed.
+* **Held-out seeds.** The reported matrix uses a seed set chosen *after* the
+  freeze and *after* all tool and test authoring finished, verified unused by
+  searching the repository, the scratch directories and the agent
+  transcripts for those seed values. The set and the verification command
+  are recorded in `docs/REPORT.md`. If that verification fails, the matrix
+  is labelled **exploratory/pilot** instead.
+* The `alarm_outage` scenario's stream 0 and its two events do not depend on
+  the seed at all (only stream 1's jitter and values do), so the demo
+  walkthrough is the same story on any seed; it is still reported from a
+  held-out seed for consistency.
+
+### 10.2 Retry budget limitation (recorded failure)
+
+With the common configuration `ack_timeout_ms=300, max_attempts=8`, an
+event's effective lifetime is at most `1 + 7 × 300 ms = 2.1 s` after its
+first transmission, regardless of `retention_rel`. In the first
+`alarm_outage` pilot run (seed 101, outage 9–15 s) both events ended
+`RETRY_EXHAUSTED` at 12 400 ms and 14 400 ms, inside the outage, with
+`rx_ev_delivered = 0`; the declared 17 s retention never mattered. The same
+would happen in `overflow` (7 s outage). This is a genuine limitation of a
+fixed retry count without backoff: **retention only matters if
+`max_attempts × ack_timeout_ms` covers the outage.** The two outage scenarios
+therefore use `max_attempts=40` (12 s of retries, longer than the longest
+scripted outage, still capped by retention), applied identically to all
+policies. All other scenarios keep `max_attempts=8`. A back-off or
+time-based retry budget is *PLANNED*.
 
 ## 11. Determinism
 Given identical (workload, trace, config, policy) the harness produces
