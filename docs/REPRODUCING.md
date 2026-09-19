@@ -98,7 +98,7 @@ Other scenarios: `python3 tools/gen_workload.py --list`. Policies:
 `flsim` also accepts `--defer 0|1`, `--late-demote 0|1`,
 `--starvation-override 0|1` to override a preset's flags, and `--quiet`.
 
-## The full matrix (320 runs, about 3 s)
+## The full matrix (320 runs)
 
 `make matrix` writes to `results/matrix/` and would overwrite the retained
 evidence. To reproduce without touching it, run the runner directly into
@@ -108,7 +108,9 @@ evidence. To reproduce without touching it, run the runner directly into
 python3 tools/run_matrix.py --flsim build/flsim --out out/matrix
 ```
 
-This generates inputs for 8 scenarios × 5 seeds (101..105), runs 7 policies
+On the reference host (4-CPU x86-64 desktop) this took about 3 s of wall
+time; treat that as an observation, not an expectation. It generates inputs
+for 8 scenarios × 5 seeds (101..105), runs 7 policies
 plus the `fresh --defer 0` ablation on each (320 runs), performs 697
 consistency checks, prunes large logs except for `alarm_outage` and
 `tight_deadline`, and writes `summary_all.csv`, `summary_by_scenario.csv`,
@@ -180,15 +182,20 @@ used by argparse for usage errors), 1 input or `flsim` failure.
 
 ## What is deterministic and what is not
 
-Byte-identity across machines is claimed only for the files whose sha256
-the manifest lists: the generated inputs (`workload.csv`, `trace.csv`, the
-copied `.cfg`), and every run's `summary.csv`, `events.csv`, `state.csv`
-(plus `decisions.csv` and `rx.csv` where kept). They depend only on the
-seed, the scenario definition and the code. Expected to differ between
-runs or machines: `runtime.txt` (host timing), the `host_wall_seconds`
-in the reproduction log, and the path, timestamp and git-state fields inside
-`manifest.json`, `reduction.json` and `checks.json`. `summary.md` and
-`plot.svg` embed the git head and are identical only for the same commit.
+The files whose sha256 the manifest lists are deterministic outputs: the
+generated inputs (`workload.csv`, `trace.csv`, the copied `.cfg`) and every
+run's `summary.csv`, `events.csv`, `state.csv` (plus `decisions.csv` and
+`rx.csv` where kept). They depend only on the seed, the scenario definition
+and the code, and the clean-worktree reproduction in
+`results/reproduction_log.txt` regenerated all 1080 of them with identical
+hashes **in the reference environment** (Ubuntu 24.04, gcc 13.3.0, x86-64).
+Equality on another compiler, platform or host has not been verified; the
+manifest comparison above is the way to check it. Expected to differ between
+runs or machines regardless: `runtime.txt` (host timing), the
+`host_wall_seconds` in the reproduction log, and the path, timestamp and
+git-state fields inside `manifest.json`, `reduction.json` and `checks.json`.
+`summary.md` and `plot.svg` embed the git head and are identical only for
+the same commit.
 
 ## Troubleshooting
 
@@ -208,6 +215,8 @@ in the reproduction log, and the path, timestamp and git-state fields inside
   ignoring rows.
 * **Python tests need a writable `/tmp`** for temporary files; the C
   `test_sim` suite also uses `mkstemp` in `/tmp`.
-* **Different compiler or platform:** the core uses only fixed-width integer
-  arithmetic, so outputs are expected to be identical; the manifest
-  comparison above is the check. Windows has not been tried.
+* **Different compiler or platform:** the core and the run ledgers use
+  fixed-width integer arithmetic, but the host AoI accumulator reports
+  floating-point means and areas in `summary.csv` and `state.csv`, so
+  equality on another platform is something to verify with the manifest
+  comparison above, not to assume. Windows has not been tried.

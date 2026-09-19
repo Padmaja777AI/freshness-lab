@@ -67,6 +67,6 @@ scenario config, workload, channel trace and policy. To report one:
   claims. Prior art is credited in `docs/RELATED_WORK.md`; no code is
   copied from the cited specifications.
 * AI assistance is disclosed: the existing work was written and executed by
-  Claude Code in this repository under human direction and review. Keep commit
-  attribution honest (`Co-Authored-By` trailers for AI-assisted commits) and
-  do not put model identifiers into code, comments or artefacts.
+  Claude Code in this repository under human direction and review. Keep that
+  attribution truthful: use `Co-Authored-By` trailers for AI-assisted
+  commits and do not present AI-generated work as independently hand-written.
