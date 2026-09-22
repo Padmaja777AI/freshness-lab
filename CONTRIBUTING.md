@@ -66,7 +66,15 @@ scenario config, workload, channel trace and policy. To report one:
 * Do not add superiority, novelty, affiliation, certification or version
   claims. Prior art is credited in `docs/RELATED_WORK.md`; no code is
   copied from the cited specifications.
-* AI assistance is disclosed: the existing work was written and executed by
-  Claude Code in this repository under human direction and review. Keep that
-  attribution truthful: use `Co-Authored-By` trailers for AI-assisted
-  commits and do not present AI-generated work as independently hand-written.
+* AI assistance is disclosed in the README's "Development process" section:
+  the project was developed with Claude Code assistance under human review.
+  Keep that attribution truthful: use `Co-Authored-By` trailers for
+  AI-assisted commits and do not present AI-generated work as independently
+  hand-written.
+
+## License
+
+By contributing, you agree that your contributions are licensed under the
+project's [MIT License](LICENSE). Keep the `SPDX-License-Identifier: MIT`
+header on new source files and do not add third-party code whose license is
+incompatible with MIT or that lacks attribution.
