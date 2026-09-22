@@ -1,5 +1,7 @@
 # Freshness Lab
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 A software-only research project on **telemetry with two different value
 semantics**: replaceable **STATE** snapshots (only the newest matters) and
 non-replaceable **EVENT** occurrences (every one matters), sent by one
@@ -19,7 +21,8 @@ figures exist.
 [The alarm example](#why-two-semantics-the-alarm-example) ·
 [Architecture](#architecture) · [Findings](#findings-host-simulation-pilot) ·
 [Validation](#validation-evidence) · [Docs](#documentation-map) ·
-[Reproducing](docs/REPRODUCING.md) · [Contributing](CONTRIBUTING.md)
+[Reproducing](docs/REPRODUCING.md) · [Contributing](CONTRIBUTING.md) ·
+[Contributors](#contributors) · [License](#license)
 
 ## Quick start
 
@@ -230,13 +233,24 @@ sensitivity (event rate, deadline, retry budget, buffer capacity); stronger
 adversarial fault combinations; a CRC trailer and corruption in the channel
 model; receiver-visible loss notification.
 
-## Attribution
+## Contributors
 
-The code, tests, tooling, experiments and documents in this repository were
-written and executed by Claude Code (an AI coding tool) in this repository,
-under human direction and review. Commits are authored by the tool with
-`Co-Authored-By` trailers; the work is not represented as independently
-hand-written code. Specifications and papers listed in
+* [Padmaja Pabbathi](https://github.com/Padmaja777AI) — Project owner and maintainer.
+
+The implementation history is recorded commit by commit in this repository
+(`git log`), including `Co-Authored-By` trailers on AI-assisted commits.
+
+## Development process
+
+Developed with Claude Code assistance under human review. Implementation
+history and reproducible evaluation artifacts are available in this
+repository. The specifications and papers listed in
 [docs/RELATED_WORK.md](docs/RELATED_WORK.md) were used as references only;
-no code was copied from them. No license file has been added; licensing is
-the repository owner's decision.
+no code was copied from them.
+
+## License
+
+This project is released under the MIT License; see [LICENSE](LICENSE).
+Source files carry `SPDX-License-Identifier: MIT` headers. The license covers
+the original project work in this repository; the referenced standards and
+papers remain the property of their respective owners.
